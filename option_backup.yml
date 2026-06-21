@@ -1,0 +1,15 @@
+version: '2.0'
+client:
+  domain:
+    - 18comic.vip
+    - 18comic.org
+  post_with_common_headers: true
+  retry_times: 5
+download:
+  threading: false
+  threads: 1
+  max_workers: 1
+  image_convert:
+    format: jpg
+    quality: 75
+  save_dir: .
