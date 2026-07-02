@@ -1,0 +1,47 @@
+{
+    "1390260262887755786": {
+        "profession": "萌力暴走者",
+        "deposit": 1093101,
+        "friends_count": 0,
+        "achievements": [],
+        "moe_point": 1093101,
+        "last_daily_time": "2026-06-28",
+        "streak_days": 2,
+        "last_hourly_time": 10800.0,
+        "level": 41,
+        "crystal": 0,
+        "dimension_crystal": 0,
+        "sha_coin": 0,
+        "sign_level": 2
+    },
+    "1008374265067864194": {
+        "profession": "無業遊民",
+        "deposit": 100,
+        "sha_coin": 0,
+        "friends_count": 0,
+        "achievements": [],
+        "moe_point": 100,
+        "dimension_crystal": 0,
+        "sign_level": 1,
+        "last_hourly_time": 0.0,
+        "last_daily_time": "",
+        "streak_days": 0,
+        "total_reclaims": 0,
+        "voice_join_time": 0.0
+    },
+    "800548681974546462": {
+        "profession": "無業遊民",
+        "deposit": 100,
+        "sha_coin": 0,
+        "friends_count": 0,
+        "achievements": [],
+        "moe_point": 100,
+        "dimension_crystal": 0,
+        "sign_level": 1,
+        "last_hourly_time": 1782737859.9173744,
+        "last_daily_time": "",
+        "streak_days": 0,
+        "total_reclaims": 0,
+        "voice_join_time": 0.0
+    }
+}
