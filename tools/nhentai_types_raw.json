@@ -1,0 +1,11602 @@
+{
+ "category": [
+  {
+   "name": "doujinshi",
+   "count": 509734
+  },
+  {
+   "name": "manga",
+   "count": 137539
+  },
+  {
+   "name": "misc",
+   "count": 2
+  }
+ ],
+ "language": [
+  {
+   "name": "japanese",
+   "count": 340958
+  },
+  {
+   "name": "translated",
+   "count": 283983
+  },
+  {
+   "name": "chinese",
+   "count": 160908
+  },
+  {
+   "name": "english",
+   "count": 147649
+  },
+  {
+   "name": "ukrainian",
+   "count": 6
+  },
+  {
+   "name": "textless",
+   "count": 4
+  },
+  {
+   "name": "hebrew",
+   "count": 2
+  },
+  {
+   "name": "arabic",
+   "count": 2
+  },
+  {
+   "name": "textless narrative",
+   "count": 1
+  },
+  {
+   "name": "khmer",
+   "count": 1
+  },
+  {
+   "name": "romanian",
+   "count": 1
+  },
+  {
+   "name": "greek",
+   "count": 1
+  },
+  {
+   "name": "turkish",
+   "count": 1
+  },
+  {
+   "name": "czech",
+   "count": 1
+  }
+ ],
+ "parody": [
+  {
+   "name": "original",
+   "count": 155505
+  },
+  {
+   "name": "touhou project",
+   "count": 23323
+  },
+  {
+   "name": "kantai collection",
+   "count": 19494
+  },
+  {
+   "name": "fate grand order",
+   "count": 17391
+  },
+  {
+   "name": "the idolmaster",
+   "count": 17043
+  },
+  {
+   "name": "blue archive",
+   "count": 14981
+  },
+  {
+   "name": "granblue fantasy",
+   "count": 4650
+  },
+  {
+   "name": "genshin impact",
+   "count": 4407
+  },
+  {
+   "name": "pokemon",
+   "count": 4244
+  },
+  {
+   "name": "azur lane",
+   "count": 4119
+  },
+  {
+   "name": "hololive",
+   "count": 3081
+  },
+  {
+   "name": "neon genesis evangelion",
+   "count": 3045
+  },
+  {
+   "name": "love live",
+   "count": 2791
+  },
+  {
+   "name": "girls und panzer",
+   "count": 2652
+  },
+  {
+   "name": "sailor moon",
+   "count": 2470
+  },
+  {
+   "name": "one piece",
+   "count": 2455
+  },
+  {
+   "name": "mahou shoujo lyrical nanoha",
+   "count": 2450
+  },
+  {
+   "name": "fate stay night",
+   "count": 2364
+  },
+  {
+   "name": "naruto",
+   "count": 2196
+  },
+  {
+   "name": "sword art online",
+   "count": 2052
+  },
+  {
+   "name": "arknights",
+   "count": 2031
+  },
+  {
+   "name": "to love-ru",
+   "count": 2024
+  },
+  {
+   "name": "my hero academia",
+   "count": 1946
+  },
+  {
+   "name": "street fighter",
+   "count": 1745
+  },
+  {
+   "name": "princess connect",
+   "count": 1691
+  },
+  {
+   "name": "nijisanji",
+   "count": 1640
+  },
+  {
+   "name": "puella magi madoka magica",
+   "count": 1568
+  },
+  {
+   "name": "touken ranbu",
+   "count": 1388
+  },
+  {
+   "name": "king of fighters",
+   "count": 1329
+  },
+  {
+   "name": "vocaloid",
+   "count": 1311
+  },
+  {
+   "name": "zenless zone zero",
+   "count": 1310
+  },
+  {
+   "name": "code geass",
+   "count": 1299
+  },
+  {
+   "name": "k-on",
+   "count": 1270
+  },
+  {
+   "name": "yu-gi-oh",
+   "count": 1270
+  },
+  {
+   "name": "final fantasy vii",
+   "count": 1262
+  },
+  {
+   "name": "cardcaptor sakura",
+   "count": 1253
+  },
+  {
+   "name": "bleach",
+   "count": 1251
+  },
+  {
+   "name": "love live sunshine",
+   "count": 1224
+  },
+  {
+   "name": "shingeki no kyojin",
+   "count": 1187
+  },
+  {
+   "name": "dragon ball z",
+   "count": 1140
+  },
+  {
+   "name": "honkai star rail",
+   "count": 1133
+  },
+  {
+   "name": "kono subarashii sekai ni syukufuku o",
+   "count": 1107
+  },
+  {
+   "name": "free",
+   "count": 1106
+  },
+  {
+   "name": "the melancholy of haruhi suzumiya",
+   "count": 1100
+  },
+  {
+   "name": "gochuumon wa usagi desu ka",
+   "count": 1083
+  },
+  {
+   "name": "toheart2",
+   "count": 1075
+  },
+  {
+   "name": "dead or alive",
+   "count": 1068
+  },
+  {
+   "name": "kimetsu no yaiba",
+   "count": 1064
+  },
+  {
+   "name": "girls frontline",
+   "count": 1054
+  },
+  {
+   "name": "fate kaleid liner prisma illya",
+   "count": 1010
+  },
+  {
+   "name": "bakemonogatari",
+   "count": 986
+  },
+  {
+   "name": "jujutsu kaisen",
+   "count": 918
+  },
+  {
+   "name": "monster hunter",
+   "count": 917
+  },
+  {
+   "name": "ore no imouto ga konna ni kawaii wake ga nai",
+   "count": 885
+  },
+  {
+   "name": "bang dream",
+   "count": 857
+  },
+  {
+   "name": "ojamajo doremi",
+   "count": 850
+  },
+  {
+   "name": "detective conan",
+   "count": 836
+  },
+  {
+   "name": "haikyuu",
+   "count": 796
+  },
+  {
+   "name": "ragnarok online",
+   "count": 787
+  },
+  {
+   "name": "toaru kagaku no railgun",
+   "count": 783
+  },
+  {
+   "name": "goddess of victory nikke",
+   "count": 780
+  },
+  {
+   "name": "dragon quest iii",
+   "count": 770
+  },
+  {
+   "name": "boku wa tomodachi ga sukunai",
+   "count": 753
+  },
+  {
+   "name": "darkstalkers",
+   "count": 751
+  },
+  {
+   "name": "danganronpa",
+   "count": 750
+  },
+  {
+   "name": "love live nijigasaki high school idol club",
+   "count": 746
+  },
+  {
+   "name": "ensemble stars",
+   "count": 734
+  },
+  {
+   "name": "osomatsu-san",
+   "count": 733
+  },
+  {
+   "name": "samurai spirits",
+   "count": 725
+  },
+  {
+   "name": "queens blade",
+   "count": 713
+  },
+  {
+   "name": "ah my goddess",
+   "count": 711
+  },
+  {
+   "name": "ranma 12",
+   "count": 709
+  },
+  {
+   "name": "league of legends",
+   "count": 691
+  },
+  {
+   "name": "yu-gi-oh zexal",
+   "count": 688
+  },
+  {
+   "name": "re zero kara hajimeru isekai seikatsu",
+   "count": 686
+  },
+  {
+   "name": "voiceroid",
+   "count": 676
+  },
+  {
+   "name": "persona 4",
+   "count": 676
+  },
+  {
+   "name": "guilty gear",
+   "count": 661
+  },
+  {
+   "name": "smile precure",
+   "count": 656
+  },
+  {
+   "name": "kuroko no basuke",
+   "count": 648
+  },
+  {
+   "name": "persona 5",
+   "count": 642
+  },
+  {
+   "name": "sakura taisen",
+   "count": 641
+  },
+  {
+   "name": "senki zesshou symphogear",
+   "count": 636
+  },
+  {
+   "name": "mahou sensei negima",
+   "count": 625
+  },
+  {
+   "name": "infinite stratos",
+   "count": 622
+  },
+  {
+   "name": "sousou no frieren",
+   "count": 620
+  },
+  {
+   "name": "to heart",
+   "count": 606
+  },
+  {
+   "name": "pretty cure",
+   "count": 596
+  },
+  {
+   "name": "gundam seed destiny",
+   "count": 595
+  },
+  {
+   "name": "saki",
+   "count": 592
+  },
+  {
+   "name": "strike witches",
+   "count": 592
+  },
+  {
+   "name": "toaru majutsu no index",
+   "count": 584
+  },
+  {
+   "name": "the legend of zelda",
+   "count": 580
+  },
+  {
+   "name": "tenchi muyo",
+   "count": 577
+  },
+  {
+   "name": "kemono friends",
+   "count": 574
+  },
+  {
+   "name": "kanon",
+   "count": 563
+  },
+  {
+   "name": "dragon ball",
+   "count": 562
+  },
+  {
+   "name": "axis powers hetalia",
+   "count": 555
+  },
+  {
+   "name": "lucky star",
+   "count": 547
+  },
+  {
+   "name": "love hina",
+   "count": 543
+  },
+  {
+   "name": "pripara",
+   "count": 535
+  },
+  {
+   "name": "amagami",
+   "count": 508
+  },
+  {
+   "name": "super robot wars",
+   "count": 497
+  },
+  {
+   "name": "dungeon ni deai o motomeru no wa machigatteiru darou ka",
+   "count": 490
+  },
+  {
+   "name": "hayate no gotoku",
+   "count": 488
+  },
+  {
+   "name": "xenoblade chronicles 2",
+   "count": 487
+  },
+  {
+   "name": "yahari ore no seishun love come wa machigatteiru",
+   "count": 471
+  },
+  {
+   "name": "dragon quest xi",
+   "count": 463
+  },
+  {
+   "name": "martian successor nadesico",
+   "count": 457
+  },
+  {
+   "name": "tsukihime",
+   "count": 454
+  },
+  {
+   "name": "gotoubun no hanayome",
+   "count": 450
+  },
+  {
+   "name": "rozen maiden",
+   "count": 450
+  },
+  {
+   "name": "one punch man",
+   "count": 448
+  },
+  {
+   "name": "dragon quest iv",
+   "count": 446
+  },
+  {
+   "name": "shinrabansho",
+   "count": 444
+  },
+  {
+   "name": "urusei yatsura",
+   "count": 440
+  },
+  {
+   "name": "inazuma eleven",
+   "count": 439
+  },
+  {
+   "name": "yu-gi-oh arc-v",
+   "count": 435
+  },
+  {
+   "name": "bocchi the rock",
+   "count": 433
+  },
+  {
+   "name": "zero no tsukaima",
+   "count": 431
+  },
+  {
+   "name": "chainsaw man",
+   "count": 430
+  },
+  {
+   "name": "dragon quest v",
+   "count": 425
+  },
+  {
+   "name": "fullmetal alchemist",
+   "count": 425
+  },
+  {
+   "name": "gundam build fighters",
+   "count": 423
+  },
+  {
+   "name": "aikatsu",
+   "count": 416
+  },
+  {
+   "name": "mitsudomoe",
+   "count": 413
+  },
+  {
+   "name": "jojos bizarre adventure",
+   "count": 412
+  },
+  {
+   "name": "dokidoki precure",
+   "count": 411
+  },
+  {
+   "name": "toaru project",
+   "count": 409
+  },
+  {
+   "name": "uma musume pretty derby",
+   "count": 408
+  },
+  {
+   "name": "gintama",
+   "count": 408
+  },
+  {
+   "name": "gundam seed",
+   "count": 406
+  },
+  {
+   "name": "heartcatch precure",
+   "count": 403
+  },
+  {
+   "name": "tengen toppa gurren lagann",
+   "count": 400
+  },
+  {
+   "name": "love plus",
+   "count": 392
+  },
+  {
+   "name": "gundam build fighters try",
+   "count": 386
+  },
+  {
+   "name": "fate hollow ataraxia",
+   "count": 383
+  },
+  {
+   "name": "amagi brilliant park",
+   "count": 379
+  },
+  {
+   "name": "sennen sensou aigis",
+   "count": 378
+  },
+  {
+   "name": "macross frontier",
+   "count": 372
+  },
+  {
+   "name": "yu-gi-oh vrains",
+   "count": 369
+  },
+  {
+   "name": "sister princess",
+   "count": 367
+  },
+  {
+   "name": "fate zero",
+   "count": 367
+  },
+  {
+   "name": "the legend of heroes",
+   "count": 364
+  },
+  {
+   "name": "lycoris recoil",
+   "count": 357
+  },
+  {
+   "name": "soulcalibur",
+   "count": 357
+  },
+  {
+   "name": "yowamushi pedal",
+   "count": 355
+  },
+  {
+   "name": "puella magi madoka magica side story magia record",
+   "count": 348
+  },
+  {
+   "name": "higurashi no naku koro ni",
+   "count": 347
+  },
+  {
+   "name": "boruto",
+   "count": 344
+  },
+  {
+   "name": "suite precure",
+   "count": 344
+  },
+  {
+   "name": "chuunibyou demo koi ga shitai",
+   "count": 344
+  },
+  {
+   "name": "onii-chan wa oshimai",
+   "count": 342
+  },
+  {
+   "name": "resident evil",
+   "count": 342
+  },
+  {
+   "name": "kyoukai senjou no horizon",
+   "count": 341
+  },
+  {
+   "name": "hypnosis mic",
+   "count": 339
+  },
+  {
+   "name": "gundam 00",
+   "count": 339
+  },
+  {
+   "name": "digimon adventure",
+   "count": 338
+  },
+  {
+   "name": "hyperdimension neptunia",
+   "count": 337
+  },
+  {
+   "name": "hunter x hunter",
+   "count": 335
+  },
+  {
+   "name": "taimanin yukikaze",
+   "count": 332
+  },
+  {
+   "name": "eromanga sensei",
+   "count": 329
+  },
+  {
+   "name": "senran kagura",
+   "count": 329
+  },
+  {
+   "name": "etrian odyssey",
+   "count": 328
+  },
+  {
+   "name": "persona 3",
+   "count": 327
+  },
+  {
+   "name": "spy x family",
+   "count": 326
+  },
+  {
+   "name": "taimanin asagi",
+   "count": 320
+  },
+  {
+   "name": "blazblue",
+   "count": 319
+  },
+  {
+   "name": "go princess precure",
+   "count": 316
+  },
+  {
+   "name": "gegege no kitarou",
+   "count": 316
+  },
+  {
+   "name": "tokimeki memorial",
+   "count": 315
+  },
+  {
+   "name": "saenai heroine no sodatekata",
+   "count": 312
+  },
+  {
+   "name": "kirakira precure a la mode",
+   "count": 306
+  },
+  {
+   "name": "final fantasy xi",
+   "count": 300
+  },
+  {
+   "name": "sono bisque doll wa koi o suru",
+   "count": 297
+  },
+  {
+   "name": "mushoku tensei",
+   "count": 297
+  },
+  {
+   "name": "fairy tail",
+   "count": 296
+  },
+  {
+   "name": "onegai teacher",
+   "count": 294
+  },
+  {
+   "name": "seiken densetsu 3",
+   "count": 293
+  },
+  {
+   "name": "shokugeki no soma",
+   "count": 293
+  },
+  {
+   "name": "disney twisted-wonderland",
+   "count": 289
+  },
+  {
+   "name": "dog days",
+   "count": 284
+  },
+  {
+   "name": "mobile suit gundam the witch from mercury",
+   "count": 283
+  },
+  {
+   "name": "magic knight rayearth",
+   "count": 281
+  },
+  {
+   "name": "fushigiboshi no futagohime",
+   "count": 276
+  },
+  {
+   "name": "azumanga daioh",
+   "count": 274
+  },
+  {
+   "name": "working",
+   "count": 273
+  },
+  {
+   "name": "dagashi kashi",
+   "count": 272
+  },
+  {
+   "name": "kobayashi-san-chi no maid dragon",
+   "count": 271
+  },
+  {
+   "name": "ichigo 100",
+   "count": 270
+  },
+  {
+   "name": "dragon quest",
+   "count": 270
+  },
+  {
+   "name": "cardfight vanguard",
+   "count": 268
+  },
+  {
+   "name": "slayers",
+   "count": 268
+  },
+  {
+   "name": "steinsgate",
+   "count": 267
+  },
+  {
+   "name": "school rumble",
+   "count": 264
+  },
+  {
+   "name": "mob psycho 100",
+   "count": 263
+  },
+  {
+   "name": "inuyasha",
+   "count": 263
+  },
+  {
+   "name": "hugtto precure",
+   "count": 260
+  },
+  {
+   "name": "tales of the abyss",
+   "count": 259
+  },
+  {
+   "name": "maho girls precure",
+   "count": 255
+  },
+  {
+   "name": "doraemon",
+   "count": 251
+  },
+  {
+   "name": "tokyo revengers",
+   "count": 248
+  },
+  {
+   "name": "uzaki-chan wa asobitai",
+   "count": 246
+  },
+  {
+   "name": "fate extra",
+   "count": 246
+  },
+  {
+   "name": "twin angels",
+   "count": 246
+  },
+  {
+   "name": "magi the labyrinth of magic",
+   "count": 245
+  },
+  {
+   "name": "its not my fault that im not popular",
+   "count": 245
+  },
+  {
+   "name": "clannad",
+   "count": 245
+  },
+  {
+   "name": "durarara",
+   "count": 245
+  },
+  {
+   "name": "final fantasy xiv",
+   "count": 244
+  },
+  {
+   "name": "ookiku furikabutte",
+   "count": 243
+  },
+  {
+   "name": "bomber girl",
+   "count": 242
+  },
+  {
+   "name": "honkai gakuen",
+   "count": 242
+  },
+  {
+   "name": "yotsubato",
+   "count": 242
+  },
+  {
+   "name": "tiger and bunny",
+   "count": 240
+  },
+  {
+   "name": "yuri on ice",
+   "count": 238
+  },
+  {
+   "name": "happinesscharge precure",
+   "count": 238
+  },
+  {
+   "name": "mobile suit gundam tekketsu no orphans",
+   "count": 237
+  },
+  {
+   "name": "fresh precure",
+   "count": 237
+  },
+  {
+   "name": "dynasty warriors",
+   "count": 237
+  },
+  {
+   "name": "ultraman",
+   "count": 234
+  },
+  {
+   "name": "quiz magic academy",
+   "count": 230
+  },
+  {
+   "name": "ssss.gridman",
+   "count": 227
+  },
+  {
+   "name": "fire emblem if",
+   "count": 224
+  },
+  {
+   "name": "blue lock",
+   "count": 223
+  },
+  {
+   "name": "space battleship yamato",
+   "count": 223
+  },
+  {
+   "name": "love live hasunosora jogakuin school idol club",
+   "count": 222
+  },
+  {
+   "name": "uta no prince-sama",
+   "count": 221
+  },
+  {
+   "name": "splatoon",
+   "count": 221
+  },
+  {
+   "name": "dirty pair",
+   "count": 218
+  },
+  {
+   "name": "dream c club",
+   "count": 218
+  },
+  {
+   "name": "toradora",
+   "count": 218
+  },
+  {
+   "name": "flower knight girl",
+   "count": 217
+  },
+  {
+   "name": "overlord",
+   "count": 216
+  },
+  {
+   "name": "yes precure 5",
+   "count": 215
+  },
+  {
+   "name": "megaman",
+   "count": 215
+  },
+  {
+   "name": "star twinkle precure",
+   "count": 212
+  },
+  {
+   "name": "nier automata",
+   "count": 211
+  },
+  {
+   "name": "fire emblem",
+   "count": 209
+  },
+  {
+   "name": "ano hi mita hana no namae wo bokutachi wa mada shiranai",
+   "count": 209
+  },
+  {
+   "name": "youjo senki",
+   "count": 208
+  },
+  {
+   "name": "dragon ball super",
+   "count": 208
+  },
+  {
+   "name": "keroro gunsou",
+   "count": 208
+  },
+  {
+   "name": "kill la kill",
+   "count": 207
+  },
+  {
+   "name": "galaxy angel",
+   "count": 207
+  },
+  {
+   "name": "fire emblem three houses",
+   "count": 206
+  },
+  {
+   "name": "comic party",
+   "count": 205
+  },
+  {
+   "name": "project sekai",
+   "count": 204
+  },
+  {
+   "name": "gundam",
+   "count": 203
+  },
+  {
+   "name": "goblin slayer",
+   "count": 202
+  },
+  {
+   "name": "maria-sama ga miteru",
+   "count": 202
+  },
+  {
+   "name": "daiya no ace",
+   "count": 201
+  },
+  {
+   "name": "kekkai sensen",
+   "count": 201
+  },
+  {
+   "name": "fatal fury",
+   "count": 201
+  },
+  {
+   "name": "nisekoi",
+   "count": 201
+  },
+  {
+   "name": "black lagoon",
+   "count": 199
+  },
+  {
+   "name": "ikkitousen",
+   "count": 199
+  },
+  {
+   "name": "mai-hime",
+   "count": 198
+  },
+  {
+   "name": "katekyo hitman reborn",
+   "count": 198
+  },
+  {
+   "name": "alice gear aegis",
+   "count": 196
+  },
+  {
+   "name": "yuru camp",
+   "count": 196
+  },
+  {
+   "name": "my hero academia | boku no hero academia",
+   "count": 196
+  },
+  {
+   "name": "bakusou kyoudai lets and go",
+   "count": 195
+  },
+  {
+   "name": "yu-gi-oh 5ds",
+   "count": 195
+  },
+  {
+   "name": "kaguya-sama wa kokurasetai",
+   "count": 194
+  },
+  {
+   "name": "pretty sammy",
+   "count": 194
+  },
+  {
+   "name": "rance",
+   "count": 194
+  },
+  {
+   "name": "utawarerumono",
+   "count": 194
+  },
+  {
+   "name": "yuruyuri",
+   "count": 193
+  },
+  {
+   "name": "wuthering waves",
+   "count": 191
+  },
+  {
+   "name": "dragon quest viii",
+   "count": 190
+  },
+  {
+   "name": "black butler",
+   "count": 190
+  },
+  {
+   "name": "hyouka",
+   "count": 189
+  },
+  {
+   "name": "maison ikkoku",
+   "count": 189
+  },
+  {
+   "name": "dungeon meshi",
+   "count": 186
+  },
+  {
+   "name": "ace attorney",
+   "count": 185
+  },
+  {
+   "name": "god eater",
+   "count": 185
+  },
+  {
+   "name": "identity v",
+   "count": 184
+  },
+  {
+   "name": "baka to test to shoukanjuu",
+   "count": 184
+  },
+  {
+   "name": "chobits",
+   "count": 184
+  },
+  {
+   "name": "highschool dxd",
+   "count": 184
+  },
+  {
+   "name": "fushigi no umi no nadia",
+   "count": 184
+  },
+  {
+   "name": "mobile suit gundam",
+   "count": 184
+  },
+  {
+   "name": "world trigger",
+   "count": 184
+  },
+  {
+   "name": "karakai jouzu no takagi-san",
+   "count": 183
+  },
+  {
+   "name": "yu-gi-oh gx",
+   "count": 183
+  },
+  {
+   "name": "digimon",
+   "count": 182
+  },
+  {
+   "name": "spice and wolf",
+   "count": 181
+  },
+  {
+   "name": "gunparade march",
+   "count": 181
+  },
+  {
+   "name": "disgaea",
+   "count": 181
+  },
+  {
+   "name": "dragon quest dai no daibouken",
+   "count": 181
+  },
+  {
+   "name": "mai-otome",
+   "count": 179
+  },
+  {
+   "name": "dr. stone",
+   "count": 178
+  },
+  {
+   "name": "ao no exorcist",
+   "count": 178
+  },
+  {
+   "name": "tensei shitara slime datta ken",
+   "count": 177
+  },
+  {
+   "name": "kodomo no jikan",
+   "count": 177
+  },
+  {
+   "name": "shakugan no shana",
+   "count": 177
+  },
+  {
+   "name": "kannagi",
+   "count": 177
+  },
+  {
+   "name": "made in abyss",
+   "count": 176
+  },
+  {
+   "name": "super mario brothers",
+   "count": 176
+  },
+  {
+   "name": "kizuato",
+   "count": 176
+  },
+  {
+   "name": "oshiete galko-chan",
+   "count": 176
+  },
+  {
+   "name": "tales of vesperia",
+   "count": 174
+  },
+  {
+   "name": "kimi no na wa.",
+   "count": 173
+  },
+  {
+   "name": "hirogaru sky precure",
+   "count": 172
+  },
+  {
+   "name": "the idolmaster sidem",
+   "count": 170
+  },
+  {
+   "name": "getsuyoubi no tawawa",
+   "count": 170
+  },
+  {
+   "name": "kochikame",
+   "count": 170
+  },
+  {
+   "name": "gundam wing",
+   "count": 170
+  },
+  {
+   "name": "tekken",
+   "count": 168
+  },
+  {
+   "name": "beatmania",
+   "count": 168
+  },
+  {
+   "name": "oshi no ko",
+   "count": 167
+  },
+  {
+   "name": "bokutachi wa benkyou ga dekinai",
+   "count": 166
+  },
+  {
+   "name": "fun fun pharmacy",
+   "count": 166
+  },
+  {
+   "name": "idolish7",
+   "count": 165
+  },
+  {
+   "name": "fire emblem awakening",
+   "count": 164
+  },
+  {
+   "name": "battle athletes",
+   "count": 164
+  },
+  {
+   "name": "ichigo mashimaro",
+   "count": 163
+  },
+  {
+   "name": "sk8 the infinity",
+   "count": 162
+  },
+  {
+   "name": "genshiken",
+   "count": 161
+  },
+  {
+   "name": "kimikiss",
+   "count": 160
+  },
+  {
+   "name": "tales of xillia",
+   "count": 160
+  },
+  {
+   "name": "gaogaigar",
+   "count": 160
+  },
+  {
+   "name": "super sonico",
+   "count": 159
+  },
+  {
+   "name": "devil may cry",
+   "count": 158
+  },
+  {
+   "name": "metroid",
+   "count": 156
+  },
+  {
+   "name": "last origin",
+   "count": 154
+  },
+  {
+   "name": "zombie land saga",
+   "count": 154
+  },
+  {
+   "name": "rival schools",
+   "count": 154
+  },
+  {
+   "name": "tokyo ghoul",
+   "count": 153
+  },
+  {
+   "name": "rurouni kenshin",
+   "count": 151
+  },
+  {
+   "name": "summon night",
+   "count": 151
+  },
+  {
+   "name": "minami-ke",
+   "count": 151
+  },
+  {
+   "name": "di gi charat",
+   "count": 147
+  },
+  {
+   "name": "xenosaga",
+   "count": 147
+  },
+  {
+   "name": "full metal panic",
+   "count": 146
+  },
+  {
+   "name": "lotte no omocha",
+   "count": 146
+  },
+  {
+   "name": "prince of tennis",
+   "count": 146
+  },
+  {
+   "name": "nintama rantarou",
+   "count": 145
+  },
+  {
+   "name": "kimetsu no yaiba | demon slayer",
+   "count": 144
+  },
+  {
+   "name": "hikaru no go",
+   "count": 144
+  },
+  {
+   "name": "saint seiya",
+   "count": 144
+  },
+  {
+   "name": "highschool of the dead",
+   "count": 143
+  },
+  {
+   "name": "gundam zz",
+   "count": 143
+  },
+  {
+   "name": "cutey honey",
+   "count": 143
+  },
+  {
+   "name": "panty and stocking with garterbelt",
+   "count": 143
+  },
+  {
+   "name": "hibike euphonium",
+   "count": 142
+  },
+  {
+   "name": "xenogears",
+   "count": 142
+  },
+  {
+   "name": "muv-luv",
+   "count": 142
+  },
+  {
+   "name": "meitantei precure",
+   "count": 141
+  },
+  {
+   "name": "shadowverse",
+   "count": 141
+  },
+  {
+   "name": "koihime musou",
+   "count": 140
+  },
+  {
+   "name": "little busters",
+   "count": 140
+  },
+  {
+   "name": "kiratto pri chan",
+   "count": 139
+  },
+  {
+   "name": "hoozuki no reitetsu",
+   "count": 138
+  },
+  {
+   "name": "alice in wonderland",
+   "count": 138
+  },
+  {
+   "name": "tantei opera milky holmes",
+   "count": 138
+  },
+  {
+   "name": "onegai my melody",
+   "count": 137
+  },
+  {
+   "name": "ghost in the shell",
+   "count": 137
+  },
+  {
+   "name": "mahouka koukou no rettousei",
+   "count": 136
+  },
+  {
+   "name": "valkyria chronicles",
+   "count": 136
+  },
+  {
+   "name": "promare",
+   "count": 135
+  },
+  {
+   "name": "darling in the franxx",
+   "count": 135
+  },
+  {
+   "name": "sora no otoshimono",
+   "count": 135
+  },
+  {
+   "name": "zettai junpaku mahou shoujo",
+   "count": 135
+  },
+  {
+   "name": "boku no kokoro no yabai yatsu",
+   "count": 134
+  },
+  {
+   "name": "magical emi",
+   "count": 134
+  },
+  {
+   "name": "final fantasy tactics",
+   "count": 134
+  },
+  {
+   "name": "watashi ni tenshi ga maiorita",
+   "count": 133
+  },
+  {
+   "name": "komi-san wa komyushou desu.",
+   "count": 133
+  },
+  {
+   "name": "is",
+   "count": 133
+  },
+  {
+   "name": "dragons crown",
+   "count": 133
+  },
+  {
+   "name": "angel beats",
+   "count": 132
+  },
+  {
+   "name": "creamy mami",
+   "count": 132
+  },
+  {
+   "name": "final fantasy x",
+   "count": 132
+  },
+  {
+   "name": "summer wars",
+   "count": 131
+  },
+  {
+   "name": "sekirei",
+   "count": 131
+  },
+  {
+   "name": "koutetsujou no kabaneri",
+   "count": 130
+  },
+  {
+   "name": "new game",
+   "count": 130
+  },
+  {
+   "name": "big hero 6",
+   "count": 130
+  },
+  {
+   "name": "akazukin cha cha",
+   "count": 129
+  },
+  {
+   "name": "shirobako",
+   "count": 129
+  },
+  {
+   "name": "historys strongest disciple kenichi",
+   "count": 129
+  },
+  {
+   "name": "chousoku henkei gyrozetter",
+   "count": 128
+  },
+  {
+   "name": "sentimental graffiti",
+   "count": 127
+  },
+  {
+   "name": "yama no susume",
+   "count": 127
+  },
+  {
+   "name": "nanatsu no taizai",
+   "count": 126
+  },
+  {
+   "name": "battle spirits",
+   "count": 126
+  },
+  {
+   "name": "ro-kyu-bu",
+   "count": 125
+  },
+  {
+   "name": "uchuu no stellvia",
+   "count": 125
+  },
+  {
+   "name": "mobile suit gundam gquuuuuux",
+   "count": 124
+  },
+  {
+   "name": "machikado mazoku",
+   "count": 124
+  },
+  {
+   "name": "pretty rhythm",
+   "count": 124
+  },
+  {
+   "name": "arcana heart",
+   "count": 124
+  },
+  {
+   "name": "elsword",
+   "count": 123
+  },
+  {
+   "name": "youre under arrest",
+   "count": 123
+  },
+  {
+   "name": "sengoku basara",
+   "count": 121
+  },
+  {
+   "name": "kimi to idol precure",
+   "count": 119
+  },
+  {
+   "name": "zettai karen children",
+   "count": 119
+  },
+  {
+   "name": "ghost sweeper mikami",
+   "count": 119
+  },
+  {
+   "name": "eureka 7",
+   "count": 119
+  },
+  {
+   "name": "harry potter",
+   "count": 119
+  },
+  {
+   "name": "digimon tamers",
+   "count": 118
+  },
+  {
+   "name": "hacka doll",
+   "count": 116
+  },
+  {
+   "name": "puyo puyo",
+   "count": 116
+  },
+  {
+   "name": "medaka box",
+   "count": 116
+  },
+  {
+   "name": "sayonara zetsubou sensei",
+   "count": 116
+  },
+  {
+   "name": "final fantasy xii",
+   "count": 116
+  },
+  {
+   "name": "k",
+   "count": 116
+  },
+  {
+   "name": "dragon ball gt",
+   "count": 115
+  },
+  {
+   "name": "hataraku maou-sama",
+   "count": 115
+  },
+  {
+   "name": "powerpuff girls z",
+   "count": 115
+  },
+  {
+   "name": "date a live",
+   "count": 115
+  },
+  {
+   "name": "revolutionary girl utena",
+   "count": 114
+  },
+  {
+   "name": "black cat",
+   "count": 114
+  },
+  {
+   "name": "turn a gundam",
+   "count": 114
+  },
+  {
+   "name": "ano natsu de matteru",
+   "count": 113
+  },
+  {
+   "name": "super black jack",
+   "count": 113
+  },
+  {
+   "name": "seishun buta yarou wa bunny girl senpai no yume o minai",
+   "count": 112
+  },
+  {
+   "name": "ryuuou no oshigoto",
+   "count": 112
+  },
+  {
+   "name": "kuroinu kedakaki seijo wa hakudaku ni somaru",
+   "count": 111
+  },
+  {
+   "name": "kanojo okarishimasu",
+   "count": 110
+  },
+  {
+   "name": "air",
+   "count": 110
+  },
+  {
+   "name": "haiyore nyaruko-san",
+   "count": 110
+  },
+  {
+   "name": "south park",
+   "count": 110
+  },
+  {
+   "name": "hentai ouji to warawanai neko",
+   "count": 110
+  },
+  {
+   "name": "cosmic baton girl comet-san",
+   "count": 110
+  },
+  {
+   "name": "ansatsu kyoushitsu",
+   "count": 110
+  },
+  {
+   "name": "golden kamuy",
+   "count": 109
+  },
+  {
+   "name": "d.gray-man",
+   "count": 109
+  },
+  {
+   "name": "tales of symphonia",
+   "count": 109
+  },
+  {
+   "name": "onegai twins",
+   "count": 108
+  },
+  {
+   "name": "aldnoah.zero",
+   "count": 108
+  },
+  {
+   "name": "darker than black",
+   "count": 107
+  },
+  {
+   "name": "shinryaku ika musume",
+   "count": 107
+  },
+  {
+   "name": "bakuman",
+   "count": 106
+  },
+  {
+   "name": "g gundam",
+   "count": 106
+  },
+  {
+   "name": "mahou shoujo ai",
+   "count": 105
+  },
+  {
+   "name": "mahoujin guru guru",
+   "count": 105
+  },
+  {
+   "name": "spider-man",
+   "count": 105
+  },
+  {
+   "name": "record of lodoss war",
+   "count": 105
+  },
+  {
+   "name": "warship girls",
+   "count": 104
+  },
+  {
+   "name": "delicious party precure",
+   "count": 103
+  },
+  {
+   "name": "final fight",
+   "count": 103
+  },
+  {
+   "name": "slam dunk",
+   "count": 103
+  },
+  {
+   "name": "inazuma eleven go",
+   "count": 103
+  },
+  {
+   "name": "final fantasy xv",
+   "count": 102
+  },
+  {
+   "name": "inu x boku ss",
+   "count": 102
+  },
+  {
+   "name": "hidamari sketch",
+   "count": 102
+  },
+  {
+   "name": "final fantasy",
+   "count": 102
+  },
+  {
+   "name": "non non biyori",
+   "count": 102
+  },
+  {
+   "name": "wonderful precure",
+   "count": 101
+  },
+  {
+   "name": "nichijou",
+   "count": 101
+  },
+  {
+   "name": "tales of zestiria",
+   "count": 101
+  },
+  {
+   "name": "love live superstar",
+   "count": 100
+  },
+  {
+   "name": "busou renkin",
+   "count": 100
+  },
+  {
+   "name": "shinkansen henkei robo shinkalion",
+   "count": 99
+  },
+  {
+   "name": "tokyo 7th sisters",
+   "count": 99
+  },
+  {
+   "name": "umineko no naku koro ni",
+   "count": 99
+  },
+  {
+   "name": "mahou shoujo ni akogarete",
+   "count": 98
+  },
+  {
+   "name": "futari wa pretty cure",
+   "count": 98
+  },
+  {
+   "name": "youkai watch",
+   "count": 98
+  },
+  {
+   "name": "kimagure orange road",
+   "count": 98
+  },
+  {
+   "name": "megaman battle network",
+   "count": 98
+  },
+  {
+   "name": "final fantasy x-2",
+   "count": 98
+  },
+  {
+   "name": "shironeko project",
+   "count": 97
+  },
+  {
+   "name": "mega man legends",
+   "count": 97
+  },
+  {
+   "name": "read or die",
+   "count": 96
+  },
+  {
+   "name": "tokyo mew mew",
+   "count": 95
+  },
+  {
+   "name": "ar tonelico",
+   "count": 94
+  },
+  {
+   "name": "vividred operation",
+   "count": 94
+  },
+  {
+   "name": "ashita no nadja",
+   "count": 94
+  },
+  {
+   "name": "the world god only knows",
+   "count": 94
+  },
+  {
+   "name": "tropical-rouge precure",
+   "count": 93
+  },
+  {
+   "name": "overwatch",
+   "count": 93
+  },
+  {
+   "name": "yuyushiki",
+   "count": 93
+  },
+  {
+   "name": "ero trap dungeon",
+   "count": 92
+  },
+  {
+   "name": "kakegurui",
+   "count": 92
+  },
+  {
+   "name": "soul eater",
+   "count": 92
+  },
+  {
+   "name": "accel world",
+   "count": 92
+  },
+  {
+   "name": "os-tan",
+   "count": 92
+  },
+  {
+   "name": "tate no yuusha no nariagari",
+   "count": 91
+  },
+  {
+   "name": "maoyuu maou yuusha",
+   "count": 91
+  },
+  {
+   "name": "hanasaku iroha",
+   "count": 91
+  },
+  {
+   "name": "final fantasy viii",
+   "count": 91
+  },
+  {
+   "name": "da capo",
+   "count": 91
+  },
+  {
+   "name": "ongeki",
+   "count": 90
+  },
+  {
+   "name": "dennou coil",
+   "count": 90
+  },
+  {
+   "name": "death note",
+   "count": 90
+  },
+  {
+   "name": "puzzle and dragons",
+   "count": 90
+  },
+  {
+   "name": "utawarerumono itsuwari no kamen",
+   "count": 89
+  },
+  {
+   "name": "prison school",
+   "count": 89
+  },
+  {
+   "name": "bayonetta",
+   "count": 89
+  },
+  {
+   "name": "walkure romanze",
+   "count": 89
+  },
+  {
+   "name": "shin megami tensei",
+   "count": 89
+  },
+  {
+   "name": "zeta gundam",
+   "count": 89
+  },
+  {
+   "name": "final fantasy xiii",
+   "count": 89
+  },
+  {
+   "name": "aquarion evol",
+   "count": 89
+  },
+  {
+   "name": "super sentai",
+   "count": 88
+  },
+  {
+   "name": "pangya",
+   "count": 88
+  },
+  {
+   "name": "tobe isami",
+   "count": 88
+  },
+  {
+   "name": "macross 7",
+   "count": 88
+  },
+  {
+   "name": "shaman king",
+   "count": 88
+  },
+  {
+   "name": "arknights endfield",
+   "count": 87
+  },
+  {
+   "name": "dandadan",
+   "count": 87
+  },
+  {
+   "name": "healin good precure",
+   "count": 87
+  },
+  {
+   "name": "muv-luv alternative total eclipse",
+   "count": 87
+  },
+  {
+   "name": "pani poni dash",
+   "count": 87
+  },
+  {
+   "name": "blend s",
+   "count": 86
+  },
+  {
+   "name": "kiniro mosaic",
+   "count": 86
+  },
+  {
+   "name": "angelic layer",
+   "count": 86
+  },
+  {
+   "name": "sengoku otome",
+   "count": 86
+  },
+  {
+   "name": "rumble roses",
+   "count": 86
+  },
+  {
+   "name": "monster girl quest",
+   "count": 85
+  },
+  {
+   "name": "witchblade",
+   "count": 85
+  },
+  {
+   "name": "lupin iii",
+   "count": 84
+  },
+  {
+   "name": "galaxy express 999",
+   "count": 84
+  },
+  {
+   "name": "final fantasy v",
+   "count": 84
+  },
+  {
+   "name": "make heroine ga oosugiru",
+   "count": 83
+  },
+  {
+   "name": "tera",
+   "count": 83
+  },
+  {
+   "name": "show by rock",
+   "count": 82
+  },
+  {
+   "name": "detective conan | meitantei conan",
+   "count": 82
+  },
+  {
+   "name": "saber marionette",
+   "count": 82
+  },
+  {
+   "name": "giant robo",
+   "count": 82
+  },
+  {
+   "name": "final fantasy iv",
+   "count": 82
+  },
+  {
+   "name": "nige jouzu no wakagimi",
+   "count": 81
+  },
+  {
+   "name": "tamako market",
+   "count": 81
+  },
+  {
+   "name": "city hunter",
+   "count": 81
+  },
+  {
+   "name": "dramatical murder",
+   "count": 81
+  },
+  {
+   "name": "trickcal revive",
+   "count": 80
+  },
+  {
+   "name": "megido 72",
+   "count": 80
+  },
+  {
+   "name": "7th dragon",
+   "count": 80
+  },
+  {
+   "name": "boku dake ga inai machi",
+   "count": 79
+  },
+  {
+   "name": "ore twintail ni narimasu.",
+   "count": 79
+  },
+  {
+   "name": "fate apocrypha",
+   "count": 79
+  },
+  {
+   "name": "phantasy star online 2",
+   "count": 79
+  },
+  {
+   "name": "final fantasy ix",
+   "count": 79
+  },
+  {
+   "name": "jin ping mei",
+   "count": 78
+  },
+  {
+   "name": "atelier ryza",
+   "count": 78
+  },
+  {
+   "name": "undertale",
+   "count": 78
+  },
+  {
+   "name": "sailor moon | bishoujo senshi sailor moon",
+   "count": 78
+  },
+  {
+   "name": "digimon frontier",
+   "count": 78
+  },
+  {
+   "name": "medabots",
+   "count": 78
+  },
+  {
+   "name": "strawberry panic",
+   "count": 78
+  },
+  {
+   "name": "minky momo",
+   "count": 78
+  },
+  {
+   "name": "rosario vampire",
+   "count": 78
+  },
+  {
+   "name": "duel masters",
+   "count": 77
+  },
+  {
+   "name": "kiddy grade",
+   "count": 77
+  },
+  {
+   "name": "kid icarus",
+   "count": 77
+  },
+  {
+   "name": "suisei no gargantia",
+   "count": 77
+  },
+  {
+   "name": "gabriel dropout",
+   "count": 76
+  },
+  {
+   "name": "la blue girl",
+   "count": 76
+  },
+  {
+   "name": "himouto umaru-chan",
+   "count": 76
+  },
+  {
+   "name": "beat angel escalayer",
+   "count": 76
+  },
+  {
+   "name": "pia carrot",
+   "count": 76
+  },
+  {
+   "name": "sengoku collection",
+   "count": 76
+  },
+  {
+   "name": "sekai seifuku bouryaku no zvezda",
+   "count": 76
+  },
+  {
+   "name": "hand maid may",
+   "count": 76
+  },
+  {
+   "name": "saint tail",
+   "count": 76
+  },
+  {
+   "name": "tachibana-san-chi no dansei jijou",
+   "count": 75
+  },
+  {
+   "name": "macross delta",
+   "count": 75
+  },
+  {
+   "name": "major",
+   "count": 75
+  },
+  {
+   "name": "gundam build divers",
+   "count": 74
+  },
+  {
+   "name": "psycho-pass",
+   "count": 74
+  },
+  {
+   "name": "super real mahjong",
+   "count": 74
+  },
+  {
+   "name": "zoids genesis",
+   "count": 74
+  },
+  {
+   "name": "fire emblem mystery of the emblem",
+   "count": 73
+  },
+  {
+   "name": "strike the blood",
+   "count": 73
+  },
+  {
+   "name": "girl friend beta",
+   "count": 73
+  },
+  {
+   "name": "super doll licca-chan",
+   "count": 73
+  },
+  {
+   "name": "betterman",
+   "count": 72
+  },
+  {
+   "name": "bamboo blade",
+   "count": 72
+  },
+  {
+   "name": "akebi no mi",
+   "count": 72
+  },
+  {
+   "name": "kingdom hearts",
+   "count": 72
+  },
+  {
+   "name": "arpeggio of blue steel",
+   "count": 72
+  },
+  {
+   "name": "yuuki yuuna wa yuusha de aru",
+   "count": 72
+  },
+  {
+   "name": "little red riding hood",
+   "count": 72
+  },
+  {
+   "name": "world masterpiece theater",
+   "count": 72
+  },
+  {
+   "name": "hazbin hotel",
+   "count": 71
+  },
+  {
+   "name": "frame arms girl",
+   "count": 71
+  },
+  {
+   "name": "el hazard",
+   "count": 70
+  },
+  {
+   "name": "white album",
+   "count": 70
+  },
+  {
+   "name": "tales of graces",
+   "count": 70
+  },
+  {
+   "name": "hellsing",
+   "count": 70
+  },
+  {
+   "name": "mato seihei no slave",
+   "count": 69
+  },
+  {
+   "name": "riddle joker",
+   "count": 69
+  },
+  {
+   "name": "shoujo kageki revue starlight",
+   "count": 69
+  },
+  {
+   "name": "sound voltex",
+   "count": 69
+  },
+  {
+   "name": "sunohara-sou no kanrinin-san",
+   "count": 69
+  },
+  {
+   "name": "eyeshield 21",
+   "count": 69
+  },
+  {
+   "name": "gad guard",
+   "count": 69
+  },
+  {
+   "name": "final fantasy vi",
+   "count": 69
+  },
+  {
+   "name": "anyamaru tantei kiruminzoo",
+   "count": 69
+  },
+  {
+   "name": "mahou tsukai no yoru",
+   "count": 69
+  },
+  {
+   "name": "expelled from paradise",
+   "count": 69
+  },
+  {
+   "name": "dragon quest ii",
+   "count": 69
+  },
+  {
+   "name": "princess resurrection",
+   "count": 69
+  },
+  {
+   "name": "myriad colors phantom world",
+   "count": 68
+  },
+  {
+   "name": "kaitou tenshi twin angel",
+   "count": 68
+  },
+  {
+   "name": "nausicaa of the valley of the wind",
+   "count": 68
+  },
+  {
+   "name": "maken-ki",
+   "count": 68
+  },
+  {
+   "name": "berserk",
+   "count": 68
+  },
+  {
+   "name": "cats eye",
+   "count": 68
+  },
+  {
+   "name": "otogi-jushi akazukin",
+   "count": 68
+  },
+  {
+   "name": "helltaker",
+   "count": 67
+  },
+  {
+   "name": "busou shinki",
+   "count": 67
+  },
+  {
+   "name": "with you",
+   "count": 67
+  },
+  {
+   "name": "lord of lords ryu knight",
+   "count": 67
+  },
+  {
+   "name": "mabinogi",
+   "count": 67
+  },
+  {
+   "name": "mega man star force",
+   "count": 67
+  },
+  {
+   "name": "princess crown",
+   "count": 66
+  },
+  {
+   "name": "gear fighter dendoh",
+   "count": 66
+  },
+  {
+   "name": "moyashimon",
+   "count": 66
+  },
+  {
+   "name": "hell teacher nube",
+   "count": 66
+  },
+  {
+   "name": "assault lily",
+   "count": 65
+  },
+  {
+   "name": "kusuriya no hitorigoto",
+   "count": 65
+  },
+  {
+   "name": "cowboy bebop",
+   "count": 65
+  },
+  {
+   "name": "nurarihyon no mago",
+   "count": 65
+  },
+  {
+   "name": "victory gundam",
+   "count": 65
+  },
+  {
+   "name": "majin tantei nougami neuro",
+   "count": 65
+  },
+  {
+   "name": "witch craft works",
+   "count": 65
+  },
+  {
+   "name": "various",
+   "count": 64
+  },
+  {
+   "name": "arslan senki",
+   "count": 64
+  },
+  {
+   "name": "he is my master",
+   "count": 64
+  },
+  {
+   "name": "moetan",
+   "count": 64
+  },
+  {
+   "name": "nurse angel ririka sos",
+   "count": 64
+  },
+  {
+   "name": "zoids",
+   "count": 64
+  },
+  {
+   "name": "esper mami",
+   "count": 64
+  },
+  {
+   "name": "kamen rider",
+   "count": 63
+  },
+  {
+   "name": "batman",
+   "count": 63
+  },
+  {
+   "name": "maji de watashi ni koi shinasai",
+   "count": 63
+  },
+  {
+   "name": "endless frontier",
+   "count": 63
+  },
+  {
+   "name": "aria",
+   "count": 63
+  },
+  {
+   "name": "voltron",
+   "count": 62
+  },
+  {
+   "name": "little witch academia",
+   "count": 62
+  },
+  {
+   "name": "no game no life",
+   "count": 62
+  },
+  {
+   "name": "samurai warriors",
+   "count": 62
+  },
+  {
+   "name": "yakitate japan",
+   "count": 62
+  },
+  {
+   "name": "fancy lala",
+   "count": 62
+  },
+  {
+   "name": "mon colle knights",
+   "count": 62
+  },
+  {
+   "name": "beat blades haruka",
+   "count": 62
+  },
+  {
+   "name": "akihabara dennou gumi",
+   "count": 62
+  },
+  {
+   "name": "ishuzoku reviewers",
+   "count": 61
+  },
+  {
+   "name": "ojamajo doremi | magical doremi",
+   "count": 61
+  },
+  {
+   "name": "cream lemon",
+   "count": 61
+  },
+  {
+   "name": "gj-bu",
+   "count": 61
+  },
+  {
+   "name": "mairimashita iruma-kun",
+   "count": 60
+  },
+  {
+   "name": "ijiranaide nagatoro-san",
+   "count": 60
+  },
+  {
+   "name": "onmyou taisenki",
+   "count": 60
+  },
+  {
+   "name": "skies of arcadia",
+   "count": 60
+  },
+  {
+   "name": "beyblade",
+   "count": 60
+  },
+  {
+   "name": "virtua fighter",
+   "count": 60
+  },
+  {
+   "name": "dolphin wave",
+   "count": 59
+  },
+  {
+   "name": "hataraku saibou",
+   "count": 59
+  },
+  {
+   "name": "da capo ii",
+   "count": 59
+  },
+  {
+   "name": "black rock shooter",
+   "count": 59
+  },
+  {
+   "name": "gunslinger girl",
+   "count": 59
+  },
+  {
+   "name": "fantasy earth zero",
+   "count": 59
+  },
+  {
+   "name": "sanoba witch",
+   "count": 58
+  },
+  {
+   "name": "crayon shin-chan",
+   "count": 58
+  },
+  {
+   "name": "kaiji",
+   "count": 58
+  },
+  {
+   "name": "seraph of the end",
+   "count": 58
+  },
+  {
+   "name": "star gladiator",
+   "count": 58
+  },
+  {
+   "name": "kino no tabi",
+   "count": 58
+  },
+  {
+   "name": "medalist",
+   "count": 57
+  },
+  {
+   "name": "the elder scrolls",
+   "count": 57
+  },
+  {
+   "name": "reco love",
+   "count": 57
+  },
+  {
+   "name": "2x2 shinobuden",
+   "count": 57
+  },
+  {
+   "name": "fruits basket",
+   "count": 57
+  },
+  {
+   "name": "viper",
+   "count": 57
+  },
+  {
+   "name": "mahoromatic",
+   "count": 57
+  },
+  {
+   "name": "kasumin",
+   "count": 57
+  },
+  {
+   "name": "denpa onna to seishun otoko",
+   "count": 56
+  },
+  {
+   "name": "log horizon",
+   "count": 56
+  },
+  {
+   "name": "hime-chans ribbon",
+   "count": 56
+  },
+  {
+   "name": "kindaichi shounen no jikenbo",
+   "count": 56
+  },
+  {
+   "name": "kaleido star",
+   "count": 56
+  },
+  {
+   "name": "the ring",
+   "count": 56
+  },
+  {
+   "name": "dragonaut",
+   "count": 56
+  },
+  {
+   "name": "yu-gi-oh go rush",
+   "count": 55
+  },
+  {
+   "name": "sono bisque doll wa koi o suru | my dress-up darling",
+   "count": 55
+  },
+  {
+   "name": "jormungand",
+   "count": 55
+  },
+  {
+   "name": "gundam unicorn",
+   "count": 55
+  },
+  {
+   "name": "bastard",
+   "count": 55
+  },
+  {
+   "name": "gakkou no kaidan",
+   "count": 55
+  },
+  {
+   "name": "dumbbell nan kilo moteru",
+   "count": 54
+  },
+  {
+   "name": "jikkyou powerful pro yakyuu",
+   "count": 54
+  },
+  {
+   "name": "dragon quest x",
+   "count": 54
+  },
+  {
+   "name": "ng knight lamune and 40",
+   "count": 54
+  },
+  {
+   "name": "yu yu hakusho",
+   "count": 54
+  },
+  {
+   "name": "cyberpunk",
+   "count": 53
+  },
+  {
+   "name": "selector infected wixoss",
+   "count": 53
+  },
+  {
+   "name": "the vision of escaflowne",
+   "count": 53
+  },
+  {
+   "name": "mahou no yousei persia",
+   "count": 53
+  },
+  {
+   "name": "sonic soldier borgman",
+   "count": 53
+  },
+  {
+   "name": "cyberbots",
+   "count": 53
+  },
+  {
+   "name": "gatchaman crowds",
+   "count": 53
+  },
+  {
+   "name": "chou kaguya-hime",
+   "count": 52
+  },
+  {
+   "name": "brave witches",
+   "count": 52
+  },
+  {
+   "name": "wedding peach",
+   "count": 52
+  },
+  {
+   "name": "gate - jietai kano chi nite kaku tatakaeri",
+   "count": 52
+  },
+  {
+   "name": "final fantasy unlimited",
+   "count": 52
+  },
+  {
+   "name": "variable geo",
+   "count": 52
+  },
+  {
+   "name": "demonbane",
+   "count": 52
+  },
+  {
+   "name": "ruri no houseki",
+   "count": 51
+  },
+  {
+   "name": "cafe stella to shinigami no chou",
+   "count": 51
+  },
+  {
+   "name": "mahou shoujo lyrical nanoha | magical girl lyrical nanoha",
+   "count": 51
+  },
+  {
+   "name": "kangoku senkan",
+   "count": 51
+  },
+  {
+   "name": "kare kano",
+   "count": 51
+  },
+  {
+   "name": "ouran high school host club",
+   "count": 51
+  },
+  {
+   "name": "papa no iu koto wo kikinasai",
+   "count": 51
+  },
+  {
+   "name": "onmyoji",
+   "count": 50
+  },
+  {
+   "name": "mamotte shugogetten",
+   "count": 50
+  },
+  {
+   "name": "toriko",
+   "count": 50
+  },
+  {
+   "name": "transformers",
+   "count": 50
+  },
+  {
+   "name": "outlaw star",
+   "count": 50
+  },
+  {
+   "name": "gekkan shoujo nozaki-kun",
+   "count": 50
+  },
+  {
+   "name": "hitsugi no chaika",
+   "count": 50
+  },
+  {
+   "name": "a3",
+   "count": 49
+  },
+  {
+   "name": "the legend of heroes | eiyuu densetsu",
+   "count": 49
+  }
+ ],
+ "character": [
+  {
+   "name": "teitoku",
+   "count": 10728
+  },
+  {
+   "name": "sensei",
+   "count": 9104
+  },
+  {
+   "name": "gudao",
+   "count": 7580
+  },
+  {
+   "name": "producer",
+   "count": 5248
+  },
+  {
+   "name": "reimu hakurei",
+   "count": 2187
+  },
+  {
+   "name": "shielder",
+   "count": 1784
+  },
+  {
+   "name": "asuka langley soryu",
+   "count": 1782
+  },
+  {
+   "name": "sakuya izayoi",
+   "count": 1734
+  },
+  {
+   "name": "gran",
+   "count": 1723
+  },
+  {
+   "name": "patchouli knowledge",
+   "count": 1701
+  },
+  {
+   "name": "shinji ikari",
+   "count": 1523
+  },
+  {
+   "name": "sanae kochiya",
+   "count": 1519
+  },
+  {
+   "name": "flandre scarlet",
+   "count": 1489
+  },
+  {
+   "name": "rei ayanami",
+   "count": 1446
+  },
+  {
+   "name": "fate testarossa",
+   "count": 1416
+  },
+  {
+   "name": "marisa kirisame",
+   "count": 1385
+  },
+  {
+   "name": "remilia scarlet",
+   "count": 1353
+  },
+  {
+   "name": "shikikan",
+   "count": 1334
+  },
+  {
+   "name": "nami",
+   "count": 1331
+  },
+  {
+   "name": "atago",
+   "count": 1261
+  },
+  {
+   "name": "shirou emiya",
+   "count": 1191
+  },
+  {
+   "name": "satori komeiji",
+   "count": 1174
+  },
+  {
+   "name": "kashima",
+   "count": 1171
+  },
+  {
+   "name": "illyasviel von einzbern",
+   "count": 1169
+  },
+  {
+   "name": "alice margatroid",
+   "count": 1158
+  },
+  {
+   "name": "yukari yakumo",
+   "count": 1132
+  },
+  {
+   "name": "sakura kinomoto",
+   "count": 1130
+  },
+  {
+   "name": "aya shameimaru",
+   "count": 1128
+  },
+  {
+   "name": "rin tosaka",
+   "count": 1128
+  },
+  {
+   "name": "kaga",
+   "count": 1113
+  },
+  {
+   "name": "shimakaze",
+   "count": 1097
+  },
+  {
+   "name": "naruto uzumaki",
+   "count": 1089
+  },
+  {
+   "name": "nanoha takamachi",
+   "count": 1081
+  },
+  {
+   "name": "kazuto kirigaya",
+   "count": 1063
+  },
+  {
+   "name": "asuna yuuki",
+   "count": 1058
+  },
+  {
+   "name": "jeanne alter",
+   "count": 1056
+  },
+  {
+   "name": "rito yuuki",
+   "count": 1050
+  },
+  {
+   "name": "tifa lockhart",
+   "count": 1046
+  },
+  {
+   "name": "reisen udongein inaba",
+   "count": 1037
+  },
+  {
+   "name": "minamoto no raikou",
+   "count": 1028
+  },
+  {
+   "name": "gudako",
+   "count": 1016
+  },
+  {
+   "name": "youmu konpaku",
+   "count": 1015
+  },
+  {
+   "name": "saber",
+   "count": 1010
+  },
+  {
+   "name": "izuku midoriya",
+   "count": 1005
+  },
+  {
+   "name": "chun-li",
+   "count": 993
+  },
+  {
+   "name": "yuuka hayase",
+   "count": 988
+  },
+  {
+   "name": "jeanne darc",
+   "count": 987
+  },
+  {
+   "name": "takao",
+   "count": 966
+  },
+  {
+   "name": "katsuki bakugou",
+   "count": 935
+  },
+  {
+   "name": "koishi komeiji",
+   "count": 921
+  },
+  {
+   "name": "mai shiranui",
+   "count": 914
+  },
+  {
+   "name": "aether",
+   "count": 891
+  },
+  {
+   "name": "astolfo",
+   "count": 880
+  },
+  {
+   "name": "scathach",
+   "count": 862
+  },
+  {
+   "name": "artoria pendragon",
+   "count": 860
+  },
+  {
+   "name": "kasumi",
+   "count": 826
+  },
+  {
+   "name": "maki nishikino",
+   "count": 823
+  },
+  {
+   "name": "mikoto misaka",
+   "count": 803
+  },
+  {
+   "name": "momiji inubashiri",
+   "count": 798
+  },
+  {
+   "name": "asuna ichinose",
+   "count": 791
+  },
+  {
+   "name": "suzuya",
+   "count": 787
+  },
+  {
+   "name": "homura akemi",
+   "count": 780
+  },
+  {
+   "name": "arisu tachibana",
+   "count": 776
+  },
+  {
+   "name": "sakura haruno",
+   "count": 774
+  },
+  {
+   "name": "hinata hyuga",
+   "count": 765
+  },
+  {
+   "name": "djeeta",
+   "count": 745
+  },
+  {
+   "name": "hamakaze",
+   "count": 741
+  },
+  {
+   "name": "sailor mercury",
+   "count": 728
+  },
+  {
+   "name": "ran yakumo",
+   "count": 721
+  },
+  {
+   "name": "rin shibuya",
+   "count": 713
+  },
+  {
+   "name": "bb",
+   "count": 704
+  },
+  {
+   "name": "nico robin",
+   "count": 702
+  },
+  {
+   "name": "mika misono",
+   "count": 696
+  },
+  {
+   "name": "mikan yuuki",
+   "count": 696
+  },
+  {
+   "name": "levi ackerman",
+   "count": 694
+  },
+  {
+   "name": "eren jaeger",
+   "count": 692
+  },
+  {
+   "name": "nico yazawa",
+   "count": 682
+  },
+  {
+   "name": "chino kafuu",
+   "count": 681
+  },
+  {
+   "name": "rider",
+   "count": 665
+  },
+  {
+   "name": "madoka kaname",
+   "count": 656
+  },
+  {
+   "name": "koyomi araragi",
+   "count": 641
+  },
+  {
+   "name": "koakuma",
+   "count": 640
+  },
+  {
+   "name": "hong meiling",
+   "count": 639
+  },
+  {
+   "name": "mio akiyama",
+   "count": 638
+  },
+  {
+   "name": "kazuma satou",
+   "count": 636
+  },
+  {
+   "name": "shigure",
+   "count": 636
+  },
+  {
+   "name": "haruka nanase",
+   "count": 632
+  },
+  {
+   "name": "haruna",
+   "count": 627
+  },
+  {
+   "name": "touma kamijou",
+   "count": 620
+  },
+  {
+   "name": "kyousuke kousaka",
+   "count": 619
+  },
+  {
+   "name": "haruhi suzumiya",
+   "count": 615
+  },
+  {
+   "name": "kongou",
+   "count": 609
+  },
+  {
+   "name": "yuyuko saigyouji",
+   "count": 606
+  },
+  {
+   "name": "makoto tachibana",
+   "count": 605
+  },
+  {
+   "name": "miku hatsune",
+   "count": 604
+  },
+  {
+   "name": "mami tomoe",
+   "count": 601
+  },
+  {
+   "name": "shuten douji",
+   "count": 593
+  },
+  {
+   "name": "tomoyo daidouji",
+   "count": 592
+  },
+  {
+   "name": "maya",
+   "count": 592
+  },
+  {
+   "name": "tsunade",
+   "count": 588
+  },
+  {
+   "name": "noa ushio",
+   "count": 583
+  },
+  {
+   "name": "golden darkness",
+   "count": 572
+  },
+  {
+   "name": "sailor jupiter",
+   "count": 572
+  },
+  {
+   "name": "umi sonoda",
+   "count": 570
+  },
+  {
+   "name": "yuuka kazami",
+   "count": 565
+  },
+  {
+   "name": "sakura matou",
+   "count": 558
+  },
+  {
+   "name": "mika jougasaki",
+   "count": 557
+  },
+  {
+   "name": "kotori minami",
+   "count": 556
+  },
+  {
+   "name": "minami nitta",
+   "count": 554
+  },
+  {
+   "name": "nagato",
+   "count": 554
+  },
+  {
+   "name": "ranma saotome",
+   "count": 552
+  },
+  {
+   "name": "rio tsukatsuki",
+   "count": 550
+  },
+  {
+   "name": "megumin",
+   "count": 550
+  },
+  {
+   "name": "hoshino takanashi",
+   "count": 548
+  },
+  {
+   "name": "kallen stadtfeld",
+   "count": 546
+  },
+  {
+   "name": "android 18",
+   "count": 541
+  },
+  {
+   "name": "sailor mars",
+   "count": 538
+  },
+  {
+   "name": "prinz eugen",
+   "count": 537
+  },
+  {
+   "name": "belldandy",
+   "count": 534
+  },
+  {
+   "name": "azusa nakano",
+   "count": 533
+  },
+  {
+   "name": "suwako moriya",
+   "count": 528
+  },
+  {
+   "name": "doctor",
+   "count": 527
+  },
+  {
+   "name": "lelouch vi britannia",
+   "count": 527
+  },
+  {
+   "name": "byakuren hijiri",
+   "count": 527
+  },
+  {
+   "name": "rika jougasaki",
+   "count": 523
+  },
+  {
+   "name": "fumika sagisawa",
+   "count": 522
+  },
+  {
+   "name": "sena kashiwazaki",
+   "count": 521
+  },
+  {
+   "name": "tenshi hinanai",
+   "count": 520
+  },
+  {
+   "name": "nightingale",
+   "count": 515
+  },
+  {
+   "name": "hina sorasaki",
+   "count": 514
+  },
+  {
+   "name": "c.c.",
+   "count": 512
+  },
+  {
+   "name": "suguha kirigaya",
+   "count": 503
+  },
+  {
+   "name": "yamato",
+   "count": 500
+  },
+  {
+   "name": "ako amau",
+   "count": 498
+  },
+  {
+   "name": "tenryuu",
+   "count": 497
+  },
+  {
+   "name": "miki hoshii",
+   "count": 496
+  },
+  {
+   "name": "nitori kawashiro",
+   "count": 494
+  },
+  {
+   "name": "gudao | ritsuka fujimaru",
+   "count": 490
+  },
+  {
+   "name": "sailor venus",
+   "count": 490
+  },
+  {
+   "name": "rin kaenbyou",
+   "count": 490
+  },
+  {
+   "name": "hibiki",
+   "count": 487
+  },
+  {
+   "name": "rin matsuoka",
+   "count": 486
+  },
+  {
+   "name": "ami mizuno",
+   "count": 485
+  },
+  {
+   "name": "musashi miyamoto",
+   "count": 480
+  },
+  {
+   "name": "toki asuma",
+   "count": 479
+  },
+  {
+   "name": "uzuki shimamura",
+   "count": 477
+  },
+  {
+   "name": "kirino kousaka",
+   "count": 475
+  },
+  {
+   "name": "sasuke uchiha",
+   "count": 473
+  },
+  {
+   "name": "ayane",
+   "count": 473
+  },
+  {
+   "name": "tamamo-no-mae",
+   "count": 469
+  },
+  {
+   "name": "mari iochi",
+   "count": 468
+  },
+  {
+   "name": "chloe von einzbern",
+   "count": 468
+  },
+  {
+   "name": "tamaki kousaka",
+   "count": 468
+  },
+  {
+   "name": "utsuho reiuji",
+   "count": 467
+  },
+  {
+   "name": "eli ayase",
+   "count": 463
+  },
+  {
+   "name": "miyu edelfelt",
+   "count": 463
+  },
+  {
+   "name": "subaru natsuki",
+   "count": 462
+  },
+  {
+   "name": "kyouko sakura",
+   "count": 459
+  },
+  {
+   "name": "taihou",
+   "count": 458
+  },
+  {
+   "name": "takane shijou",
+   "count": 457
+  },
+  {
+   "name": "yuki nagato",
+   "count": 457
+  },
+  {
+   "name": "aqua",
+   "count": 456
+  },
+  {
+   "name": "archer",
+   "count": 452
+  },
+  {
+   "name": "morrigan aensland",
+   "count": 452
+  },
+  {
+   "name": "inazuma",
+   "count": 451
+  },
+  {
+   "name": "momoka sakurai",
+   "count": 451
+  },
+  {
+   "name": "cirno",
+   "count": 448
+  },
+  {
+   "name": "karin kakudate",
+   "count": 447
+  },
+  {
+   "name": "karamatsu matsuno",
+   "count": 447
+  },
+  {
+   "name": "rumia",
+   "count": 445
+  },
+  {
+   "name": "sailor moon",
+   "count": 445
+  },
+  {
+   "name": "kisaki ryuuge",
+   "count": 441
+  },
+  {
+   "name": "abigail williams",
+   "count": 441
+  },
+  {
+   "name": "ruri gokou",
+   "count": 440
+  },
+  {
+   "name": "miho nishizumi",
+   "count": 437
+  },
+  {
+   "name": "gilgamesh",
+   "count": 437
+  },
+  {
+   "name": "wise",
+   "count": 430
+  },
+  {
+   "name": "zuikaku",
+   "count": 427
+  },
+  {
+   "name": "fern",
+   "count": 423
+  },
+  {
+   "name": "chen",
+   "count": 422
+  },
+  {
+   "name": "link",
+   "count": 419
+  },
+  {
+   "name": "iori minase",
+   "count": 416
+  },
+  {
+   "name": "kodaka hasegawa",
+   "count": 416
+  },
+  {
+   "name": "yui kotegawa",
+   "count": 412
+  },
+  {
+   "name": "len kagamine",
+   "count": 410
+  },
+  {
+   "name": "narmaya",
+   "count": 405
+  },
+  {
+   "name": "alice tendou",
+   "count": 404
+  },
+  {
+   "name": "ikazuchi",
+   "count": 404
+  },
+  {
+   "name": "akagi",
+   "count": 404
+  },
+  {
+   "name": "sakura kasugano",
+   "count": 401
+  },
+  {
+   "name": "ichimatsu matsuno",
+   "count": 399
+  },
+  {
+   "name": "misato katsuragi",
+   "count": 399
+  },
+  {
+   "name": "kazusa kyouyama",
+   "count": 398
+  },
+  {
+   "name": "raiden shogun",
+   "count": 398
+  },
+  {
+   "name": "rem",
+   "count": 398
+  },
+  {
+   "name": "nakoruru",
+   "count": 398
+  },
+  {
+   "name": "chie sasaki",
+   "count": 396
+  },
+  {
+   "name": "eri ayase",
+   "count": 394
+  },
+  {
+   "name": "tewi inaba",
+   "count": 390
+  },
+  {
+   "name": "kokoa hoto",
+   "count": 390
+  },
+  {
+   "name": "hatate himekaidou",
+   "count": 390
+  },
+  {
+   "name": "hasumi hanekawa",
+   "count": 388
+  },
+  {
+   "name": "houshou marine",
+   "count": 386
+  },
+  {
+   "name": "kokkoro",
+   "count": 386
+  },
+  {
+   "name": "hachiman hikigaya",
+   "count": 385
+  },
+  {
+   "name": "satoru gojo",
+   "count": 383
+  },
+  {
+   "name": "sayaka miki",
+   "count": 382
+  },
+  {
+   "name": "souji okita",
+   "count": 379
+  },
+  {
+   "name": "kaede takagaki",
+   "count": 378
+  },
+  {
+   "name": "ganyu",
+   "count": 377
+  },
+  {
+   "name": "akatsuki",
+   "count": 376
+  },
+  {
+   "name": "fujiwara no mokou",
+   "count": 375
+  },
+  {
+   "name": "ichika orimura",
+   "count": 374
+  },
+  {
+   "name": "eirin yagokoro",
+   "count": 374
+  },
+  {
+   "name": "shiho nishizumi",
+   "count": 373
+  },
+  {
+   "name": "kyon",
+   "count": 373
+  },
+  {
+   "name": "cammy white",
+   "count": 373
+  },
+  {
+   "name": "ruri hoshino",
+   "count": 371
+  },
+  {
+   "name": "amatsukaze",
+   "count": 370
+  },
+  {
+   "name": "boa hancock",
+   "count": 370
+  },
+  {
+   "name": "belfast",
+   "count": 369
+  },
+  {
+   "name": "rangiku matsumoto",
+   "count": 369
+  },
+  {
+   "name": "shoukaku",
+   "count": 368
+  },
+  {
+   "name": "ro-500",
+   "count": 366
+  },
+  {
+   "name": "kayoko onikata",
+   "count": 365
+  },
+  {
+   "name": "hayate yagami",
+   "count": 362
+  },
+  {
+   "name": "kasen ibara",
+   "count": 361
+  },
+  {
+   "name": "usagi tsukino",
+   "count": 359
+  },
+  {
+   "name": "lum",
+   "count": 358
+  },
+  {
+   "name": "makoto kino",
+   "count": 357
+  },
+  {
+   "name": "lumine",
+   "count": 356
+  },
+  {
+   "name": "darkness",
+   "count": 356
+  },
+  {
+   "name": "keine kamishirasawa",
+   "count": 354
+  },
+  {
+   "name": "charlotte dunois",
+   "count": 352
+  },
+  {
+   "name": "mikuru asahina",
+   "count": 352
+  },
+  {
+   "name": "hestia",
+   "count": 350
+  },
+  {
+   "name": "koharu shimoe",
+   "count": 348
+  },
+  {
+   "name": "onpu segawa",
+   "count": 348
+  },
+  {
+   "name": "nozomi tojo",
+   "count": 346
+  },
+  {
+   "name": "seia yurizono",
+   "count": 343
+  },
+  {
+   "name": "red saber",
+   "count": 343
+  },
+  {
+   "name": "yukari yuzuki",
+   "count": 340
+  },
+  {
+   "name": "musashi",
+   "count": 339
+  },
+  {
+   "name": "doremi harukaze",
+   "count": 339
+  },
+  {
+   "name": "lala satalin deviluke",
+   "count": 338
+  },
+  {
+   "name": "kuroko shirai",
+   "count": 337
+  },
+  {
+   "name": "marin kitagawa",
+   "count": 336
+  },
+  {
+   "name": "shinobu kochou",
+   "count": 336
+  },
+  {
+   "name": "akira kurusu",
+   "count": 336
+  },
+  {
+   "name": "you watanabe",
+   "count": 336
+  },
+  {
+   "name": "bianca whitaker",
+   "count": 336
+  },
+  {
+   "name": "cagliostro",
+   "count": 335
+  },
+  {
+   "name": "momo velia deviluke",
+   "count": 335
+  },
+  {
+   "name": "darjeeling",
+   "count": 334
+  },
+  {
+   "name": "kiyohime",
+   "count": 333
+  },
+  {
+   "name": "mari illustrious makinami",
+   "count": 333
+  },
+  {
+   "name": "miria akagi",
+   "count": 332
+  },
+  {
+   "name": "mutsu",
+   "count": 332
+  },
+  {
+   "name": "mutsuki asagi",
+   "count": 331
+  },
+  {
+   "name": "yui hirasawa",
+   "count": 331
+  },
+  {
+   "name": "nue houjuu",
+   "count": 331
+  },
+  {
+   "name": "bismarck",
+   "count": 330
+  },
+  {
+   "name": "madoka higuchi",
+   "count": 328
+  },
+  {
+   "name": "kagerou imaizumi",
+   "count": 324
+  },
+  {
+   "name": "kanna ogata",
+   "count": 323
+  },
+  {
+   "name": "kagami hiiragi",
+   "count": 323
+  },
+  {
+   "name": "kei tendou",
+   "count": 321
+  },
+  {
+   "name": "nonomi izayoi",
+   "count": 320
+  },
+  {
+   "name": "pyra",
+   "count": 320
+  },
+  {
+   "name": "maho nishizumi",
+   "count": 320
+  },
+  {
+   "name": "warrior",
+   "count": 319
+  },
+  {
+   "name": "chisato nishikigi",
+   "count": 318
+  },
+  {
+   "name": "shinobu oshino",
+   "count": 318
+  },
+  {
+   "name": "rei hino",
+   "count": 317
+  },
+  {
+   "name": "saori joumae",
+   "count": 316
+  },
+  {
+   "name": "asashio",
+   "count": 316
+  },
+  {
+   "name": "dark magician girl",
+   "count": 316
+  },
+  {
+   "name": "orihime inoue",
+   "count": 315
+  },
+  {
+   "name": "hero",
+   "count": 313
+  },
+  {
+   "name": "ritsu tainaka",
+   "count": 312
+  },
+  {
+   "name": "yamashiro",
+   "count": 311
+  },
+  {
+   "name": "osakabehime",
+   "count": 309
+  },
+  {
+   "name": "son goku",
+   "count": 309
+  },
+  {
+   "name": "nazrin",
+   "count": 309
+  },
+  {
+   "name": "bridget",
+   "count": 308
+  },
+  {
+   "name": "sachiko koshimizu",
+   "count": 308
+  },
+  {
+   "name": "murakumo",
+   "count": 307
+  },
+  {
+   "name": "saber alter",
+   "count": 307
+  },
+  {
+   "name": "tanjirou kamado",
+   "count": 306
+  },
+  {
+   "name": "lillie",
+   "count": 306
+  },
+  {
+   "name": "isuzu sento",
+   "count": 305
+  },
+  {
+   "name": "yuma tsukumo",
+   "count": 304
+  },
+  {
+   "name": "nozomi toujou",
+   "count": 304
+  },
+  {
+   "name": "ritsuko akizuki",
+   "count": 303
+  },
+  {
+   "name": "tsumugi kotobuki",
+   "count": 302
+  },
+  {
+   "name": "fuyuko mayuzumi",
+   "count": 299
+  },
+  {
+   "name": "mysterious heroine x",
+   "count": 297
+  },
+  {
+   "name": "caelus",
+   "count": 296
+  },
+  {
+   "name": "yuuji itadori",
+   "count": 296
+  },
+  {
+   "name": "ochako uraraka",
+   "count": 296
+  },
+  {
+   "name": "may",
+   "count": 296
+  },
+  {
+   "name": "bulma briefs",
+   "count": 295
+  },
+  {
+   "name": "akiko minase",
+   "count": 295
+  },
+  {
+   "name": "koume shirasaka",
+   "count": 295
+  },
+  {
+   "name": "konata izumi",
+   "count": 295
+  },
+  {
+   "name": "yuu narukami",
+   "count": 294
+  },
+  {
+   "name": "kama",
+   "count": 292
+  },
+  {
+   "name": "shouto todoroki",
+   "count": 292
+  },
+  {
+   "name": "cloud strife",
+   "count": 291
+  },
+  {
+   "name": "princess zelda",
+   "count": 290
+  },
+  {
+   "name": "midori saiba",
+   "count": 289
+  },
+  {
+   "name": "kaworu nagisa",
+   "count": 289
+  },
+  {
+   "name": "morgan le fay",
+   "count": 288
+  },
+  {
+   "name": "yoruichi shihoin",
+   "count": 288
+  },
+  {
+   "name": "haruna sairenji",
+   "count": 288
+  },
+  {
+   "name": "shiroko sunaookami",
+   "count": 287
+  },
+  {
+   "name": "shinobu maehara",
+   "count": 286
+  },
+  {
+   "name": "momoi saiba",
+   "count": 285
+  },
+  {
+   "name": "yoko ritona",
+   "count": 285
+  },
+  {
+   "name": "riko sakurauchi",
+   "count": 284
+  },
+  {
+   "name": "suika ibuki",
+   "count": 284
+  },
+  {
+   "name": "frieren",
+   "count": 283
+  },
+  {
+   "name": "ash ketchum",
+   "count": 283
+  },
+  {
+   "name": "ushiwakamaru",
+   "count": 280
+  },
+  {
+   "name": "hanako urawa",
+   "count": 278
+  },
+  {
+   "name": "louise francoise le blanc de la valliere",
+   "count": 278
+  },
+  {
+   "name": "azusa miura",
+   "count": 277
+  },
+  {
+   "name": "sailor saturn",
+   "count": 277
+  },
+  {
+   "name": "ranko kanzaki",
+   "count": 276
+  },
+  {
+   "name": "rei furuya",
+   "count": 275
+  },
+  {
+   "name": "shino asada",
+   "count": 273
+  },
+  {
+   "name": "hoshimachi suisei",
+   "count": 271
+  },
+  {
+   "name": "nekomata okayu",
+   "count": 271
+  },
+  {
+   "name": "riesz",
+   "count": 270
+  },
+  {
+   "name": "minako aino",
+   "count": 270
+  },
+  {
+   "name": "yuudachi",
+   "count": 269
+  },
+  {
+   "name": "chris yukine",
+   "count": 269
+  },
+  {
+   "name": "mayu sakuma",
+   "count": 268
+  },
+  {
+   "name": "takina inoue",
+   "count": 267
+  },
+  {
+   "name": "lana",
+   "count": 267
+  },
+  {
+   "name": "rin hoshizora",
+   "count": 266
+  },
+  {
+   "name": "rosa",
+   "count": 266
+  },
+  {
+   "name": "bell cranel",
+   "count": 265
+  },
+  {
+   "name": "iku nagae",
+   "count": 264
+  },
+  {
+   "name": "chihaya kisaragi",
+   "count": 264
+  },
+  {
+   "name": "wriggle nightbug",
+   "count": 263
+  },
+  {
+   "name": "naru narusegawa",
+   "count": 263
+  },
+  {
+   "name": "ushio",
+   "count": 263
+  },
+  {
+   "name": "lunamaria hawke",
+   "count": 263
+  },
+  {
+   "name": "hitori gotou",
+   "count": 262
+  },
+  {
+   "name": "nozomi tachibana",
+   "count": 260
+  },
+  {
+   "name": "hu tao",
+   "count": 260
+  },
+  {
+   "name": "miku maekawa",
+   "count": 260
+  },
+  {
+   "name": "skuld",
+   "count": 259
+  },
+  {
+   "name": "kogasa tatara",
+   "count": 259
+  },
+  {
+   "name": "tsubasa hanekawa",
+   "count": 258
+  },
+  {
+   "name": "serena",
+   "count": 258
+  },
+  {
+   "name": "rinko iori",
+   "count": 257
+  },
+  {
+   "name": "aiko senoo",
+   "count": 257
+  },
+  {
+   "name": "athena asamiya",
+   "count": 257
+  },
+  {
+   "name": "aru rikuhachima",
+   "count": 255
+  },
+  {
+   "name": "yukiho hagiwara",
+   "count": 255
+  },
+  {
+   "name": "yuusaku fujiki",
+   "count": 254
+  },
+  {
+   "name": "minato aqua",
+   "count": 253
+  },
+  {
+   "name": "ereshkigal",
+   "count": 253
+  },
+  {
+   "name": "honoka kosaka",
+   "count": 252
+  },
+  {
+   "name": "lacus clyne",
+   "count": 252
+  },
+  {
+   "name": "mahiro oyama",
+   "count": 251
+  },
+  {
+   "name": "shirakami fubuki",
+   "count": 251
+  },
+  {
+   "name": "boudica",
+   "count": 251
+  },
+  {
+   "name": "mordred pendragon",
+   "count": 251
+  },
+  {
+   "name": "videl",
+   "count": 251
+  },
+  {
+   "name": "kaguya houraisan",
+   "count": 251
+  },
+  {
+   "name": "anzu futaba",
+   "count": 251
+  },
+  {
+   "name": "taiga kagami",
+   "count": 251
+  },
+  {
+   "name": "hinagiku katsura",
+   "count": 251
+  },
+  {
+   "name": "yoshiko tsushima",
+   "count": 250
+  },
+  {
+   "name": "makoto kikuchi",
+   "count": 250
+  },
+  {
+   "name": "baobhan sith",
+   "count": 249
+  },
+  {
+   "name": "kyaru",
+   "count": 249
+  },
+  {
+   "name": "pecorine",
+   "count": 249
+  },
+  {
+   "name": "rex",
+   "count": 249
+  },
+  {
+   "name": "mythra",
+   "count": 249
+  },
+  {
+   "name": "roronoa zoro",
+   "count": 249
+  },
+  {
+   "name": "ran mouri",
+   "count": 249
+  },
+  {
+   "name": "cattleya",
+   "count": 249
+  },
+  {
+   "name": "misty",
+   "count": 249
+  },
+  {
+   "name": "fumina hoshino",
+   "count": 248
+  },
+  {
+   "name": "yae miko",
+   "count": 247
+  },
+  {
+   "name": "mikasa ackerman",
+   "count": 247
+  },
+  {
+   "name": "ruiko saten",
+   "count": 247
+  },
+  {
+   "name": "hanayo koizumi",
+   "count": 247
+  },
+  {
+   "name": "komachi onozuka",
+   "count": 247
+  },
+  {
+   "name": "rukia kuchiki",
+   "count": 247
+  },
+  {
+   "name": "arisu shimada",
+   "count": 246
+  },
+  {
+   "name": "yuri",
+   "count": 246
+  },
+  {
+   "name": "ishtar",
+   "count": 245
+  },
+  {
+   "name": "ritsuko akagi",
+   "count": 244
+  },
+  {
+   "name": "haruka amami",
+   "count": 244
+  },
+  {
+   "name": "osomatsu matsuno",
+   "count": 242
+  },
+  {
+   "name": "tetsuya kuroko",
+   "count": 242
+  },
+  {
+   "name": "vita",
+   "count": 242
+  },
+  {
+   "name": "hazuki fujiwara",
+   "count": 242
+  },
+  {
+   "name": "unicorn",
+   "count": 241
+  },
+  {
+   "name": "kanako yasaka",
+   "count": 241
+  },
+  {
+   "name": "zuihou",
+   "count": 241
+  },
+  {
+   "name": "england",
+   "count": 241
+  },
+  {
+   "name": "misaki shokuhou",
+   "count": 240
+  },
+  {
+   "name": "tatsuta",
+   "count": 240
+  },
+  {
+   "name": "nino nakano",
+   "count": 239
+  },
+  {
+   "name": "rikka takanashi",
+   "count": 239
+  },
+  {
+   "name": "mizuho kazami",
+   "count": 239
+  },
+  {
+   "name": "ichigo kurosaki",
+   "count": 239
+  },
+  {
+   "name": "yor forger",
+   "count": 238
+  },
+  {
+   "name": "chiyuki kuwayama",
+   "count": 238
+  },
+  {
+   "name": "hata no kokoro",
+   "count": 237
+  },
+  {
+   "name": "tanya von degurechaff",
+   "count": 236
+  },
+  {
+   "name": "z1",
+   "count": 235
+  },
+  {
+   "name": "i-19",
+   "count": 235
+  },
+  {
+   "name": "hikari tachibana",
+   "count": 234
+  },
+  {
+   "name": "neru mikamo",
+   "count": 234
+  },
+  {
+   "name": "miku nakano",
+   "count": 233
+  },
+  {
+   "name": "yu takasaki",
+   "count": 232
+  },
+  {
+   "name": "martina",
+   "count": 232
+  },
+  {
+   "name": "hotaru shidare",
+   "count": 232
+  },
+  {
+   "name": "sage",
+   "count": 232
+  },
+  {
+   "name": "xuanzang",
+   "count": 231
+  },
+  {
+   "name": "cecilia alcott",
+   "count": 231
+  },
+  {
+   "name": "anira",
+   "count": 230
+  },
+  {
+   "name": "chi chi",
+   "count": 230
+  },
+  {
+   "name": "cleric",
+   "count": 230
+  },
+  {
+   "name": "gintoki sakata",
+   "count": 230
+  },
+  {
+   "name": "shizuku oikawa",
+   "count": 230
+  },
+  {
+   "name": "saki sorai",
+   "count": 229
+  },
+  {
+   "name": "mystia lorelei",
+   "count": 229
+  },
+  {
+   "name": "saito hiraga",
+   "count": 229
+  },
+  {
+   "name": "masamune izumi",
+   "count": 228
+  },
+  {
+   "name": "mallow",
+   "count": 228
+  },
+  {
+   "name": "lancer",
+   "count": 228
+  },
+  {
+   "name": "son gohan",
+   "count": 228
+  },
+  {
+   "name": "sousuke yamazaki",
+   "count": 228
+  },
+  {
+   "name": "saratoga",
+   "count": 227
+  },
+  {
+   "name": "akane tendo",
+   "count": 226
+  },
+  {
+   "name": "neko musume",
+   "count": 226
+  },
+  {
+   "name": "hitagi senjougahara",
+   "count": 225
+  },
+  {
+   "name": "nagisa kirifuji",
+   "count": 224
+  },
+  {
+   "name": "setsuna yuki",
+   "count": 224
+  },
+  {
+   "name": "urakaze",
+   "count": 224
+  },
+  {
+   "name": "yuugi hoshiguma",
+   "count": 223
+  },
+  {
+   "name": "oozora subaru",
+   "count": 222
+  },
+  {
+   "name": "giyuu tomioka",
+   "count": 221
+  },
+  {
+   "name": "aerith gainsborough",
+   "count": 221
+  },
+  {
+   "name": "suigintou",
+   "count": 221
+  },
+  {
+   "name": "monkey d. luffy",
+   "count": 221
+  },
+  {
+   "name": "firefly",
+   "count": 220
+  },
+  {
+   "name": "leonardo da vinci",
+   "count": 220
+  },
+  {
+   "name": "suzaku kururugi",
+   "count": 220
+  },
+  {
+   "name": "asuna kagurazaka",
+   "count": 219
+  },
+  {
+   "name": "murasaki shikibu",
+   "count": 218
+  },
+  {
+   "name": "signum",
+   "count": 218
+  },
+  {
+   "name": "yuffie kisaragi",
+   "count": 217
+  },
+  {
+   "name": "daiki aomine",
+   "count": 217
+  },
+  {
+   "name": "ayumu uehara",
+   "count": 216
+  },
+  {
+   "name": "shikieiki yamaxanadu",
+   "count": 216
+  },
+  {
+   "name": "artoria pendragon alter",
+   "count": 215
+  },
+  {
+   "name": "honoka kousaka",
+   "count": 215
+  },
+  {
+   "name": "ooi",
+   "count": 215
+  },
+  {
+   "name": "mona megistus",
+   "count": 214
+  },
+  {
+   "name": "chika takami",
+   "count": 214
+  },
+  {
+   "name": "anastasia",
+   "count": 214
+  },
+  {
+   "name": "nene anegasaki",
+   "count": 214
+  },
+  {
+   "name": "syaoran li",
+   "count": 214
+  },
+  {
+   "name": "shigeo kageyama",
+   "count": 213
+  },
+  {
+   "name": "index librorum prohibitorum",
+   "count": 213
+  },
+  {
+   "name": "shun sunohara",
+   "count": 212
+  },
+  {
+   "name": "emilia",
+   "count": 212
+  },
+  {
+   "name": "renko usami",
+   "count": 212
+  },
+  {
+   "name": "master roshi",
+   "count": 212
+  },
+  {
+   "name": "katsushika hokusai",
+   "count": 211
+  },
+  {
+   "name": "sagiri izumi",
+   "count": 211
+  },
+  {
+   "name": "ryuujou",
+   "count": 211
+  },
+  {
+   "name": "yuuichi aizawa",
+   "count": 211
+  },
+  {
+   "name": "plana",
+   "count": 210
+  },
+  {
+   "name": "ooyodo",
+   "count": 210
+  },
+  {
+   "name": "jessica albert",
+   "count": 210
+  },
+  {
+   "name": "kobato hasegawa",
+   "count": 210
+  },
+  {
+   "name": "shizuku osaka",
+   "count": 208
+  },
+  {
+   "name": "sharo kirima",
+   "count": 208
+  },
+  {
+   "name": "kari kamiya",
+   "count": 208
+  },
+  {
+   "name": "edward elric",
+   "count": 208
+  },
+  {
+   "name": "cynthia",
+   "count": 208
+  },
+  {
+   "name": "graf zeppelin",
+   "count": 207
+  },
+  {
+   "name": "fubuki",
+   "count": 207
+  },
+  {
+   "name": "hibiki ganaha",
+   "count": 207
+  },
+  {
+   "name": "naoto shirogane",
+   "count": 207
+  },
+  {
+   "name": "ui kozeki",
+   "count": 206
+  },
+  {
+   "name": "daiyousei",
+   "count": 206
+  },
+  {
+   "name": "zhongli",
+   "count": 205
+  },
+  {
+   "name": "nodoka haramura",
+   "count": 205
+  },
+  {
+   "name": "bulma",
+   "count": 205
+  },
+  {
+   "name": "2b",
+   "count": 204
+  },
+  {
+   "name": "haru yuuki",
+   "count": 204
+  },
+  {
+   "name": "kanan matsuura",
+   "count": 204
+  },
+  {
+   "name": "dia kurosawa",
+   "count": 204
+  },
+  {
+   "name": "mio honda",
+   "count": 204
+  },
+  {
+   "name": "ikuyo kita",
+   "count": 203
+  },
+  {
+   "name": "urd",
+   "count": 203
+  },
+  {
+   "name": "sendai",
+   "count": 203
+  },
+  {
+   "name": "kei",
+   "count": 203
+  },
+  {
+   "name": "kikyou kiryuu",
+   "count": 202
+  },
+  {
+   "name": "senritsu no tatsumaki",
+   "count": 202
+  },
+  {
+   "name": "suletta mercury",
+   "count": 201
+  },
+  {
+   "name": "iowa",
+   "count": 201
+  },
+  {
+   "name": "seiga kaku",
+   "count": 201
+  },
+  {
+   "name": "cure black",
+   "count": 201
+  },
+  {
+   "name": "yuuta togashi",
+   "count": 201
+  },
+  {
+   "name": "ryouta kise",
+   "count": 200
+  },
+  {
+   "name": "ibuki tanga",
+   "count": 199
+  },
+  {
+   "name": "ayase aragaki",
+   "count": 199
+  },
+  {
+   "name": "yuuya sakaki",
+   "count": 199
+  },
+  {
+   "name": "lei fang",
+   "count": 199
+  },
+  {
+   "name": "nitocris",
+   "count": 198
+  },
+  {
+   "name": "rinnosuke morichika",
+   "count": 198
+  },
+  {
+   "name": "ai amatsu",
+   "count": 198
+  },
+  {
+   "name": "risa matoba",
+   "count": 198
+  },
+  {
+   "name": "kuro von einzbern",
+   "count": 197
+  },
+  {
+   "name": "kanako mimura",
+   "count": 197
+  },
+  {
+   "name": "hotaru tomoe",
+   "count": 197
+  },
+  {
+   "name": "momo yaoyorozu",
+   "count": 196
+  },
+  {
+   "name": "erika itsumi",
+   "count": 196
+  },
+  {
+   "name": "killua zoldyck",
+   "count": 196
+  },
+  {
+   "name": "lilith aensland",
+   "count": 196
+  },
+  {
+   "name": "hitoha marui",
+   "count": 196
+  },
+  {
+   "name": "shuuichi akai",
+   "count": 196
+  },
+  {
+   "name": "tomoko kuroki",
+   "count": 196
+  },
+  {
+   "name": "miyu mifune",
+   "count": 195
+  },
+  {
+   "name": "shizuo heiwajima",
+   "count": 195
+  },
+  {
+   "name": "kosuzu motoori",
+   "count": 194
+  },
+  {
+   "name": "jigoku no fubuki",
+   "count": 194
+  },
+  {
+   "name": "eijirou kirishima",
+   "count": 193
+  },
+  {
+   "name": "tomoe gozen",
+   "count": 193
+  },
+  {
+   "name": "kitakami",
+   "count": 193
+  },
+  {
+   "name": "shampoo",
+   "count": 193
+  },
+  {
+   "name": "lyfa",
+   "count": 192
+  },
+  {
+   "name": "yuzu hanaoka",
+   "count": 191
+  },
+  {
+   "name": "shiki ichinose",
+   "count": 191
+  },
+  {
+   "name": "melusine",
+   "count": 190
+  },
+  {
+   "name": "rin kagamine",
+   "count": 190
+  },
+  {
+   "name": "yuuri katsuki",
+   "count": 189
+  },
+  {
+   "name": "akashi",
+   "count": 189
+  },
+  {
+   "name": "roy mustang",
+   "count": 189
+  },
+  {
+   "name": "tobio kageyama",
+   "count": 189
+  },
+  {
+   "name": "tsuyu asui",
+   "count": 189
+  },
+  {
+   "name": "ichika nakamasa",
+   "count": 188
+  },
+  {
+   "name": "zeta",
+   "count": 188
+  },
+  {
+   "name": "riamu yumemi",
+   "count": 187
+  },
+  {
+   "name": "kaoru ryuzaki",
+   "count": 187
+  },
+  {
+   "name": "houshou",
+   "count": 187
+  },
+  {
+   "name": "miyako tsukiyuki",
+   "count": 186
+  },
+  {
+   "name": "makima",
+   "count": 186
+  },
+  {
+   "name": "holo",
+   "count": 186
+  },
+  {
+   "name": "shoyo hinata",
+   "count": 186
+  },
+  {
+   "name": "sebastian michaelis",
+   "count": 186
+  },
+  {
+   "name": "reginald kastle",
+   "count": 186
+  },
+  {
+   "name": "ciel phantomhive",
+   "count": 186
+  },
+  {
+   "name": "mitsuri kanroji",
+   "count": 185
+  },
+  {
+   "name": "yozora mikazuki",
+   "count": 185
+  },
+  {
+   "name": "motoko aoyama",
+   "count": 185
+  },
+  {
+   "name": "tokitsukaze",
+   "count": 185
+  },
+  {
+   "name": "kokona sunohara",
+   "count": 184
+  },
+  {
+   "name": "nobara kugisaki",
+   "count": 184
+  },
+  {
+   "name": "shirogane noel",
+   "count": 184
+  },
+  {
+   "name": "meguru hachimiya",
+   "count": 184
+  },
+  {
+   "name": "parsee mizuhashi",
+   "count": 184
+  },
+  {
+   "name": "yayoi takatsuki",
+   "count": 184
+  },
+  {
+   "name": "victor nikiforov",
+   "count": 183
+  },
+  {
+   "name": "manaka komaki",
+   "count": 183
+  },
+  {
+   "name": "sora",
+   "count": 183
+  },
+  {
+   "name": "chibiusa",
+   "count": 182
+  },
+  {
+   "name": "izuna kuda",
+   "count": 181
+  },
+  {
+   "name": "arona",
+   "count": 181
+  },
+  {
+   "name": "sei iori",
+   "count": 181
+  },
+  {
+   "name": "iroha natsume",
+   "count": 180
+  },
+  {
+   "name": "suguru geto",
+   "count": 180
+  },
+  {
+   "name": "sirius",
+   "count": 180
+  },
+  {
+   "name": "hibiki tachibana",
+   "count": 180
+  },
+  {
+   "name": "sasami masaki jurai",
+   "count": 180
+  },
+  {
+   "name": "meer campbell",
+   "count": 180
+  },
+  {
+   "name": "hina kagiyama",
+   "count": 180
+  },
+  {
+   "name": "airi totoki",
+   "count": 180
+  },
+  {
+   "name": "clownpiece",
+   "count": 179
+  },
+  {
+   "name": "tearju lunatique",
+   "count": 179
+  },
+  {
+   "name": "cure white",
+   "count": 179
+  },
+  {
+   "name": "murrue ramius",
+   "count": 179
+  },
+  {
+   "name": "rize tedeza",
+   "count": 179
+  },
+  {
+   "name": "fuutarou uesugi",
+   "count": 178
+  },
+  {
+   "name": "shiori fujisaki",
+   "count": 178
+  },
+  {
+   "name": "kyouko kasodani",
+   "count": 178
+  },
+  {
+   "name": "meena",
+   "count": 178
+  },
+  {
+   "name": "tokoyami towa",
+   "count": 177
+  },
+  {
+   "name": "yamakaze",
+   "count": 177
+  },
+  {
+   "name": "hanamaru kunikida",
+   "count": 177
+  },
+  {
+   "name": "maribel han",
+   "count": 177
+  },
+  {
+   "name": "kagura",
+   "count": 177
+  },
+  {
+   "name": "yixuan",
+   "count": 176
+  },
+  {
+   "name": "scaramouche",
+   "count": 176
+  },
+  {
+   "name": "mikazuki munechika",
+   "count": 176
+  },
+  {
+   "name": "saitama",
+   "count": 176
+  },
+  {
+   "name": "ai haibara",
+   "count": 176
+  },
+  {
+   "name": "satoko houjou",
+   "count": 176
+  },
+  {
+   "name": "yukikaze mizuki",
+   "count": 176
+  },
+  {
+   "name": "lize helesta",
+   "count": 175
+  },
+  {
+   "name": "ruby kurosawa",
+   "count": 175
+  },
+  {
+   "name": "lina inverse",
+   "count": 175
+  },
+  {
+   "name": "izaya orihara",
+   "count": 175
+  },
+  {
+   "name": "iori shiromi",
+   "count": 174
+  },
+  {
+   "name": "barghest",
+   "count": 174
+  },
+  {
+   "name": "ryoken kogami",
+   "count": 174
+  },
+  {
+   "name": "kyoko otonashi",
+   "count": 174
+  },
+  {
+   "name": "keqing",
+   "count": 173
+  },
+  {
+   "name": "murasaki shion",
+   "count": 173
+  },
+  {
+   "name": "erina nakiri",
+   "count": 173
+  },
+  {
+   "name": "ichiro ogami",
+   "count": 173
+  },
+  {
+   "name": "yukino yukinoshita",
+   "count": 172
+  },
+  {
+   "name": "keiko ayano",
+   "count": 172
+  },
+  {
+   "name": "juri han",
+   "count": 172
+  },
+  {
+   "name": "dawn",
+   "count": 172
+  },
+  {
+   "name": "multi",
+   "count": 172
+  },
+  {
+   "name": "isokaze",
+   "count": 171
+  },
+  {
+   "name": "tooru oikawa",
+   "count": 171
+  },
+  {
+   "name": "vegeta",
+   "count": 171
+  },
+  {
+   "name": "kumano",
+   "count": 171
+  },
+  {
+   "name": "yukari akiyama",
+   "count": 171
+  },
+  {
+   "name": "jack the ripper",
+   "count": 170
+  },
+  {
+   "name": "iroha isshiki",
+   "count": 170
+  },
+  {
+   "name": "ahri",
+   "count": 170
+  },
+  {
+   "name": "mai amatsu",
+   "count": 170
+  },
+  {
+   "name": "kurisu makise",
+   "count": 170
+  },
+  {
+   "name": "conan edogawa",
+   "count": 170
+  },
+  {
+   "name": "shokudaikiri mitsutada",
+   "count": 170
+  },
+  {
+   "name": "yuna",
+   "count": 170
+  },
+  {
+   "name": "sheryl nome",
+   "count": 170
+  },
+  {
+   "name": "gloria",
+   "count": 169
+  },
+  {
+   "name": "ichika nakano",
+   "count": 169
+  },
+  {
+   "name": "takagi",
+   "count": 169
+  },
+  {
+   "name": "hikaru shidou",
+   "count": 169
+  },
+  {
+   "name": "souryuu",
+   "count": 169
+  },
+  {
+   "name": "saren sasaki",
+   "count": 168
+  },
+  {
+   "name": "illustrious",
+   "count": 168
+  },
+  {
+   "name": "kokonotsu shikada",
+   "count": 168
+  },
+  {
+   "name": "kanade hayami",
+   "count": 168
+  },
+  {
+   "name": "nadia la arwall",
+   "count": 167
+  },
+  {
+   "name": "king",
+   "count": 167
+  },
+  {
+   "name": "gon freecss",
+   "count": 167
+  },
+  {
+   "name": "kotori otonashi",
+   "count": 167
+  },
+  {
+   "name": "hilda",
+   "count": 167
+  },
+  {
+   "name": "sakuya shirase",
+   "count": 166
+  },
+  {
+   "name": "kirishima",
+   "count": 166
+  },
+  {
+   "name": "ryo akizuki",
+   "count": 166
+  },
+  {
+   "name": "kagome higurashi",
+   "count": 166
+  },
+  {
+   "name": "marnie",
+   "count": 165
+  },
+  {
+   "name": "rika furude",
+   "count": 165
+  },
+  {
+   "name": "yui yuigahama",
+   "count": 165
+  },
+  {
+   "name": "karen araragi",
+   "count": 165
+  },
+  {
+   "name": "shizuka minamoto",
+   "count": 165
+  },
+  {
+   "name": "miorine rembran",
+   "count": 164
+  },
+  {
+   "name": "saniwa",
+   "count": 164
+  },
+  {
+   "name": "beatrix",
+   "count": 164
+  },
+  {
+   "name": "samus aran",
+   "count": 164
+  },
+  {
+   "name": "katori",
+   "count": 164
+  },
+  {
+   "name": "umi ryuuzaki",
+   "count": 164
+  },
+  {
+   "name": "mitsuba marui",
+   "count": 164
+  },
+  {
+   "name": "chie satonaka",
+   "count": 164
+  },
+  {
+   "name": "shiki tohno",
+   "count": 164
+  },
+  {
+   "name": "rikka takarada",
+   "count": 163
+  },
+  {
+   "name": "taiga aisaka",
+   "count": 163
+  },
+  {
+   "name": "seija kijin",
+   "count": 163
+  },
+  {
+   "name": "denji",
+   "count": 162
+  },
+  {
+   "name": "anne takamaki",
+   "count": 162
+  },
+  {
+   "name": "france",
+   "count": 162
+  },
+  {
+   "name": "utaha kasumigaoka",
+   "count": 162
+  },
+  {
+   "name": "kotetsu t. kaburagi",
+   "count": 162
+  },
+  {
+   "name": "erio mondial",
+   "count": 162
+  },
+  {
+   "name": "nana asta deviluke",
+   "count": 162
+  },
+  {
+   "name": "rin kokonoe",
+   "count": 161
+  },
+  {
+   "name": "tai kamiya",
+   "count": 161
+  },
+  {
+   "name": "hieda no akyuu",
+   "count": 161
+  },
+  {
+   "name": "ino yamanaka",
+   "count": 161
+  },
+  {
+   "name": "hilichurl",
+   "count": 160
+  },
+  {
+   "name": "yui kusano",
+   "count": 160
+  },
+  {
+   "name": "naganami",
+   "count": 160
+  },
+  {
+   "name": "kamui",
+   "count": 160
+  },
+  {
+   "name": "shana",
+   "count": 160
+  },
+  {
+   "name": "kazari uiharu",
+   "count": 160
+  },
+  {
+   "name": "stark",
+   "count": 159
+  },
+  {
+   "name": "belle",
+   "count": 159
+  },
+  {
+   "name": "wo-class",
+   "count": 159
+  },
+  {
+   "name": "trunks briefs",
+   "count": 159
+  },
+  {
+   "name": "kaori sakuramori",
+   "count": 158
+  },
+  {
+   "name": "helena blavatsky",
+   "count": 158
+  },
+  {
+   "name": "yoshika miyafuji",
+   "count": 158
+  },
+  {
+   "name": "mononobe no futo",
+   "count": 158
+  },
+  {
+   "name": "mitsuru kirijo",
+   "count": 158
+  },
+  {
+   "name": "yuuki",
+   "count": 157
+  },
+  {
+   "name": "galko",
+   "count": 157
+  },
+  {
+   "name": "toyosatomimi no miko",
+   "count": 157
+  },
+  {
+   "name": "robin",
+   "count": 157
+  },
+  {
+   "name": "wakana gojou",
+   "count": 156
+  },
+  {
+   "name": "karin asaka",
+   "count": 156
+  },
+  {
+   "name": "meltryllis",
+   "count": 156
+  },
+  {
+   "name": "vira",
+   "count": 156
+  },
+  {
+   "name": "chiyomi anzai",
+   "count": 156
+  },
+  {
+   "name": "toshiro hijikata",
+   "count": 156
+  },
+  {
+   "name": "sailor chibi moon",
+   "count": 156
+  },
+  {
+   "name": "sakamata chloe",
+   "count": 155
+  },
+  {
+   "name": "kisaragi",
+   "count": 155
+  },
+  {
+   "name": "z3",
+   "count": 155
+  },
+  {
+   "name": "dante",
+   "count": 155
+  },
+  {
+   "name": "tomoko hoshina",
+   "count": 155
+  },
+  {
+   "name": "helena douglas",
+   "count": 155
+  }
+ ],
+ "group": [
+  {
+   "name": "digital lover",
+   "count": 598
+  },
+  {
+   "name": "crimson comics",
+   "count": 586
+  },
+  {
+   "name": "noraneko-no-tama",
+   "count": 532
+  },
+  {
+   "name": "black dog",
+   "count": 530
+  },
+  {
+   "name": "studio wallaby",
+   "count": 518
+  },
+  {
+   "name": "amuai okashi seisakusho",
+   "count": 503
+  },
+  {
+   "name": "nagiyamasugi",
+   "count": 473
+  },
+  {
+   "name": "kinokonomi",
+   "count": 460
+  },
+  {
+   "name": "valssu",
+   "count": 455
+  },
+  {
+   "name": "clesta",
+   "count": 450
+  },
+  {
+   "name": "axz",
+   "count": 443
+  },
+  {
+   "name": "warabimochi",
+   "count": 419
+  },
+  {
+   "name": "tsurikichi doumei",
+   "count": 416
+  },
+  {
+   "name": "u.r.c",
+   "count": 414
+  },
+  {
+   "name": "ncp",
+   "count": 401
+  },
+  {
+   "name": "nyuu koubou",
+   "count": 390
+  },
+  {
+   "name": "gambler club",
+   "count": 386
+  },
+  {
+   "name": "rpg company 2",
+   "count": 381
+  },
+  {
+   "name": "cyclone",
+   "count": 380
+  },
+  {
+   "name": "orangemaru",
+   "count": 378
+  },
+  {
+   "name": "crimson",
+   "count": 364
+  },
+  {
+   "name": "fatalpulse",
+   "count": 357
+  },
+  {
+   "name": "st. rio",
+   "count": 345
+  },
+  {
+   "name": "akumu no takuhaibin",
+   "count": 345
+  },
+  {
+   "name": "shimoyakedou",
+   "count": 339
+  },
+  {
+   "name": "saigado",
+   "count": 336
+  },
+  {
+   "name": "c.rs nest",
+   "count": 333
+  },
+  {
+   "name": "raijinkai",
+   "count": 326
+  },
+  {
+   "name": "23.4do",
+   "count": 322
+  },
+  {
+   "name": "honey qp",
+   "count": 320
+  },
+  {
+   "name": "angyadow",
+   "count": 316
+  },
+  {
+   "name": "bluemage",
+   "count": 315
+  },
+  {
+   "name": "misaki",
+   "count": 314
+  },
+  {
+   "name": "circle taihei-tengoku",
+   "count": 310
+  },
+  {
+   "name": "studio huan",
+   "count": 309
+  },
+  {
+   "name": "naruho-dou",
+   "count": 307
+  },
+  {
+   "name": "marked-two",
+   "count": 304
+  },
+  {
+   "name": "behind moon",
+   "count": 297
+  },
+  {
+   "name": "tsf no f",
+   "count": 293
+  },
+  {
+   "name": "popochichi",
+   "count": 292
+  },
+  {
+   "name": "crazy9",
+   "count": 289
+  },
+  {
+   "name": "kouchaya",
+   "count": 287
+  },
+  {
+   "name": "bolze.",
+   "count": 285
+  },
+  {
+   "name": "hellabunna",
+   "count": 285
+  },
+  {
+   "name": "sanbaizu",
+   "count": 285
+  },
+  {
+   "name": "bronco hitoritabi",
+   "count": 282
+  },
+  {
+   "name": "seika kairaku shoten",
+   "count": 280
+  },
+  {
+   "name": "pintsize",
+   "count": 277
+  },
+  {
+   "name": "shoot the moon",
+   "count": 277
+  },
+  {
+   "name": "kedama gyuunyuu",
+   "count": 275
+  },
+  {
+   "name": "furaipan daimaou",
+   "count": 275
+  },
+  {
+   "name": "hyoui lover",
+   "count": 274
+  },
+  {
+   "name": "shounen zoom",
+   "count": 274
+  },
+  {
+   "name": "18master",
+   "count": 270
+  },
+  {
+   "name": "haitokukan",
+   "count": 269
+  },
+  {
+   "name": "karakishi youhei-dan",
+   "count": 263
+  },
+  {
+   "name": "eromazun",
+   "count": 263
+  },
+  {
+   "name": "algolagnia",
+   "count": 255
+  },
+  {
+   "name": "shinsei lolishota",
+   "count": 254
+  },
+  {
+   "name": "plant",
+   "count": 254
+  },
+  {
+   "name": "ringoya",
+   "count": 252
+  },
+  {
+   "name": "number2",
+   "count": 250
+  },
+  {
+   "name": "diogenes club",
+   "count": 250
+  },
+  {
+   "name": "kohakutei",
+   "count": 249
+  },
+  {
+   "name": "dl mate",
+   "count": 248
+  },
+  {
+   "name": "mc",
+   "count": 247
+  },
+  {
+   "name": "french letter",
+   "count": 246
+  },
+  {
+   "name": "erect touch",
+   "count": 246
+  },
+  {
+   "name": "i-raf-you",
+   "count": 245
+  },
+  {
+   "name": "studio pal",
+   "count": 244
+  },
+  {
+   "name": "ninokoya",
+   "count": 243
+  },
+  {
+   "name": "yuzuponz",
+   "count": 243
+  },
+  {
+   "name": "mitarashi club",
+   "count": 241
+  },
+  {
+   "name": "ties",
+   "count": 239
+  },
+  {
+   "name": "sago-jou",
+   "count": 238
+  },
+  {
+   "name": "kamikadou",
+   "count": 237
+  },
+  {
+   "name": "toko-ya",
+   "count": 236
+  },
+  {
+   "name": "studio kimigabuchi",
+   "count": 235
+  },
+  {
+   "name": "stapspats",
+   "count": 235
+  },
+  {
+   "name": "aerodog",
+   "count": 234
+  },
+  {
+   "name": "saz",
+   "count": 233
+  },
+  {
+   "name": "d.n.a.lab.",
+   "count": 233
+  },
+  {
+   "name": "studio big-x",
+   "count": 232
+  },
+  {
+   "name": "leaz koubou",
+   "count": 229
+  },
+  {
+   "name": "imomuya honpo",
+   "count": 227
+  },
+  {
+   "name": "yashiya",
+   "count": 227
+  },
+  {
+   "name": "ryuukakusan nodoame",
+   "count": 226
+  },
+  {
+   "name": "shigunyan",
+   "count": 225
+  },
+  {
+   "name": "hitsuji kikaku",
+   "count": 225
+  },
+  {
+   "name": "funi funi lab",
+   "count": 225
+  },
+  {
+   "name": "studio katsudon",
+   "count": 225
+  },
+  {
+   "name": "circle-fiore",
+   "count": 224
+  },
+  {
+   "name": "otomekibun",
+   "count": 224
+  },
+  {
+   "name": "yosutebito na mangakaki",
+   "count": 224
+  },
+  {
+   "name": "part k",
+   "count": 223
+  },
+  {
+   "name": "antyuumosaku",
+   "count": 223
+  },
+  {
+   "name": "thirty saver street 2d shooting",
+   "count": 222
+  },
+  {
+   "name": "kensoh ogawa",
+   "count": 221
+  },
+  {
+   "name": "jack to nicholson",
+   "count": 221
+  },
+  {
+   "name": "maruarai",
+   "count": 220
+  },
+  {
+   "name": "shin hijiridou honpo",
+   "count": 219
+  },
+  {
+   "name": "kuma-puro",
+   "count": 219
+  },
+  {
+   "name": "studio tar",
+   "count": 219
+  },
+  {
+   "name": "sumomo dou",
+   "count": 218
+  },
+  {
+   "name": "niku ringo",
+   "count": 217
+  },
+  {
+   "name": "kaiki nisshoku",
+   "count": 217
+  },
+  {
+   "name": "modae tei",
+   "count": 216
+  },
+  {
+   "name": "tiramisu tart",
+   "count": 216
+  },
+  {
+   "name": "nakayohi mogudan",
+   "count": 215
+  },
+  {
+   "name": "saihate-kukan",
+   "count": 215
+  },
+  {
+   "name": "the nation of head scissors",
+   "count": 214
+  },
+  {
+   "name": "pecan",
+   "count": 214
+  },
+  {
+   "name": "high risk revolution",
+   "count": 214
+  },
+  {
+   "name": "zenmai kourogi",
+   "count": 213
+  },
+  {
+   "name": "ameshoo",
+   "count": 212
+  },
+  {
+   "name": "xration",
+   "count": 211
+  },
+  {
+   "name": "aodouhu",
+   "count": 210
+  },
+  {
+   "name": "hi-per pinch",
+   "count": 210
+  },
+  {
+   "name": "yami ni ugomeku",
+   "count": 209
+  },
+  {
+   "name": "dot eito",
+   "count": 209
+  },
+  {
+   "name": "amp",
+   "count": 206
+  },
+  {
+   "name": "nama cream biyori",
+   "count": 205
+  },
+  {
+   "name": "kamogawaya",
+   "count": 204
+  },
+  {
+   "name": "kirintei",
+   "count": 204
+  },
+  {
+   "name": "40010 1-go",
+   "count": 203
+  },
+  {
+   "name": "ciaociao",
+   "count": 203
+  },
+  {
+   "name": "akys honpo",
+   "count": 201
+  },
+  {
+   "name": "doushoku",
+   "count": 200
+  },
+  {
+   "name": "majimeya",
+   "count": 200
+  },
+  {
+   "name": "secret society m",
+   "count": 199
+  },
+  {
+   "name": "royal bitch",
+   "count": 199
+  },
+  {
+   "name": "katamari-ya",
+   "count": 198
+  },
+  {
+   "name": "studio rakkyou",
+   "count": 197
+  },
+  {
+   "name": "asanoya",
+   "count": 196
+  },
+  {
+   "name": "nekomataya",
+   "count": 195
+  },
+  {
+   "name": "itou life",
+   "count": 195
+  },
+  {
+   "name": "circle ohigetan",
+   "count": 195
+  },
+  {
+   "name": "manga super",
+   "count": 193
+  },
+  {
+   "name": "futanarun",
+   "count": 192
+  },
+  {
+   "name": "kaminendo.corporation",
+   "count": 192
+  },
+  {
+   "name": "enokoro kurage",
+   "count": 191
+  },
+  {
+   "name": "bakunyu fullnerson",
+   "count": 191
+  },
+  {
+   "name": "studio mizuyokan",
+   "count": 191
+  },
+  {
+   "name": "uroboros",
+   "count": 191
+  },
+  {
+   "name": "cocoa holic",
+   "count": 190
+  },
+  {
+   "name": "renai mangaka",
+   "count": 190
+  },
+  {
+   "name": "kenja time",
+   "count": 190
+  },
+  {
+   "name": "chijoku an",
+   "count": 190
+  },
+  {
+   "name": "labomagi",
+   "count": 190
+  },
+  {
+   "name": "konnyaku nabe",
+   "count": 189
+  },
+  {
+   "name": "aquadrop",
+   "count": 189
+  },
+  {
+   "name": "alpha to yukaina nakamatachi",
+   "count": 188
+  },
+  {
+   "name": "shimajiya",
+   "count": 188
+  },
+  {
+   "name": "mousou engine",
+   "count": 187
+  },
+  {
+   "name": "cuniculus",
+   "count": 187
+  },
+  {
+   "name": "kitsune to budou",
+   "count": 187
+  },
+  {
+   "name": "sankaku apron",
+   "count": 187
+  },
+  {
+   "name": "seishimentai",
+   "count": 186
+  },
+  {
+   "name": "daihonei",
+   "count": 186
+  },
+  {
+   "name": "helldevice",
+   "count": 186
+  },
+  {
+   "name": "t.4.p",
+   "count": 185
+  },
+  {
+   "name": "busou megami",
+   "count": 184
+  },
+  {
+   "name": "in the sky",
+   "count": 184
+  },
+  {
+   "name": "vpans extasy",
+   "count": 184
+  },
+  {
+   "name": "g-panda",
+   "count": 184
+  },
+  {
+   "name": "youkai tamanokoshi",
+   "count": 184
+  },
+  {
+   "name": "kitaku jikan",
+   "count": 183
+  },
+  {
+   "name": "horizontal world",
+   "count": 183
+  },
+  {
+   "name": "otonano do-wa",
+   "count": 182
+  },
+  {
+   "name": "shota mangaya-san",
+   "count": 181
+  },
+  {
+   "name": "ajisaidenden",
+   "count": 181
+  },
+  {
+   "name": "shironegiya",
+   "count": 181
+  },
+  {
+   "name": "kurione-sha",
+   "count": 181
+  },
+  {
+   "name": "kurosawa pict",
+   "count": 181
+  },
+  {
+   "name": "ash wing",
+   "count": 180
+  },
+  {
+   "name": "yusaritsukata",
+   "count": 180
+  },
+  {
+   "name": "tora machine",
+   "count": 179
+  },
+  {
+   "name": "showa saishuu sensen",
+   "count": 178
+  },
+  {
+   "name": "an-arc",
+   "count": 178
+  },
+  {
+   "name": "mugen at works",
+   "count": 178
+  },
+  {
+   "name": "testa kitchen",
+   "count": 177
+  },
+  {
+   "name": "frac",
+   "count": 177
+  },
+  {
+   "name": "kemokomoya",
+   "count": 176
+  },
+  {
+   "name": "kaientai",
+   "count": 176
+  },
+  {
+   "name": "rere",
+   "count": 176
+  },
+  {
+   "name": "alemateorema",
+   "count": 175
+  },
+  {
+   "name": "gold rush",
+   "count": 175
+  },
+  {
+   "name": "chimee house",
+   "count": 174
+  },
+  {
+   "name": "yoru no benkyoukai",
+   "count": 174
+  },
+  {
+   "name": "botugo",
+   "count": 173
+  },
+  {
+   "name": "nekonokone",
+   "count": 172
+  },
+  {
+   "name": "otaku beam",
+   "count": 172
+  },
+  {
+   "name": "studio a",
+   "count": 172
+  },
+  {
+   "name": "darabuchidou",
+   "count": 171
+  },
+  {
+   "name": "ltm.",
+   "count": 171
+  },
+  {
+   "name": "kurimomo",
+   "count": 171
+  },
+  {
+   "name": "oving",
+   "count": 171
+  },
+  {
+   "name": "kikyakudou",
+   "count": 170
+  },
+  {
+   "name": "arsenothelus",
+   "count": 170
+  },
+  {
+   "name": "gerupin",
+   "count": 170
+  },
+  {
+   "name": "twinbox",
+   "count": 170
+  },
+  {
+   "name": "shouchuu mac",
+   "count": 169
+  },
+  {
+   "name": "rubbish selecting squad",
+   "count": 168
+  },
+  {
+   "name": "maidoll",
+   "count": 168
+  },
+  {
+   "name": "goromenz",
+   "count": 168
+  },
+  {
+   "name": "chronolog",
+   "count": 168
+  },
+  {
+   "name": "waffle doumeiken",
+   "count": 166
+  },
+  {
+   "name": "kabayakiya",
+   "count": 166
+  },
+  {
+   "name": "hbo",
+   "count": 165
+  },
+  {
+   "name": "ryu-seki-do",
+   "count": 165
+  },
+  {
+   "name": "lonely church",
+   "count": 165
+  },
+  {
+   "name": "majimadou",
+   "count": 164
+  },
+  {
+   "name": "marialite",
+   "count": 163
+  },
+  {
+   "name": "temparing",
+   "count": 163
+  },
+  {
+   "name": "p.p",
+   "count": 163
+  },
+  {
+   "name": "gust",
+   "count": 163
+  },
+  {
+   "name": "mtsp",
+   "count": 163
+  },
+  {
+   "name": "arakureta monotachi",
+   "count": 162
+  },
+  {
+   "name": "plum",
+   "count": 162
+  },
+  {
+   "name": "digital accel works",
+   "count": 162
+  },
+  {
+   "name": "jack-pot",
+   "count": 162
+  },
+  {
+   "name": "micro page",
+   "count": 162
+  },
+  {
+   "name": "mousou bijutsubu",
+   "count": 161
+  },
+  {
+   "name": "takotsuboya",
+   "count": 161
+  },
+  {
+   "name": "110-groove",
+   "count": 161
+  },
+  {
+   "name": "aimaitei",
+   "count": 161
+  },
+  {
+   "name": "musashi-dou",
+   "count": 161
+  },
+  {
+   "name": "chokudoukan",
+   "count": 161
+  },
+  {
+   "name": "doza village",
+   "count": 161
+  },
+  {
+   "name": "fukurou naru tori",
+   "count": 160
+  },
+  {
+   "name": "hakuginmokusei",
+   "count": 160
+  },
+  {
+   "name": "kakumei seifu kouhoushitsu",
+   "count": 160
+  },
+  {
+   "name": "udon-ya",
+   "count": 160
+  },
+  {
+   "name": "puchi-ya",
+   "count": 160
+  },
+  {
+   "name": "enuma elish",
+   "count": 160
+  },
+  {
+   "name": "archives",
+   "count": 159
+  },
+  {
+   "name": "circle eden",
+   "count": 159
+  },
+  {
+   "name": "karomix",
+   "count": 159
+  },
+  {
+   "name": "byousatsu tanukidan",
+   "count": 159
+  },
+  {
+   "name": "cior",
+   "count": 159
+  },
+  {
+   "name": "akapenguin",
+   "count": 158
+  },
+  {
+   "name": "water drop",
+   "count": 158
+  },
+  {
+   "name": "attendance number 26",
+   "count": 158
+  },
+  {
+   "name": "meltdown comet",
+   "count": 158
+  },
+  {
+   "name": "aoba q madou",
+   "count": 157
+  },
+  {
+   "name": "muchakai",
+   "count": 157
+  },
+  {
+   "name": "akuochisukii kyoushitsu",
+   "count": 156
+  },
+  {
+   "name": "san se fang",
+   "count": 156
+  },
+  {
+   "name": "anchor",
+   "count": 155
+  },
+  {
+   "name": "hakueki shobou",
+   "count": 155
+  },
+  {
+   "name": "rippadou",
+   "count": 155
+  },
+  {
+   "name": "chibikko kingdom",
+   "count": 155
+  },
+  {
+   "name": "oneekyou",
+   "count": 154
+  },
+  {
+   "name": "zenra restaurant",
+   "count": 154
+  },
+  {
+   "name": "p-forest",
+   "count": 154
+  },
+  {
+   "name": "tenkirin",
+   "count": 154
+  },
+  {
+   "name": "mix fry",
+   "count": 153
+  },
+  {
+   "name": "reverse noise",
+   "count": 153
+  },
+  {
+   "name": "setoran",
+   "count": 153
+  },
+  {
+   "name": "ohkura bekkan",
+   "count": 153
+  },
+  {
+   "name": "dr.vermilion",
+   "count": 153
+  },
+  {
+   "name": "handsome aniki",
+   "count": 153
+  },
+  {
+   "name": "studio aruta",
+   "count": 152
+  },
+  {
+   "name": "kazeuma",
+   "count": 152
+  },
+  {
+   "name": "wancho-ke",
+   "count": 152
+  },
+  {
+   "name": "fuzume",
+   "count": 151
+  },
+  {
+   "name": "roubai-tei",
+   "count": 151
+  },
+  {
+   "name": "hisagoya",
+   "count": 150
+  },
+  {
+   "name": "kaniya",
+   "count": 149
+  },
+  {
+   "name": "kitsuneya",
+   "count": 149
+  },
+  {
+   "name": "metabocafe offensive smell uproar",
+   "count": 149
+  },
+  {
+   "name": "shioya",
+   "count": 148
+  },
+  {
+   "name": "rip at lip",
+   "count": 148
+  },
+  {
+   "name": "misty isle",
+   "count": 148
+  },
+  {
+   "name": "tiba-santi",
+   "count": 148
+  },
+  {
+   "name": "imitation moon",
+   "count": 148
+  },
+  {
+   "name": "jido-hikki",
+   "count": 147
+  },
+  {
+   "name": "rocket chousashitsu",
+   "count": 147
+  },
+  {
+   "name": "circle energy",
+   "count": 147
+  },
+  {
+   "name": "uran-factory",
+   "count": 147
+  },
+  {
+   "name": "kashiwa-ya",
+   "count": 147
+  },
+  {
+   "name": "windarteam",
+   "count": 147
+  },
+  {
+   "name": "pianiishimo",
+   "count": 146
+  },
+  {
+   "name": "zettai shoujo",
+   "count": 146
+  },
+  {
+   "name": "power slide",
+   "count": 146
+  },
+  {
+   "name": "kacchuu musume",
+   "count": 146
+  },
+  {
+   "name": "circle outerworld",
+   "count": 146
+  },
+  {
+   "name": "neko to hato",
+   "count": 146
+  },
+  {
+   "name": "craft",
+   "count": 146
+  },
+  {
+   "name": "execio",
+   "count": 146
+  },
+  {
+   "name": "singleton",
+   "count": 146
+  },
+  {
+   "name": "come through",
+   "count": 146
+  },
+  {
+   "name": "jouji mujoh",
+   "count": 146
+  },
+  {
+   "name": "insert",
+   "count": 146
+  },
+  {
+   "name": "motchie kingdom",
+   "count": 146
+  },
+  {
+   "name": "pulin nabe",
+   "count": 145
+  },
+  {
+   "name": "motsu ryouri",
+   "count": 145
+  },
+  {
+   "name": "celluloid-acme",
+   "count": 145
+  },
+  {
+   "name": "akkan-bi project",
+   "count": 145
+  },
+  {
+   "name": "semakute kurai",
+   "count": 144
+  },
+  {
+   "name": "kurubusi-kai",
+   "count": 144
+  },
+  {
+   "name": "mochi-ya",
+   "count": 144
+  },
+  {
+   "name": "remora works",
+   "count": 144
+  },
+  {
+   "name": "toraya",
+   "count": 144
+  },
+  {
+   "name": "yuki-iro",
+   "count": 144
+  },
+  {
+   "name": "shinnihon pepsitou",
+   "count": 144
+  },
+  {
+   "name": "akatsuki souken",
+   "count": 144
+  },
+  {
+   "name": "fruitsjam",
+   "count": 143
+  },
+  {
+   "name": "derlanger",
+   "count": 143
+  },
+  {
+   "name": "kawaraya honpo",
+   "count": 143
+  },
+  {
+   "name": "gadget",
+   "count": 143
+  },
+  {
+   "name": "mannen dokodoko dondodoko",
+   "count": 142
+  },
+  {
+   "name": "article 60 of criminal code",
+   "count": 142
+  },
+  {
+   "name": "shimekiri sanpunmae",
+   "count": 141
+  },
+  {
+   "name": "okina flying factory",
+   "count": 141
+  },
+  {
+   "name": "fantasy wind",
+   "count": 141
+  },
+  {
+   "name": "ohoshisamadou",
+   "count": 141
+  },
+  {
+   "name": "kuma-tan flash",
+   "count": 141
+  },
+  {
+   "name": "parupunte",
+   "count": 140
+  },
+  {
+   "name": "night fuckers",
+   "count": 140
+  },
+  {
+   "name": "rat tail",
+   "count": 140
+  },
+  {
+   "name": "acid-head",
+   "count": 140
+  },
+  {
+   "name": "nihon dandy",
+   "count": 140
+  },
+  {
+   "name": "sorairo march",
+   "count": 140
+  },
+  {
+   "name": "bakuretsu fusen",
+   "count": 140
+  },
+  {
+   "name": "cannabis",
+   "count": 140
+  },
+  {
+   "name": "akutensoushin",
+   "count": 139
+  },
+  {
+   "name": "permission",
+   "count": 139
+  },
+  {
+   "name": "toriaezu kari",
+   "count": 139
+  },
+  {
+   "name": "sigma-arts",
+   "count": 139
+  },
+  {
+   "name": "homuraya",
+   "count": 139
+  },
+  {
+   "name": "l5ex",
+   "count": 139
+  },
+  {
+   "name": "yukikagerou",
+   "count": 138
+  },
+  {
+   "name": "laminaria",
+   "count": 138
+  },
+  {
+   "name": "shining",
+   "count": 138
+  },
+  {
+   "name": "monaka udon",
+   "count": 138
+  },
+  {
+   "name": "human high-light film",
+   "count": 138
+  },
+  {
+   "name": "kuromahou kenkyuujo",
+   "count": 138
+  },
+  {
+   "name": "happy birthday",
+   "count": 138
+  },
+  {
+   "name": "himeya",
+   "count": 138
+  },
+  {
+   "name": "hyoco road",
+   "count": 137
+  },
+  {
+   "name": "studio triumph",
+   "count": 137
+  },
+  {
+   "name": "niratama",
+   "count": 137
+  },
+  {
+   "name": "fake an",
+   "count": 137
+  },
+  {
+   "name": "kaname",
+   "count": 137
+  },
+  {
+   "name": "camrism",
+   "count": 137
+  },
+  {
+   "name": "rinjuu circus",
+   "count": 137
+  },
+  {
+   "name": "studio n.ball",
+   "count": 137
+  },
+  {
+   "name": "redrop",
+   "count": 137
+  },
+  {
+   "name": "doronuma kyoudai",
+   "count": 137
+  },
+  {
+   "name": "sakura no tomoru hie",
+   "count": 136
+  },
+  {
+   "name": "hibon",
+   "count": 136
+  },
+  {
+   "name": "efuya",
+   "count": 136
+  },
+  {
+   "name": "urakata honpo",
+   "count": 136
+  },
+  {
+   "name": "toybox",
+   "count": 136
+  },
+  {
+   "name": "studio tiamat",
+   "count": 136
+  },
+  {
+   "name": "tamagou",
+   "count": 135
+  },
+  {
+   "name": "armadillo",
+   "count": 135
+  },
+  {
+   "name": "mikezoutei",
+   "count": 135
+  },
+  {
+   "name": "watakubi",
+   "count": 135
+  },
+  {
+   "name": "rkaffy",
+   "count": 135
+  },
+  {
+   "name": "kanten jigenryuu",
+   "count": 135
+  },
+  {
+   "name": "essentia",
+   "count": 135
+  },
+  {
+   "name": "70 nenshiki yuukyuu kikan",
+   "count": 135
+  },
+  {
+   "name": "virophilia",
+   "count": 134
+  },
+  {
+   "name": "granada sky",
+   "count": 134
+  },
+  {
+   "name": "takumi na muchi",
+   "count": 134
+  },
+  {
+   "name": "akusei-shinseibutsu",
+   "count": 134
+  },
+  {
+   "name": "heatwave",
+   "count": 134
+  },
+  {
+   "name": "momonga club",
+   "count": 134
+  },
+  {
+   "name": "oretachi misnon ikka",
+   "count": 134
+  },
+  {
+   "name": "kansai gyogyou kyoudou kumiai",
+   "count": 134
+  },
+  {
+   "name": "mist night",
+   "count": 133
+  },
+  {
+   "name": "alps",
+   "count": 133
+  },
+  {
+   "name": "service heaven",
+   "count": 133
+  },
+  {
+   "name": "m",
+   "count": 133
+  },
+  {
+   "name": "acid eaters",
+   "count": 133
+  },
+  {
+   "name": "chocolate latte",
+   "count": 133
+  },
+  {
+   "name": "ssb",
+   "count": 132
+  },
+  {
+   "name": "oneone1",
+   "count": 132
+  },
+  {
+   "name": "molotov cocktail",
+   "count": 132
+  },
+  {
+   "name": "venom",
+   "count": 132
+  },
+  {
+   "name": "ame nochi yuki",
+   "count": 131
+  },
+  {
+   "name": "type-g",
+   "count": 131
+  },
+  {
+   "name": "zenra qq",
+   "count": 130
+  },
+  {
+   "name": "slime kikaku",
+   "count": 130
+  },
+  {
+   "name": "supe",
+   "count": 130
+  },
+  {
+   "name": "astras",
+   "count": 130
+  },
+  {
+   "name": "studio kyawn",
+   "count": 130
+  },
+  {
+   "name": "haguruman",
+   "count": 130
+  },
+  {
+   "name": "puppukupu",
+   "count": 130
+  },
+  {
+   "name": "telomerena",
+   "count": 130
+  },
+  {
+   "name": "yama danchi",
+   "count": 129
+  },
+  {
+   "name": "hakutamayu",
+   "count": 129
+  },
+  {
+   "name": "chotto b-sen",
+   "count": 129
+  },
+  {
+   "name": "topgun",
+   "count": 129
+  },
+  {
+   "name": "corori",
+   "count": 129
+  },
+  {
+   "name": "wakuwaku doubutsuen",
+   "count": 129
+  },
+  {
+   "name": "basutei shower",
+   "count": 129
+  },
+  {
+   "name": "pentacle",
+   "count": 128
+  },
+  {
+   "name": "yomothuhirasaka",
+   "count": 128
+  },
+  {
+   "name": "nanmin festival",
+   "count": 128
+  },
+  {
+   "name": "otukimi koubo",
+   "count": 128
+  },
+  {
+   "name": "mean machine",
+   "count": 128
+  },
+  {
+   "name": "r.s.i.",
+   "count": 127
+  },
+  {
+   "name": "kaze no gotoku",
+   "count": 127
+  },
+  {
+   "name": "inst",
+   "count": 127
+  },
+  {
+   "name": "nozarashi",
+   "count": 127
+  },
+  {
+   "name": "senpenbankashiki",
+   "count": 127
+  },
+  {
+   "name": "otabe dynamites",
+   "count": 127
+  },
+  {
+   "name": "f taku",
+   "count": 127
+  },
+  {
+   "name": "route1",
+   "count": 126
+  },
+  {
+   "name": "kamishiki",
+   "count": 126
+  },
+  {
+   "name": "omodume",
+   "count": 126
+  },
+  {
+   "name": "shishamo house",
+   "count": 126
+  },
+  {
+   "name": "dashigara 100",
+   "count": 126
+  },
+  {
+   "name": "rotary engine",
+   "count": 126
+  },
+  {
+   "name": "pastel wing",
+   "count": 125
+  },
+  {
+   "name": "garyuh-chitai",
+   "count": 125
+  },
+  {
+   "name": "potato salad",
+   "count": 125
+  },
+  {
+   "name": "global one",
+   "count": 125
+  },
+  {
+   "name": "wakamaker",
+   "count": 125
+  },
+  {
+   "name": "radiostar",
+   "count": 125
+  },
+  {
+   "name": "chocolate synapse",
+   "count": 124
+  },
+  {
+   "name": "chinzuri bop",
+   "count": 124
+  },
+  {
+   "name": "wasabi",
+   "count": 124
+  },
+  {
+   "name": "senya sabou",
+   "count": 124
+  },
+  {
+   "name": "project harakiri",
+   "count": 124
+  },
+  {
+   "name": "the waidan",
+   "count": 123
+  },
+  {
+   "name": "rev3",
+   "count": 123
+  },
+  {
+   "name": "zetsubou shiromuji",
+   "count": 123
+  },
+  {
+   "name": "k2 tomo no kai",
+   "count": 123
+  },
+  {
+   "name": "tetrodotoxin",
+   "count": 123
+  },
+  {
+   "name": "mieow",
+   "count": 123
+  },
+  {
+   "name": "lemonmaiden",
+   "count": 123
+  },
+  {
+   "name": "hachihachihachi",
+   "count": 122
+  },
+  {
+   "name": "kaoinshou zero",
+   "count": 122
+  },
+  {
+   "name": "teruterugirl",
+   "count": 122
+  },
+  {
+   "name": "a gokuburi",
+   "count": 122
+  },
+  {
+   "name": "twilight road",
+   "count": 122
+  },
+  {
+   "name": "mekongdelta",
+   "count": 122
+  },
+  {
+   "name": "takanaedoko",
+   "count": 122
+  },
+  {
+   "name": "tousen soudou",
+   "count": 122
+  },
+  {
+   "name": "sarurururu",
+   "count": 122
+  },
+  {
+   "name": "mugenkidou a",
+   "count": 122
+  },
+  {
+   "name": "idenshi no fune",
+   "count": 122
+  },
+  {
+   "name": "meshikutteneru.",
+   "count": 122
+  },
+  {
+   "name": "red ribbon revenger",
+   "count": 122
+  },
+  {
+   "name": "atelier maso",
+   "count": 121
+  },
+  {
+   "name": "box",
+   "count": 121
+  },
+  {
+   "name": "henreikai",
+   "count": 121
+  },
+  {
+   "name": "kebero corporation",
+   "count": 121
+  },
+  {
+   "name": "yokohama junky",
+   "count": 121
+  },
+  {
+   "name": "fakestar",
+   "count": 121
+  },
+  {
+   "name": "amakuchi syoujo",
+   "count": 120
+  },
+  {
+   "name": "ame usagi",
+   "count": 120
+  },
+  {
+   "name": "okosama lunch",
+   "count": 120
+  },
+  {
+   "name": "shallot coco",
+   "count": 120
+  },
+  {
+   "name": "seisui bar",
+   "count": 119
+  },
+  {
+   "name": "sorairo panda",
+   "count": 119
+  },
+  {
+   "name": "pixel cot.",
+   "count": 119
+  },
+  {
+   "name": "k plus w",
+   "count": 119
+  },
+  {
+   "name": "eclipse",
+   "count": 119
+  },
+  {
+   "name": "ponkotsu works",
+   "count": 119
+  },
+  {
+   "name": "salt peanuts",
+   "count": 119
+  },
+  {
+   "name": "mahjong yugen co.ltd 58",
+   "count": 119
+  },
+  {
+   "name": "yamitsuki honpo",
+   "count": 118
+  },
+  {
+   "name": "hoyoyodou",
+   "count": 118
+  },
+  {
+   "name": "ranshi to kimi to.",
+   "count": 118
+  },
+  {
+   "name": "chotto dake aruyo.",
+   "count": 118
+  },
+  {
+   "name": "esuesu",
+   "count": 118
+  },
+  {
+   "name": "shinenkan",
+   "count": 118
+  },
+  {
+   "name": "p.a. project",
+   "count": 118
+  },
+  {
+   "name": "g-scan corp.",
+   "count": 118
+  },
+  {
+   "name": "primal gym",
+   "count": 118
+  },
+  {
+   "name": "uguisuya",
+   "count": 118
+  },
+  {
+   "name": "yuriru-rarika",
+   "count": 117
+  },
+  {
+   "name": "douganebuibui",
+   "count": 117
+  },
+  {
+   "name": "art jam",
+   "count": 117
+  },
+  {
+   "name": "shinohara heavy industry",
+   "count": 117
+  },
+  {
+   "name": "ororiya enpitsudo",
+   "count": 117
+  },
+  {
+   "name": "ebitendon",
+   "count": 117
+  },
+  {
+   "name": "yuunabe shinkouchuu",
+   "count": 117
+  },
+  {
+   "name": "circle roman hikou",
+   "count": 117
+  },
+  {
+   "name": "gamushara",
+   "count": 116
+  },
+  {
+   "name": "hikiwari nattou",
+   "count": 116
+  },
+  {
+   "name": "hitotsukami",
+   "count": 116
+  },
+  {
+   "name": "magono-tei",
+   "count": 116
+  },
+  {
+   "name": "tanuking sleep",
+   "count": 116
+  },
+  {
+   "name": "rbooks",
+   "count": 116
+  },
+  {
+   "name": "jibaku-system",
+   "count": 116
+  },
+  {
+   "name": "sugar berry syrup",
+   "count": 116
+  },
+  {
+   "name": "kuma qm",
+   "count": 115
+  },
+  {
+   "name": "circle tokomaya",
+   "count": 115
+  },
+  {
+   "name": "animal service",
+   "count": 115
+  },
+  {
+   "name": "unknown",
+   "count": 115
+  },
+  {
+   "name": "hy-dou",
+   "count": 115
+  },
+  {
+   "name": "sweet pea",
+   "count": 115
+  },
+  {
+   "name": "cool brain",
+   "count": 115
+  },
+  {
+   "name": "go go heaven",
+   "count": 115
+  },
+  {
+   "name": "ani ga saru",
+   "count": 115
+  },
+  {
+   "name": "moe hime rengou",
+   "count": 115
+  },
+  {
+   "name": "uousaohkoku",
+   "count": 115
+  },
+  {
+   "name": "nanatsu no kagiana",
+   "count": 115
+  },
+  {
+   "name": "king revolver",
+   "count": 115
+  },
+  {
+   "name": "kujira logic",
+   "count": 115
+  },
+  {
+   "name": "mitari gakuen",
+   "count": 114
+  },
+  {
+   "name": "digianko",
+   "count": 114
+  },
+  {
+   "name": "athome shuka",
+   "count": 114
+  },
+  {
+   "name": "rosetta stone",
+   "count": 114
+  },
+  {
+   "name": "happiness milk",
+   "count": 114
+  },
+  {
+   "name": "hadairo rooibos tea",
+   "count": 114
+  },
+  {
+   "name": "akuten soushin",
+   "count": 114
+  },
+  {
+   "name": "54burger",
+   "count": 114
+  },
+  {
+   "name": "god ryokutya",
+   "count": 114
+  },
+  {
+   "name": "morimiyakan",
+   "count": 114
+  },
+  {
+   "name": "g-power",
+   "count": 114
+  },
+  {
+   "name": "kaiten sommelier",
+   "count": 114
+  },
+  {
+   "name": "kakuzatou",
+   "count": 113
+  },
+  {
+   "name": "shiitake nouen",
+   "count": 113
+  },
+  {
+   "name": "kokonokiya",
+   "count": 113
+  },
+  {
+   "name": "odenden",
+   "count": 113
+  },
+  {
+   "name": "gokusaishiki",
+   "count": 113
+  },
+  {
+   "name": "hooliganism",
+   "count": 113
+  },
+  {
+   "name": "paranoia cat",
+   "count": 113
+  },
+  {
+   "name": "pollinosis",
+   "count": 113
+  },
+  {
+   "name": "mentaiko",
+   "count": 113
+  },
+  {
+   "name": "ai wa kurayami",
+   "count": 113
+  },
+  {
+   "name": "mebius no wa",
+   "count": 112
+  },
+  {
+   "name": "okina keikaku",
+   "count": 112
+  },
+  {
+   "name": "hirojuu renshuuchou",
+   "count": 112
+  },
+  {
+   "name": "choujikuu yousai kachuusha",
+   "count": 112
+  },
+  {
+   "name": "contamination",
+   "count": 112
+  },
+  {
+   "name": "ririo gatto",
+   "count": 112
+  },
+  {
+   "name": "chinpudo",
+   "count": 112
+  },
+  {
+   "name": "gallery walhalla",
+   "count": 112
+  },
+  {
+   "name": "brave heart petit",
+   "count": 112
+  },
+  {
+   "name": "metamor",
+   "count": 112
+  },
+  {
+   "name": "goshujinsama no omochabako",
+   "count": 112
+  },
+  {
+   "name": "haechaimu",
+   "count": 111
+  },
+  {
+   "name": "rorinoutage",
+   "count": 111
+  },
+  {
+   "name": "himepuchitei",
+   "count": 111
+  },
+  {
+   "name": "gomuhachi",
+   "count": 111
+  },
+  {
+   "name": "metal",
+   "count": 111
+  },
+  {
+   "name": "pink chuchu",
+   "count": 111
+  },
+  {
+   "name": "atelier maruwa",
+   "count": 111
+  },
+  {
+   "name": "studio q",
+   "count": 111
+  },
+  {
+   "name": "heisei chachamaru dou",
+   "count": 111
+  },
+  {
+   "name": "aohimo familia",
+   "count": 110
+  },
+  {
+   "name": "nanairo no neribukuro",
+   "count": 110
+  },
+  {
+   "name": "suitekiya",
+   "count": 110
+  },
+  {
+   "name": "yakiniku teikoku",
+   "count": 110
+  },
+  {
+   "name": "watsukiya",
+   "count": 110
+  },
+  {
+   "name": "calpis koubou",
+   "count": 110
+  },
+  {
+   "name": "ichinose",
+   "count": 110
+  },
+  {
+   "name": "jenoa cake",
+   "count": 110
+  },
+  {
+   "name": "ph-bu",
+   "count": 110
+  },
+  {
+   "name": "kichiku koubou",
+   "count": 110
+  },
+  {
+   "name": "hachiouji kaipan totsugeki kiheitai",
+   "count": 110
+  },
+  {
+   "name": "crowview",
+   "count": 109
+  },
+  {
+   "name": "yakitate jamaica",
+   "count": 109
+  },
+  {
+   "name": "hirahira",
+   "count": 109
+  },
+  {
+   "name": "ohtado",
+   "count": 109
+  },
+  {
+   "name": "lezmoe",
+   "count": 109
+  },
+  {
+   "name": "pandagaippiki.",
+   "count": 109
+  },
+  {
+   "name": "yan-yam",
+   "count": 109
+  },
+  {
+   "name": "asatsuki dou",
+   "count": 109
+  },
+  {
+   "name": "gachinko shobou",
+   "count": 109
+  },
+  {
+   "name": "panda 4gou",
+   "count": 108
+  },
+  {
+   "name": "satellites",
+   "count": 108
+  },
+  {
+   "name": "sekai kakumei club",
+   "count": 108
+  },
+  {
+   "name": "kuroni",
+   "count": 108
+  },
+  {
+   "name": "take out",
+   "count": 108
+  },
+  {
+   "name": "100yenmofa",
+   "count": 108
+  },
+  {
+   "name": "maniac street",
+   "count": 108
+  },
+  {
+   "name": "pink-noise",
+   "count": 108
+  },
+  {
+   "name": "activemover",
+   "count": 108
+  },
+  {
+   "name": "s shoten",
+   "count": 108
+  },
+  {
+   "name": "sanazura doujinshi hakkoujo",
+   "count": 108
+  },
+  {
+   "name": "iwashita shoten",
+   "count": 107
+  },
+  {
+   "name": "iron grimoire",
+   "count": 107
+  },
+  {
+   "name": "divine fountain",
+   "count": 107
+  },
+  {
+   "name": "starmine18",
+   "count": 107
+  },
+  {
+   "name": "uninigumi",
+   "count": 107
+  },
+  {
+   "name": "usotsukiya",
+   "count": 107
+  },
+  {
+   "name": "nejimaki kougen",
+   "count": 107
+  },
+  {
+   "name": "caramel crunch",
+   "count": 107
+  },
+  {
+   "name": "activa",
+   "count": 107
+  },
+  {
+   "name": "naya",
+   "count": 107
+  },
+  {
+   "name": "beat-pop",
+   "count": 107
+  },
+  {
+   "name": "yasrin-do",
+   "count": 107
+  },
+  {
+   "name": "hinaprin",
+   "count": 107
+  },
+  {
+   "name": "hito no fundoshi",
+   "count": 107
+  },
+  {
+   "name": "dschinghis khan no tamanegi wa ore no yome",
+   "count": 107
+  },
+  {
+   "name": "causciant",
+   "count": 107
+  },
+  {
+   "name": "type-57",
+   "count": 107
+  },
+  {
+   "name": "seven days holiday",
+   "count": 107
+  },
+  {
+   "name": "angelic feather",
+   "count": 107
+  },
+  {
+   "name": "tanic ya",
+   "count": 106
+  },
+  {
+   "name": "hokkebain",
+   "count": 106
+  },
+  {
+   "name": "sakura garden",
+   "count": 106
+  },
+  {
+   "name": "yamaguchirou",
+   "count": 106
+  },
+  {
+   "name": "sandworks",
+   "count": 106
+  },
+  {
+   "name": "intoku.info",
+   "count": 106
+  },
+  {
+   "name": "rycanthropy",
+   "count": 106
+  },
+  {
+   "name": "higuma-ya",
+   "count": 106
+  },
+  {
+   "name": "shoujo kishidan",
+   "count": 106
+  },
+  {
+   "name": "imomaru",
+   "count": 106
+  },
+  {
+   "name": "super ichigo-chan",
+   "count": 106
+  },
+  {
+   "name": "kyomu no uta",
+   "count": 106
+  },
+  {
+   "name": "wireframe",
+   "count": 106
+  },
+  {
+   "name": "atelier hachifukuan",
+   "count": 106
+  },
+  {
+   "name": "tonzura douchuu",
+   "count": 106
+  },
+  {
+   "name": "kuronisiki",
+   "count": 106
+  },
+  {
+   "name": "yamamoto",
+   "count": 106
+  },
+  {
+   "name": "syunichi kansuu",
+   "count": 105
+  },
+  {
+   "name": "batten kariba",
+   "count": 105
+  },
+  {
+   "name": "poison gray",
+   "count": 105
+  },
+  {
+   "name": "titokara 2nd branch",
+   "count": 105
+  },
+  {
+   "name": "purimomo",
+   "count": 105
+  },
+  {
+   "name": "marchen box",
+   "count": 105
+  },
+  {
+   "name": "hma",
+   "count": 105
+  },
+  {
+   "name": "kocho kocho koukou",
+   "count": 105
+  },
+  {
+   "name": "kleitos",
+   "count": 105
+  },
+  {
+   "name": "super flat lolinitron",
+   "count": 105
+  },
+  {
+   "name": "botibotiikoka",
+   "count": 104
+  },
+  {
+   "name": "hiiro no kenkyuushitsu",
+   "count": 104
+  },
+  {
+   "name": "enokiya",
+   "count": 104
+  },
+  {
+   "name": "rocomani",
+   "count": 104
+  },
+  {
+   "name": "natsume benkei",
+   "count": 104
+  },
+  {
+   "name": "jukusei kakuzatou",
+   "count": 104
+  },
+  {
+   "name": "inbou no teikoku",
+   "count": 104
+  },
+  {
+   "name": "monsieur",
+   "count": 104
+  },
+  {
+   "name": "sheepfold",
+   "count": 104
+  },
+  {
+   "name": "hatena-box",
+   "count": 104
+  },
+  {
+   "name": "jingai makyou",
+   "count": 104
+  },
+  {
+   "name": "blue garnet",
+   "count": 104
+  },
+  {
+   "name": "egyptsobaya",
+   "count": 104
+  },
+  {
+   "name": "freaks",
+   "count": 104
+  },
+  {
+   "name": "fujiya",
+   "count": 104
+  },
+  {
+   "name": "wata 120 percent",
+   "count": 104
+  },
+  {
+   "name": "kyougetsutei",
+   "count": 104
+  },
+  {
+   "name": "alicesoft",
+   "count": 104
+  },
+  {
+   "name": "owakari itadaketa darou ka",
+   "count": 103
+  },
+  {
+   "name": "mikenekohanten",
+   "count": 103
+  },
+  {
+   "name": "kayoudou",
+   "count": 103
+  },
+  {
+   "name": "tokuda",
+   "count": 103
+  },
+  {
+   "name": "kudamono monogatari",
+   "count": 103
+  },
+  {
+   "name": "kitsune",
+   "count": 103
+  },
+  {
+   "name": "pe theta",
+   "count": 103
+  },
+  {
+   "name": "junginboshi",
+   "count": 103
+  },
+  {
+   "name": "luck and pluck co.",
+   "count": 103
+  },
+  {
+   "name": "nanakorobi yaoki",
+   "count": 103
+  },
+  {
+   "name": "sound milk",
+   "count": 103
+  },
+  {
+   "name": "ego dance",
+   "count": 103
+  },
+  {
+   "name": "akirerushoujo",
+   "count": 102
+  },
+  {
+   "name": "shotaian",
+   "count": 102
+  },
+  {
+   "name": "fukunoren",
+   "count": 102
+  },
+  {
+   "name": "ray-raw",
+   "count": 102
+  },
+  {
+   "name": "pink",
+   "count": 102
+  },
+  {
+   "name": "taishou romanesque",
+   "count": 102
+  },
+  {
+   "name": "ruu kikaku",
+   "count": 102
+  },
+  {
+   "name": "c.n.p",
+   "count": 102
+  },
+  {
+   "name": "tsu ga mittsu.",
+   "count": 102
+  },
+  {
+   "name": "werk",
+   "count": 102
+  },
+  {
+   "name": "takemasaya",
+   "count": 102
+  },
+  {
+   "name": "avion village",
+   "count": 102
+  },
+  {
+   "name": "the dungeon in yarn",
+   "count": 102
+  },
+  {
+   "name": "garimpeiro",
+   "count": 102
+  },
+  {
+   "name": "mugen jirai",
+   "count": 102
+  },
+  {
+   "name": "kazama dojo",
+   "count": 101
+  },
+  {
+   "name": "torano ori",
+   "count": 101
+  },
+  {
+   "name": "trigger.m",
+   "count": 101
+  },
+  {
+   "name": "paradisegom",
+   "count": 101
+  },
+  {
+   "name": "nakayohi",
+   "count": 101
+  },
+  {
+   "name": "tear drop",
+   "count": 101
+  },
+  {
+   "name": "yumesaki annai kairanban",
+   "count": 101
+  },
+  {
+   "name": "iron fin",
+   "count": 101
+  },
+  {
+   "name": "jitaku vacation",
+   "count": 101
+  },
+  {
+   "name": "studio himawari",
+   "count": 101
+  },
+  {
+   "name": "calm white",
+   "count": 100
+  },
+  {
+   "name": "haruharudo",
+   "count": 100
+  },
+  {
+   "name": "samurai ninja greentea",
+   "count": 100
+  },
+  {
+   "name": "seafox",
+   "count": 100
+  },
+  {
+   "name": "fujiya honten",
+   "count": 100
+  },
+  {
+   "name": "blue bean",
+   "count": 100
+  },
+  {
+   "name": "odin",
+   "count": 100
+  },
+  {
+   "name": "shiawase kyouwakoku",
+   "count": 100
+  },
+  {
+   "name": "furuike",
+   "count": 100
+  },
+  {
+   "name": "ochikonium",
+   "count": 100
+  },
+  {
+   "name": "korisuya",
+   "count": 100
+  },
+  {
+   "name": "f.w.zholic",
+   "count": 99
+  },
+  {
+   "name": "suinose",
+   "count": 99
+  },
+  {
+   "name": "pettan doujou",
+   "count": 99
+  },
+  {
+   "name": "ikameshi shokudou",
+   "count": 99
+  },
+  {
+   "name": "newtype kenkyuujo",
+   "count": 99
+  },
+  {
+   "name": "area14",
+   "count": 99
+  },
+  {
+   "name": "steel mayonnaise",
+   "count": 99
+  },
+  {
+   "name": "finecraft69",
+   "count": 99
+  },
+  {
+   "name": "oboro and tempo gensui dou",
+   "count": 99
+  },
+  {
+   "name": "rin",
+   "count": 99
+  },
+  {
+   "name": "kikurage-ya",
+   "count": 99
+  },
+  {
+   "name": "tomoshibiya koubou",
+   "count": 99
+  },
+  {
+   "name": "awatake",
+   "count": 99
+  },
+  {
+   "name": "shoshi magazine hitori",
+   "count": 99
+  },
+  {
+   "name": "escargot club",
+   "count": 99
+  },
+  {
+   "name": "banana style",
+   "count": 98
+  },
+  {
+   "name": "tempest",
+   "count": 98
+  },
+  {
+   "name": "aiirosakura",
+   "count": 98
+  },
+  {
+   "name": "subesube1kg",
+   "count": 98
+  },
+  {
+   "name": "nyanko batake",
+   "count": 98
+  },
+  {
+   "name": "yu-yu-tei",
+   "count": 98
+  },
+  {
+   "name": "atelier hinata",
+   "count": 98
+  },
+  {
+   "name": "aokihoshi",
+   "count": 98
+  },
+  {
+   "name": "paradise city",
+   "count": 98
+  },
+  {
+   "name": "pyramid house",
+   "count": 98
+  },
+  {
+   "name": "syunkan saidaihusoku",
+   "count": 98
+  },
+  {
+   "name": "right away",
+   "count": 98
+  },
+  {
+   "name": "senaka",
+   "count": 97
+  },
+  {
+   "name": "chabashira chainsaw",
+   "count": 97
+  }
+ ],
+ "artist": [
+  {
+   "name": "ankoman",
+   "count": 1075
+  },
+  {
+   "name": "crimson",
+   "count": 1010
+  },
+  {
+   "name": "saigado",
+   "count": 779
+  },
+  {
+   "name": "inochi wazuka",
+   "count": 678
+  },
+  {
+   "name": "itaba hiroshi",
+   "count": 675
+  },
+  {
+   "name": "osuwaani",
+   "count": 640
+  },
+  {
+   "name": "takasugi kou",
+   "count": 628
+  },
+  {
+   "name": "bai asuka",
+   "count": 606
+  },
+  {
+   "name": "sanbun kyoden",
+   "count": 603
+  },
+  {
+   "name": "nakajima yuka",
+   "count": 579
+  },
+  {
+   "name": "shiwasu no okina",
+   "count": 566
+  },
+  {
+   "name": "yukino minato",
+   "count": 563
+  },
+  {
+   "name": "mimonel",
+   "count": 559
+  },
+  {
+   "name": "nekogen",
+   "count": 559
+  },
+  {
+   "name": "fan no hitori",
+   "count": 546
+  },
+  {
+   "name": "kuroinu juu",
+   "count": 545
+  },
+  {
+   "name": "cuvie",
+   "count": 523
+  },
+  {
+   "name": "ryo",
+   "count": 499
+  },
+  {
+   "name": "ahemaru",
+   "count": 496
+  },
+  {
+   "name": "cle masahiro",
+   "count": 495
+  },
+  {
+   "name": "kawamori misaki",
+   "count": 484
+  },
+  {
+   "name": "c.r",
+   "count": 476
+  },
+  {
+   "name": "nagiyama",
+   "count": 473
+  },
+  {
+   "name": "ie",
+   "count": 470
+  },
+  {
+   "name": "charu",
+   "count": 461
+  },
+  {
+   "name": "yanagawa rio",
+   "count": 460
+  },
+  {
+   "name": "poriuretan",
+   "count": 457
+  },
+  {
+   "name": "nigiri usagi",
+   "count": 454
+  },
+  {
+   "name": "kon-kit",
+   "count": 454
+  },
+  {
+   "name": "type.90",
+   "count": 449
+  },
+  {
+   "name": "manabe jouji",
+   "count": 446
+  },
+  {
+   "name": "mogiki hayami",
+   "count": 446
+  },
+  {
+   "name": "ozaki akira",
+   "count": 442
+  },
+  {
+   "name": "terasu mc",
+   "count": 441
+  },
+  {
+   "name": "takatsu",
+   "count": 439
+  },
+  {
+   "name": "hidemaru",
+   "count": 432
+  },
+  {
+   "name": "erect sawaru",
+   "count": 432
+  },
+  {
+   "name": "alp",
+   "count": 430
+  },
+  {
+   "name": "taira hajime",
+   "count": 428
+  },
+  {
+   "name": "aoi hitori",
+   "count": 426
+  },
+  {
+   "name": "kiliu",
+   "count": 426
+  },
+  {
+   "name": "nagashima chosuke",
+   "count": 425
+  },
+  {
+   "name": "maeshima ryou",
+   "count": 423
+  },
+  {
+   "name": "inu",
+   "count": 422
+  },
+  {
+   "name": "arino hiroshi",
+   "count": 422
+  },
+  {
+   "name": "momoya show-neko",
+   "count": 421
+  },
+  {
+   "name": "kusayarou",
+   "count": 417
+  },
+  {
+   "name": "shimaji",
+   "count": 417
+  },
+  {
+   "name": "tamagoro",
+   "count": 412
+  },
+  {
+   "name": "uchi-uchi keyaki",
+   "count": 411
+  },
+  {
+   "name": "umedama nabu",
+   "count": 406
+  },
+  {
+   "name": "eb110ss",
+   "count": 405
+  },
+  {
+   "name": "asanagi",
+   "count": 405
+  },
+  {
+   "name": "arsenal",
+   "count": 403
+  },
+  {
+   "name": "hoshino ryuichi",
+   "count": 403
+  },
+  {
+   "name": "shinobu tanei",
+   "count": 402
+  },
+  {
+   "name": "date",
+   "count": 402
+  },
+  {
+   "name": "hal",
+   "count": 400
+  },
+  {
+   "name": "takase yuu",
+   "count": 400
+  },
+  {
+   "name": "ueda yuu",
+   "count": 400
+  },
+  {
+   "name": "hoshino fuuta",
+   "count": 400
+  },
+  {
+   "name": "john k. pe-ta",
+   "count": 398
+  },
+  {
+   "name": "mdo-h",
+   "count": 397
+  },
+  {
+   "name": "matsunami rumi",
+   "count": 397
+  },
+  {
+   "name": "hazuki kaoru",
+   "count": 397
+  },
+  {
+   "name": "nishikawa kou",
+   "count": 395
+  },
+  {
+   "name": "kousaka jun",
+   "count": 392
+  },
+  {
+   "name": "chuuka naruto",
+   "count": 389
+  },
+  {
+   "name": "sink",
+   "count": 386
+  },
+  {
+   "name": "asagi ryu",
+   "count": 386
+  },
+  {
+   "name": "agata",
+   "count": 384
+  },
+  {
+   "name": "ouma tokiichi",
+   "count": 382
+  },
+  {
+   "name": "grifon",
+   "count": 382
+  },
+  {
+   "name": "fuusen club",
+   "count": 378
+  },
+  {
+   "name": "chiba toshirou",
+   "count": 378
+  },
+  {
+   "name": "pon takahanada",
+   "count": 376
+  },
+  {
+   "name": "tefuru",
+   "count": 373
+  },
+  {
+   "name": "yuzuki n dash",
+   "count": 372
+  },
+  {
+   "name": "kazuhiro",
+   "count": 371
+  },
+  {
+   "name": "marui maru",
+   "count": 370
+  },
+  {
+   "name": "izumi",
+   "count": 369
+  },
+  {
+   "name": "ken",
+   "count": 368
+  },
+  {
+   "name": "fujisaka lyric",
+   "count": 368
+  },
+  {
+   "name": "marushamo",
+   "count": 366
+  },
+  {
+   "name": "eba",
+   "count": 366
+  },
+  {
+   "name": "rico",
+   "count": 365
+  },
+  {
+   "name": "r-koga",
+   "count": 363
+  },
+  {
+   "name": "kotoyoshi yumisuke",
+   "count": 361
+  },
+  {
+   "name": "toppogi",
+   "count": 358
+  },
+  {
+   "name": "equal",
+   "count": 356
+  },
+  {
+   "name": "onikubo hirohisa",
+   "count": 355
+  },
+  {
+   "name": "chiba tetsutarou",
+   "count": 354
+  },
+  {
+   "name": "tamano kedama",
+   "count": 352
+  },
+  {
+   "name": "laliberte",
+   "count": 351
+  },
+  {
+   "name": "sakai hamachi",
+   "count": 351
+  },
+  {
+   "name": "kuroiwa menou",
+   "count": 350
+  },
+  {
+   "name": "mogudan",
+   "count": 348
+  },
+  {
+   "name": "natsuka q-ya",
+   "count": 346
+  },
+  {
+   "name": "noise",
+   "count": 346
+  },
+  {
+   "name": "okina",
+   "count": 345
+  },
+  {
+   "name": "ohtomo takuji",
+   "count": 342
+  },
+  {
+   "name": "airandou",
+   "count": 340
+  },
+  {
+   "name": "nikusoukyuu",
+   "count": 340
+  },
+  {
+   "name": "haruki genia",
+   "count": 340
+  },
+  {
+   "name": "ryoh-zoh",
+   "count": 339
+  },
+  {
+   "name": "reizei",
+   "count": 338
+  },
+  {
+   "name": "zen9",
+   "count": 338
+  },
+  {
+   "name": "shouji ayumu",
+   "count": 337
+  },
+  {
+   "name": "ootsuka kotora",
+   "count": 337
+  },
+  {
+   "name": "bennys",
+   "count": 334
+  },
+  {
+   "name": "ichiri",
+   "count": 334
+  },
+  {
+   "name": "ma-kurou",
+   "count": 333
+  },
+  {
+   "name": "zero no mono",
+   "count": 333
+  },
+  {
+   "name": "fuetakishi",
+   "count": 331
+  },
+  {
+   "name": "chinzurena",
+   "count": 330
+  },
+  {
+   "name": "corundum",
+   "count": 329
+  },
+  {
+   "name": "q",
+   "count": 329
+  },
+  {
+   "name": "sanatuki",
+   "count": 327
+  },
+  {
+   "name": "sakamata nerimono",
+   "count": 327
+  },
+  {
+   "name": "yahiro pochi",
+   "count": 327
+  },
+  {
+   "name": "oouso",
+   "count": 326
+  },
+  {
+   "name": "mikoshiro honnin",
+   "count": 325
+  },
+  {
+   "name": "mitarashi kousei",
+   "count": 325
+  },
+  {
+   "name": "uru",
+   "count": 325
+  },
+  {
+   "name": "aoi manabu",
+   "count": 323
+  },
+  {
+   "name": "oyama yasunaga",
+   "count": 322
+  },
+  {
+   "name": "minazuki juuzou",
+   "count": 322
+  },
+  {
+   "name": "oyster",
+   "count": 322
+  },
+  {
+   "name": "iruma kamiri",
+   "count": 320
+  },
+  {
+   "name": "azuma yuki",
+   "count": 320
+  },
+  {
+   "name": "sena youtarou",
+   "count": 320
+  },
+  {
+   "name": "hotate-chan",
+   "count": 319
+  },
+  {
+   "name": "4uu",
+   "count": 318
+  },
+  {
+   "name": "ringo club",
+   "count": 318
+  },
+  {
+   "name": "ponsuke",
+   "count": 318
+  },
+  {
+   "name": "shikei",
+   "count": 317
+  },
+  {
+   "name": "maruta",
+   "count": 317
+  },
+  {
+   "name": "yuuki",
+   "count": 315
+  },
+  {
+   "name": "fukada takushi",
+   "count": 315
+  },
+  {
+   "name": "ozy",
+   "count": 313
+  },
+  {
+   "name": "raidon",
+   "count": 312
+  },
+  {
+   "name": "sunagawa tara",
+   "count": 312
+  },
+  {
+   "name": "naruhodo",
+   "count": 311
+  },
+  {
+   "name": "hiiragi popura",
+   "count": 310
+  },
+  {
+   "name": "ratatatat74",
+   "count": 308
+  },
+  {
+   "name": "fei",
+   "count": 308
+  },
+  {
+   "name": "clone ningen",
+   "count": 308
+  },
+  {
+   "name": "tagame gengoroh",
+   "count": 307
+  },
+  {
+   "name": "tsuyatsuya",
+   "count": 307
+  },
+  {
+   "name": "akazawa red",
+   "count": 305
+  },
+  {
+   "name": "muneshiro",
+   "count": 304
+  },
+  {
+   "name": "konomi",
+   "count": 304
+  },
+  {
+   "name": "touma itsuki",
+   "count": 304
+  },
+  {
+   "name": "kitty",
+   "count": 303
+  },
+  {
+   "name": "chouchin ankou",
+   "count": 302
+  },
+  {
+   "name": "palco nagashima",
+   "count": 301
+  },
+  {
+   "name": "kouji",
+   "count": 301
+  },
+  {
+   "name": "hino hino",
+   "count": 301
+  },
+  {
+   "name": "fujisaki hikari",
+   "count": 300
+  },
+  {
+   "name": "tamachi yuki",
+   "count": 299
+  },
+  {
+   "name": "hisui",
+   "count": 298
+  },
+  {
+   "name": "makibe kataru",
+   "count": 298
+  },
+  {
+   "name": "ozaki miray",
+   "count": 298
+  },
+  {
+   "name": "satou kuuki",
+   "count": 298
+  },
+  {
+   "name": "kokuryuugan",
+   "count": 297
+  },
+  {
+   "name": "ichitaka",
+   "count": 297
+  },
+  {
+   "name": "neromashin",
+   "count": 296
+  },
+  {
+   "name": "red-rum",
+   "count": 296
+  },
+  {
+   "name": "shinozaki rei",
+   "count": 296
+  },
+  {
+   "name": "ooshima ryou",
+   "count": 296
+  },
+  {
+   "name": "kaiduka",
+   "count": 296
+  },
+  {
+   "name": "kai hiroyuki",
+   "count": 296
+  },
+  {
+   "name": "etori yuuya",
+   "count": 295
+  },
+  {
+   "name": "kurumiya mashimin",
+   "count": 293
+  },
+  {
+   "name": "kamitou masaki",
+   "count": 292
+  },
+  {
+   "name": "takaoka motofumi",
+   "count": 292
+  },
+  {
+   "name": "jirou",
+   "count": 292
+  },
+  {
+   "name": "kiya shii",
+   "count": 292
+  },
+  {
+   "name": "wakamatsu",
+   "count": 291
+  },
+  {
+   "name": "nozarashi satoru",
+   "count": 291
+  },
+  {
+   "name": "raita",
+   "count": 290
+  },
+  {
+   "name": "nanno koto",
+   "count": 290
+  },
+  {
+   "name": "gokubuto mayuge",
+   "count": 289
+  },
+  {
+   "name": "charlie nishinaka",
+   "count": 288
+  },
+  {
+   "name": "the amanoja9",
+   "count": 287
+  },
+  {
+   "name": "karma tatsurou",
+   "count": 286
+  },
+  {
+   "name": "noripachi",
+   "count": 286
+  },
+  {
+   "name": "norakuro nero",
+   "count": 285
+  },
+  {
+   "name": "shigunyan",
+   "count": 285
+  },
+  {
+   "name": "nagare ippon",
+   "count": 285
+  },
+  {
+   "name": "yukiu con",
+   "count": 285
+  },
+  {
+   "name": "maguro teikoku",
+   "count": 285
+  },
+  {
+   "name": "kokutou nikke",
+   "count": 283
+  },
+  {
+   "name": "uran",
+   "count": 283
+  },
+  {
+   "name": "usakun",
+   "count": 282
+  },
+  {
+   "name": "gustav",
+   "count": 280
+  },
+  {
+   "name": "momonosuke",
+   "count": 280
+  },
+  {
+   "name": "kusui aruta",
+   "count": 279
+  },
+  {
+   "name": "misaki yukihiro",
+   "count": 279
+  },
+  {
+   "name": "piero",
+   "count": 279
+  },
+  {
+   "name": "hanamaki kaeru",
+   "count": 279
+  },
+  {
+   "name": "inoue yoshihisa",
+   "count": 278
+  },
+  {
+   "name": "mikemono yuu",
+   "count": 278
+  },
+  {
+   "name": "haitokukan",
+   "count": 278
+  },
+  {
+   "name": "etuzan jakusui",
+   "count": 277
+  },
+  {
+   "name": "sansyoku amido.",
+   "count": 277
+  },
+  {
+   "name": "fukudahda",
+   "count": 277
+  },
+  {
+   "name": "shinama",
+   "count": 276
+  },
+  {
+   "name": "honda arima",
+   "count": 276
+  },
+  {
+   "name": "emua",
+   "count": 275
+  },
+  {
+   "name": "gengorou",
+   "count": 274
+  },
+  {
+   "name": "shimanto shisakugata",
+   "count": 274
+  },
+  {
+   "name": "hijiri tsukasa",
+   "count": 274
+  },
+  {
+   "name": "itoyoko",
+   "count": 273
+  },
+  {
+   "name": "yumeno tanuki",
+   "count": 273
+  },
+  {
+   "name": "carn",
+   "count": 272
+  },
+  {
+   "name": "dozamura",
+   "count": 272
+  },
+  {
+   "name": "hakaba",
+   "count": 271
+  },
+  {
+   "name": "utamaro",
+   "count": 271
+  },
+  {
+   "name": "kakugari kyoudai",
+   "count": 270
+  },
+  {
+   "name": "takashi",
+   "count": 269
+  },
+  {
+   "name": "maki",
+   "count": 269
+  },
+  {
+   "name": "sahara wataru",
+   "count": 269
+  },
+  {
+   "name": "nyuu",
+   "count": 269
+  },
+  {
+   "name": "juna juna juice",
+   "count": 268
+  },
+  {
+   "name": "hyji",
+   "count": 268
+  },
+  {
+   "name": "kuro",
+   "count": 268
+  },
+  {
+   "name": "inanaki shiki",
+   "count": 266
+  },
+  {
+   "name": "bu-chan",
+   "count": 265
+  },
+  {
+   "name": "mr.way",
+   "count": 264
+  },
+  {
+   "name": "kanroame",
+   "count": 264
+  },
+  {
+   "name": "minion",
+   "count": 264
+  },
+  {
+   "name": "clover",
+   "count": 262
+  },
+  {
+   "name": "isao",
+   "count": 261
+  },
+  {
+   "name": "tanabe kyou",
+   "count": 260
+  },
+  {
+   "name": "yukiyanagi",
+   "count": 259
+  },
+  {
+   "name": "shinonome ryu",
+   "count": 259
+  },
+  {
+   "name": "hori hiroaki",
+   "count": 259
+  },
+  {
+   "name": "gonza",
+   "count": 259
+  },
+  {
+   "name": "teterun",
+   "count": 258
+  },
+  {
+   "name": "johnny",
+   "count": 258
+  },
+  {
+   "name": "itou",
+   "count": 258
+  },
+  {
+   "name": "nekomata naomi",
+   "count": 258
+  },
+  {
+   "name": "miyahara ayumu",
+   "count": 258
+  },
+  {
+   "name": "ninoko",
+   "count": 257
+  },
+  {
+   "name": "kurikara",
+   "count": 257
+  },
+  {
+   "name": "kutani",
+   "count": 256
+  },
+  {
+   "name": "haikawa hemlen",
+   "count": 256
+  },
+  {
+   "name": "yuiga naoha",
+   "count": 255
+  },
+  {
+   "name": "tsurui",
+   "count": 255
+  },
+  {
+   "name": "namonashi",
+   "count": 254
+  },
+  {
+   "name": "dokurosan",
+   "count": 254
+  },
+  {
+   "name": "gen",
+   "count": 254
+  },
+  {
+   "name": "okada kou",
+   "count": 254
+  },
+  {
+   "name": "unagimaru",
+   "count": 253
+  },
+  {
+   "name": "raymon",
+   "count": 253
+  },
+  {
+   "name": "himeno mikan",
+   "count": 253
+  },
+  {
+   "name": "arakure",
+   "count": 253
+  },
+  {
+   "name": "mmchair",
+   "count": 252
+  },
+  {
+   "name": "yassy",
+   "count": 252
+  },
+  {
+   "name": "sorimura youji",
+   "count": 252
+  },
+  {
+   "name": "nanao",
+   "count": 251
+  },
+  {
+   "name": "sagattoru",
+   "count": 251
+  },
+  {
+   "name": "yasui riosuke",
+   "count": 251
+  },
+  {
+   "name": "haruki",
+   "count": 251
+  },
+  {
+   "name": "fuyuno mikan",
+   "count": 251
+  },
+  {
+   "name": "minor boy",
+   "count": 251
+  },
+  {
+   "name": "zaki zaraki",
+   "count": 250
+  },
+  {
+   "name": "kobayashi youkoh",
+   "count": 250
+  },
+  {
+   "name": "kouzuki rio",
+   "count": 250
+  },
+  {
+   "name": "merkonig",
+   "count": 249
+  },
+  {
+   "name": "mana",
+   "count": 249
+  },
+  {
+   "name": "rit.",
+   "count": 249
+  },
+  {
+   "name": "inomaru",
+   "count": 248
+  },
+  {
+   "name": "azuse",
+   "count": 248
+  },
+  {
+   "name": "utatane hiroyuki",
+   "count": 248
+  },
+  {
+   "name": "kokekokko coma",
+   "count": 248
+  },
+  {
+   "name": "ginyou haru",
+   "count": 248
+  },
+  {
+   "name": "saida kazuaki",
+   "count": 247
+  },
+  {
+   "name": "kishizuka kenji",
+   "count": 247
+  },
+  {
+   "name": "jamming",
+   "count": 247
+  },
+  {
+   "name": "seura isago",
+   "count": 246
+  },
+  {
+   "name": "funabori nariaki",
+   "count": 246
+  },
+  {
+   "name": "distance",
+   "count": 246
+  },
+  {
+   "name": "himajin no izu",
+   "count": 245
+  },
+  {
+   "name": "darkmaya",
+   "count": 245
+  },
+  {
+   "name": "awayume",
+   "count": 245
+  },
+  {
+   "name": "fumihiro",
+   "count": 245
+  },
+  {
+   "name": "okumori boy",
+   "count": 245
+  },
+  {
+   "name": "sevengar",
+   "count": 244
+  },
+  {
+   "name": "asuhiro",
+   "count": 244
+  },
+  {
+   "name": "hatakeyama tohya",
+   "count": 243
+  },
+  {
+   "name": "otochichi",
+   "count": 243
+  },
+  {
+   "name": "somejima",
+   "count": 243
+  },
+  {
+   "name": "kimimaru",
+   "count": 242
+  },
+  {
+   "name": "alpha",
+   "count": 242
+  },
+  {
+   "name": "dokuneko noil",
+   "count": 241
+  },
+  {
+   "name": "midoh tsukasa",
+   "count": 241
+  },
+  {
+   "name": "katsurai yoshiaki",
+   "count": 241
+  },
+  {
+   "name": "takei ooki",
+   "count": 241
+  },
+  {
+   "name": "araki kanao",
+   "count": 241
+  },
+  {
+   "name": "miyasu risa",
+   "count": 240
+  },
+  {
+   "name": "haruhisky",
+   "count": 240
+  },
+  {
+   "name": "chin",
+   "count": 239
+  },
+  {
+   "name": "kamogawa tanuki",
+   "count": 239
+  },
+  {
+   "name": "kokonoki nao",
+   "count": 239
+  },
+  {
+   "name": "tanaka aji",
+   "count": 238
+  },
+  {
+   "name": "kyouichirou",
+   "count": 238
+  },
+  {
+   "name": "amano kazumi",
+   "count": 238
+  },
+  {
+   "name": "ekakibit",
+   "count": 238
+  },
+  {
+   "name": "nanamatsu kenji",
+   "count": 238
+  },
+  {
+   "name": "kojima saya",
+   "count": 238
+  },
+  {
+   "name": "horikawa gorou",
+   "count": 238
+  },
+  {
+   "name": "malcorond",
+   "count": 237
+  },
+  {
+   "name": "koutarou",
+   "count": 237
+  },
+  {
+   "name": "magifuro konnyaku",
+   "count": 237
+  },
+  {
+   "name": "shiina",
+   "count": 237
+  },
+  {
+   "name": "umino sachi",
+   "count": 237
+  },
+  {
+   "name": "aizawa hiroshi",
+   "count": 236
+  },
+  {
+   "name": "araki akira",
+   "count": 236
+  },
+  {
+   "name": "mutou mato",
+   "count": 236
+  },
+  {
+   "name": "shiokonbu",
+   "count": 236
+  },
+  {
+   "name": "takeda aranobu",
+   "count": 235
+  },
+  {
+   "name": "mutsuki",
+   "count": 235
+  },
+  {
+   "name": "takaman",
+   "count": 234
+  },
+  {
+   "name": "amanagi seiji",
+   "count": 234
+  },
+  {
+   "name": "kurenai yuuji",
+   "count": 234
+  },
+  {
+   "name": "ohigetan",
+   "count": 234
+  },
+  {
+   "name": "kitoen",
+   "count": 233
+  },
+  {
+   "name": "tanaka naburu",
+   "count": 233
+  },
+  {
+   "name": "hanpera",
+   "count": 233
+  },
+  {
+   "name": "agobitch nee-san",
+   "count": 232
+  },
+  {
+   "name": "oujano kaze",
+   "count": 232
+  },
+  {
+   "name": "asahina makoto",
+   "count": 232
+  },
+  {
+   "name": "tel",
+   "count": 232
+  },
+  {
+   "name": "marneko",
+   "count": 232
+  },
+  {
+   "name": "okawari",
+   "count": 232
+  },
+  {
+   "name": "hatoba akane",
+   "count": 231
+  },
+  {
+   "name": "jairou",
+   "count": 231
+  },
+  {
+   "name": "kurona",
+   "count": 231
+  },
+  {
+   "name": "ayano naoto",
+   "count": 231
+  },
+  {
+   "name": "homura subaru",
+   "count": 231
+  },
+  {
+   "name": "satsuki itsuka",
+   "count": 231
+  },
+  {
+   "name": "mita kurumi",
+   "count": 231
+  },
+  {
+   "name": "tomoki tomonori",
+   "count": 231
+  },
+  {
+   "name": "nishida megane",
+   "count": 230
+  },
+  {
+   "name": "juan gotoh",
+   "count": 230
+  },
+  {
+   "name": "sawayaka samehada",
+   "count": 230
+  },
+  {
+   "name": "drill murata",
+   "count": 230
+  },
+  {
+   "name": "kanten",
+   "count": 230
+  },
+  {
+   "name": "narumi yuu",
+   "count": 230
+  },
+  {
+   "name": "mil",
+   "count": 229
+  },
+  {
+   "name": "mifune seijirou",
+   "count": 229
+  },
+  {
+   "name": "teruki kuma",
+   "count": 229
+  },
+  {
+   "name": "maka fushigi",
+   "count": 229
+  },
+  {
+   "name": "king",
+   "count": 228
+  },
+  {
+   "name": "kozi",
+   "count": 228
+  },
+  {
+   "name": "aomushi",
+   "count": 228
+  },
+  {
+   "name": "ginhaha",
+   "count": 228
+  },
+  {
+   "name": "toba yuga",
+   "count": 228
+  },
+  {
+   "name": "andou hiroyuki",
+   "count": 228
+  },
+  {
+   "name": "amano ameno",
+   "count": 228
+  },
+  {
+   "name": "yukimi",
+   "count": 228
+  },
+  {
+   "name": "tenchuumaru",
+   "count": 228
+  },
+  {
+   "name": "mitsuya",
+   "count": 228
+  },
+  {
+   "name": "abe morioka",
+   "count": 227
+  },
+  {
+   "name": "gekka kaguya",
+   "count": 227
+  },
+  {
+   "name": "amahara",
+   "count": 227
+  },
+  {
+   "name": "youta",
+   "count": 227
+  },
+  {
+   "name": "nemunemu",
+   "count": 227
+  },
+  {
+   "name": "kumada",
+   "count": 227
+  },
+  {
+   "name": "yd",
+   "count": 226
+  },
+  {
+   "name": "kamino ryu-ya",
+   "count": 226
+  },
+  {
+   "name": "uziga waita",
+   "count": 226
+  },
+  {
+   "name": "chiguchi miri",
+   "count": 224
+  },
+  {
+   "name": "mamezou",
+   "count": 224
+  },
+  {
+   "name": "take",
+   "count": 224
+  },
+  {
+   "name": "yagami dai",
+   "count": 223
+  },
+  {
+   "name": "hitsujibane shinobu",
+   "count": 223
+  },
+  {
+   "name": "toyo",
+   "count": 222
+  },
+  {
+   "name": "ishimura",
+   "count": 222
+  },
+  {
+   "name": "hinemosu notari",
+   "count": 222
+  },
+  {
+   "name": "ishigaki takashi",
+   "count": 222
+  },
+  {
+   "name": "mikaduki neko",
+   "count": 222
+  },
+  {
+   "name": "sakamoto kafka",
+   "count": 221
+  },
+  {
+   "name": "korotsuke",
+   "count": 221
+  },
+  {
+   "name": "motchie",
+   "count": 220
+  },
+  {
+   "name": "fujiwara shunichi",
+   "count": 220
+  },
+  {
+   "name": "nishimaki tohru",
+   "count": 220
+  },
+  {
+   "name": "hroz",
+   "count": 220
+  },
+  {
+   "name": "ikoma ippei",
+   "count": 220
+  },
+  {
+   "name": "jackasss",
+   "count": 219
+  },
+  {
+   "name": "akuochisukii sensei",
+   "count": 219
+  },
+  {
+   "name": "keso",
+   "count": 219
+  },
+  {
+   "name": "nanohana",
+   "count": 218
+  },
+  {
+   "name": "nekoi mie",
+   "count": 218
+  },
+  {
+   "name": "rocket monkey",
+   "count": 218
+  },
+  {
+   "name": "miyashiro sousuke",
+   "count": 218
+  },
+  {
+   "name": "sanagi torajirou",
+   "count": 218
+  },
+  {
+   "name": "ruuen rouga",
+   "count": 218
+  },
+  {
+   "name": "taihei tengoku",
+   "count": 218
+  },
+  {
+   "name": "akishima shun",
+   "count": 217
+  },
+  {
+   "name": "ookami uo",
+   "count": 217
+  },
+  {
+   "name": "tomozawa shou",
+   "count": 217
+  },
+  {
+   "name": "makunouchi",
+   "count": 216
+  },
+  {
+   "name": "arai kazuki",
+   "count": 216
+  },
+  {
+   "name": "kirin kakeru",
+   "count": 216
+  },
+  {
+   "name": "ponpon",
+   "count": 215
+  },
+  {
+   "name": "pija",
+   "count": 215
+  },
+  {
+   "name": "taniguchi-san",
+   "count": 215
+  },
+  {
+   "name": "yuizaki kazuya",
+   "count": 214
+  },
+  {
+   "name": "mikami cannon",
+   "count": 214
+  },
+  {
+   "name": "yamu",
+   "count": 213
+  },
+  {
+   "name": "makuro",
+   "count": 213
+  },
+  {
+   "name": "yamamoto yoshifumi",
+   "count": 213
+  },
+  {
+   "name": "haguhagu",
+   "count": 213
+  },
+  {
+   "name": "sabuustar",
+   "count": 212
+  },
+  {
+   "name": "shirabe shiki",
+   "count": 212
+  },
+  {
+   "name": "soba",
+   "count": 212
+  },
+  {
+   "name": "tachibana yuu",
+   "count": 212
+  },
+  {
+   "name": "akino sora",
+   "count": 212
+  },
+  {
+   "name": "marugoshi",
+   "count": 212
+  },
+  {
+   "name": "hiro",
+   "count": 212
+  },
+  {
+   "name": "kitahara aki",
+   "count": 212
+  },
+  {
+   "name": "yumesaki sanjuro",
+   "count": 211
+  },
+  {
+   "name": "kojima miu",
+   "count": 211
+  },
+  {
+   "name": "remora",
+   "count": 210
+  },
+  {
+   "name": "toku",
+   "count": 210
+  },
+  {
+   "name": "shinjima saki",
+   "count": 210
+  },
+  {
+   "name": "nitta jun",
+   "count": 209
+  },
+  {
+   "name": "po-ju",
+   "count": 209
+  },
+  {
+   "name": "zurikishi",
+   "count": 208
+  },
+  {
+   "name": "ken-1",
+   "count": 208
+  },
+  {
+   "name": "maihara matsuge",
+   "count": 208
+  },
+  {
+   "name": "sumomo ex",
+   "count": 208
+  },
+  {
+   "name": "radiohead",
+   "count": 208
+  },
+  {
+   "name": "alto seneka",
+   "count": 208
+  },
+  {
+   "name": "tenma femio",
+   "count": 207
+  },
+  {
+   "name": "hamo",
+   "count": 207
+  },
+  {
+   "name": "nanase meruchi",
+   "count": 207
+  },
+  {
+   "name": "chiro",
+   "count": 207
+  },
+  {
+   "name": "hiyoshi hana",
+   "count": 207
+  },
+  {
+   "name": "kira hiroyoshi",
+   "count": 207
+  },
+  {
+   "name": "usashiro mani",
+   "count": 206
+  },
+  {
+   "name": "hindenburg",
+   "count": 206
+  },
+  {
+   "name": "komori kei",
+   "count": 206
+  },
+  {
+   "name": "random",
+   "count": 206
+  },
+  {
+   "name": "maruwa tarou",
+   "count": 206
+  },
+  {
+   "name": "kamiya ogawa",
+   "count": 205
+  },
+  {
+   "name": "awaji himeji",
+   "count": 205
+  },
+  {
+   "name": "urute",
+   "count": 205
+  },
+  {
+   "name": "yuzupon",
+   "count": 205
+  },
+  {
+   "name": "marcy dog",
+   "count": 205
+  },
+  {
+   "name": "tsukako",
+   "count": 205
+  },
+  {
+   "name": "diisuke",
+   "count": 205
+  },
+  {
+   "name": "dekosuke 18gou",
+   "count": 204
+  },
+  {
+   "name": "tsukumo gou",
+   "count": 204
+  },
+  {
+   "name": "riki",
+   "count": 204
+  },
+  {
+   "name": "hanauna",
+   "count": 204
+  },
+  {
+   "name": "meowwithme",
+   "count": 203
+  },
+  {
+   "name": "leafy",
+   "count": 203
+  },
+  {
+   "name": "kanna",
+   "count": 203
+  },
+  {
+   "name": "jun",
+   "count": 203
+  },
+  {
+   "name": "henkuma",
+   "count": 203
+  },
+  {
+   "name": "inomoto rikako",
+   "count": 203
+  },
+  {
+   "name": "itou yuuji",
+   "count": 203
+  },
+  {
+   "name": "takurou",
+   "count": 202
+  },
+  {
+   "name": "naruse hirofumi",
+   "count": 202
+  },
+  {
+   "name": "yokkora",
+   "count": 202
+  },
+  {
+   "name": "ameyama denshin",
+   "count": 202
+  },
+  {
+   "name": "tokimachi eisei",
+   "count": 202
+  },
+  {
+   "name": "rei",
+   "count": 202
+  },
+  {
+   "name": "onizuka naoshi",
+   "count": 202
+  },
+  {
+   "name": "ohsaka minami",
+   "count": 202
+  },
+  {
+   "name": "herio",
+   "count": 201
+  },
+  {
+   "name": "kaitou yuuhi",
+   "count": 201
+  },
+  {
+   "name": "zonda",
+   "count": 201
+  },
+  {
+   "name": "yue",
+   "count": 201
+  },
+  {
+   "name": "sumiya",
+   "count": 201
+  },
+  {
+   "name": "hatch",
+   "count": 201
+  },
+  {
+   "name": "nosa",
+   "count": 200
+  },
+  {
+   "name": "z-ton",
+   "count": 200
+  },
+  {
+   "name": "testa",
+   "count": 200
+  },
+  {
+   "name": "itou life",
+   "count": 200
+  },
+  {
+   "name": "tsubaki jushirou",
+   "count": 199
+  },
+  {
+   "name": "murasaki syu",
+   "count": 199
+  },
+  {
+   "name": "kino hitoshi",
+   "count": 199
+  },
+  {
+   "name": "kino",
+   "count": 199
+  },
+  {
+   "name": "kirisaki byakko",
+   "count": 199
+  },
+  {
+   "name": "nakano sora",
+   "count": 199
+  },
+  {
+   "name": "nise",
+   "count": 198
+  },
+  {
+   "name": "hiroshiki",
+   "count": 198
+  },
+  {
+   "name": "poncocchan",
+   "count": 198
+  },
+  {
+   "name": "yokoyama michiru",
+   "count": 198
+  },
+  {
+   "name": "kawakami rokkaku",
+   "count": 198
+  },
+  {
+   "name": "rebis",
+   "count": 198
+  },
+  {
+   "name": "hiyo hiyo",
+   "count": 198
+  },
+  {
+   "name": "maro",
+   "count": 197
+  },
+  {
+   "name": "aki",
+   "count": 197
+  },
+  {
+   "name": "darabuchi",
+   "count": 197
+  },
+  {
+   "name": "tokuda shinnosuke",
+   "count": 197
+  },
+  {
+   "name": "motomiya mitsuki",
+   "count": 197
+  },
+  {
+   "name": "yamamoto zenzen",
+   "count": 197
+  },
+  {
+   "name": "linda",
+   "count": 197
+  },
+  {
+   "name": "okiha",
+   "count": 196
+  },
+  {
+   "name": "tenjiku rounin",
+   "count": 196
+  },
+  {
+   "name": "kanzume",
+   "count": 196
+  },
+  {
+   "name": "aichi shiho",
+   "count": 196
+  },
+  {
+   "name": "abe inori",
+   "count": 196
+  },
+  {
+   "name": "usi",
+   "count": 196
+  },
+  {
+   "name": "hiroya",
+   "count": 196
+  },
+  {
+   "name": "otono natsu",
+   "count": 196
+  },
+  {
+   "name": "yui toshiki",
+   "count": 196
+  },
+  {
+   "name": "obui",
+   "count": 195
+  },
+  {
+   "name": "sabashi renya",
+   "count": 195
+  },
+  {
+   "name": "drachef",
+   "count": 194
+  },
+  {
+   "name": "urushihara satoshi",
+   "count": 194
+  },
+  {
+   "name": "harigane shinshi",
+   "count": 194
+  },
+  {
+   "name": "isawa nohri",
+   "count": 194
+  },
+  {
+   "name": "ippongui",
+   "count": 194
+  },
+  {
+   "name": "inazuma",
+   "count": 194
+  },
+  {
+   "name": "goya",
+   "count": 194
+  },
+  {
+   "name": "inago",
+   "count": 194
+  },
+  {
+   "name": "tks",
+   "count": 194
+  },
+  {
+   "name": "syoukaki",
+   "count": 193
+  },
+  {
+   "name": "atahuta",
+   "count": 193
+  },
+  {
+   "name": "nalvas",
+   "count": 193
+  },
+  {
+   "name": "china",
+   "count": 193
+  },
+  {
+   "name": "yoshitora",
+   "count": 193
+  },
+  {
+   "name": "giga",
+   "count": 192
+  },
+  {
+   "name": "gegera toshikazu",
+   "count": 192
+  },
+  {
+   "name": "yanagi masashi",
+   "count": 192
+  },
+  {
+   "name": "kurogane kenn",
+   "count": 192
+  },
+  {
+   "name": "kazuma muramasa",
+   "count": 192
+  },
+  {
+   "name": "asahina hikage",
+   "count": 192
+  },
+  {
+   "name": "mikami mika",
+   "count": 192
+  },
+  {
+   "name": "isorashi",
+   "count": 192
+  },
+  {
+   "name": "jin",
+   "count": 192
+  },
+  {
+   "name": "sawada daisuke",
+   "count": 192
+  },
+  {
+   "name": "kittsu",
+   "count": 191
+  },
+  {
+   "name": "muronaga chaashuu",
+   "count": 191
+  },
+  {
+   "name": "yukiusagi.",
+   "count": 191
+  },
+  {
+   "name": "minority",
+   "count": 190
+  },
+  {
+   "name": "modaetei anetarou",
+   "count": 190
+  },
+  {
+   "name": "unno hotaru",
+   "count": 190
+  },
+  {
+   "name": "h9",
+   "count": 190
+  },
+  {
+   "name": "zukiki",
+   "count": 190
+  },
+  {
+   "name": "takayaki",
+   "count": 190
+  },
+  {
+   "name": "makin",
+   "count": 189
+  },
+  {
+   "name": "kidouchi kon",
+   "count": 189
+  },
+  {
+   "name": "syouryuupen",
+   "count": 189
+  },
+  {
+   "name": "hanabi",
+   "count": 189
+  },
+  {
+   "name": "warashibe",
+   "count": 189
+  },
+  {
+   "name": "kumoemon",
+   "count": 189
+  },
+  {
+   "name": "fujisaka kuuki",
+   "count": 189
+  },
+  {
+   "name": "suzunone rena",
+   "count": 189
+  },
+  {
+   "name": "nagare hyo-go",
+   "count": 189
+  },
+  {
+   "name": "yanagi hirohiko",
+   "count": 189
+  },
+  {
+   "name": "atage",
+   "count": 189
+  },
+  {
+   "name": "shiomaneki",
+   "count": 189
+  },
+  {
+   "name": "yositama",
+   "count": 189
+  },
+  {
+   "name": "kumoi takashi",
+   "count": 189
+  },
+  {
+   "name": "rusty soul",
+   "count": 189
+  },
+  {
+   "name": "poshi",
+   "count": 189
+  },
+  {
+   "name": "kanabun",
+   "count": 188
+  },
+  {
+   "name": "takeyuu",
+   "count": 188
+  },
+  {
+   "name": "ishino kanon",
+   "count": 188
+  },
+  {
+   "name": "harazaki takuma",
+   "count": 188
+  },
+  {
+   "name": "kizuki aruchu",
+   "count": 188
+  },
+  {
+   "name": "hatoya mameshichi",
+   "count": 188
+  },
+  {
+   "name": "juubaori mashumaro",
+   "count": 188
+  },
+  {
+   "name": "tanaka decilitre",
+   "count": 188
+  },
+  {
+   "name": "danimaru",
+   "count": 187
+  },
+  {
+   "name": "sugar milk",
+   "count": 187
+  },
+  {
+   "name": "remu",
+   "count": 187
+  },
+  {
+   "name": "lefthand",
+   "count": 187
+  },
+  {
+   "name": "kawady max",
+   "count": 187
+  },
+  {
+   "name": "shimuro itaru",
+   "count": 186
+  },
+  {
+   "name": "aoki kanji",
+   "count": 186
+  },
+  {
+   "name": "takei masaki",
+   "count": 186
+  },
+  {
+   "name": "chaccu",
+   "count": 186
+  },
+  {
+   "name": "machida hiraku",
+   "count": 186
+  },
+  {
+   "name": "miharu",
+   "count": 186
+  },
+  {
+   "name": "gibuchoko",
+   "count": 186
+  },
+  {
+   "name": "himadara",
+   "count": 186
+  },
+  {
+   "name": "satou chagashi",
+   "count": 186
+  },
+  {
+   "name": "orukoa",
+   "count": 185
+  },
+  {
+   "name": "leonat",
+   "count": 185
+  },
+  {
+   "name": "endou okito",
+   "count": 185
+  },
+  {
+   "name": "tana",
+   "count": 185
+  },
+  {
+   "name": "miya9",
+   "count": 185
+  },
+  {
+   "name": "kusatsu terunyo",
+   "count": 185
+  },
+  {
+   "name": "narita kyousha",
+   "count": 185
+  },
+  {
+   "name": "mokkouyou bond",
+   "count": 185
+  },
+  {
+   "name": "tanishi",
+   "count": 185
+  },
+  {
+   "name": "siina yuuki",
+   "count": 184
+  },
+  {
+   "name": "ryuuki yumi",
+   "count": 184
+  },
+  {
+   "name": "chataro",
+   "count": 184
+  },
+  {
+   "name": "shioya maico",
+   "count": 184
+  },
+  {
+   "name": "mochi",
+   "count": 184
+  },
+  {
+   "name": "shuten douji",
+   "count": 184
+  },
+  {
+   "name": "itou ei",
+   "count": 184
+  },
+  {
+   "name": "kitaku",
+   "count": 183
+  },
+  {
+   "name": "sasachinn",
+   "count": 183
+  },
+  {
+   "name": "kurosawa kiyotaka",
+   "count": 183
+  },
+  {
+   "name": "kannaduki kanna",
+   "count": 183
+  },
+  {
+   "name": "musashi daichi",
+   "count": 183
+  },
+  {
+   "name": "jeanne dack",
+   "count": 183
+  },
+  {
+   "name": "hyocorou",
+   "count": 183
+  },
+  {
+   "name": "morishima kon",
+   "count": 183
+  },
+  {
+   "name": "higashitotsuka raisuta",
+   "count": 183
+  },
+  {
+   "name": "shunjou shuusuke",
+   "count": 183
+  },
+  {
+   "name": "maki hideto",
+   "count": 183
+  },
+  {
+   "name": "fumitsuki sou",
+   "count": 182
+  },
+  {
+   "name": "dowman sayman",
+   "count": 182
+  },
+  {
+   "name": "hikoma hiroyuki",
+   "count": 182
+  },
+  {
+   "name": "wanyanaguda",
+   "count": 182
+  },
+  {
+   "name": "hechi",
+   "count": 182
+  },
+  {
+   "name": "nanjou asuka",
+   "count": 181
+  },
+  {
+   "name": "shiina kazuki",
+   "count": 181
+  },
+  {
+   "name": "shousan bouzu",
+   "count": 181
+  },
+  {
+   "name": "yu-ri",
+   "count": 181
+  },
+  {
+   "name": "karateka value",
+   "count": 181
+  },
+  {
+   "name": "kasukabe taro",
+   "count": 181
+  },
+  {
+   "name": "akiduki akina",
+   "count": 181
+  },
+  {
+   "name": "itami",
+   "count": 180
+  },
+  {
+   "name": "tachibana naoki",
+   "count": 180
+  },
+  {
+   "name": "oobayashi mori",
+   "count": 180
+  },
+  {
+   "name": "kawaraya a-ta",
+   "count": 180
+  },
+  {
+   "name": "heriyama",
+   "count": 180
+  },
+  {
+   "name": "kotobuki kazuki",
+   "count": 180
+  },
+  {
+   "name": "ice",
+   "count": 180
+  },
+  {
+   "name": "ashiomi masato",
+   "count": 180
+  },
+  {
+   "name": "takei tsukasa",
+   "count": 180
+  },
+  {
+   "name": "hoshiai hilo",
+   "count": 180
+  },
+  {
+   "name": "kouda tomohiro",
+   "count": 180
+  },
+  {
+   "name": "konnyaku",
+   "count": 179
+  },
+  {
+   "name": "akahito",
+   "count": 179
+  },
+  {
+   "name": "hozumi kenji",
+   "count": 179
+  },
+  {
+   "name": "kaname aomame",
+   "count": 179
+  },
+  {
+   "name": "a-10",
+   "count": 179
+  },
+  {
+   "name": "jyura",
+   "count": 179
+  },
+  {
+   "name": "sengoku-kun",
+   "count": 179
+  },
+  {
+   "name": "tange suzuki",
+   "count": 178
+  },
+  {
+   "name": "sakaki utamaru",
+   "count": 178
+  },
+  {
+   "name": "matou",
+   "count": 178
+  },
+  {
+   "name": "itachou",
+   "count": 178
+  },
+  {
+   "name": "mizuhara yuu",
+   "count": 178
+  },
+  {
+   "name": "aimaitei umami",
+   "count": 178
+  },
+  {
+   "name": "rindou",
+   "count": 178
+  },
+  {
+   "name": "tukimi daifuku",
+   "count": 177
+  },
+  {
+   "name": "hazuki",
+   "count": 177
+  },
+  {
+   "name": "n.o. chachamaru",
+   "count": 177
+  },
+  {
+   "name": "shigemaru shigeru",
+   "count": 176
+  },
+  {
+   "name": "suga hideo",
+   "count": 176
+  },
+  {
+   "name": "tirotata",
+   "count": 176
+  },
+  {
+   "name": "suzuki address",
+   "count": 176
+  },
+  {
+   "name": "musashino sekai",
+   "count": 176
+  },
+  {
+   "name": "kosuke haruhito",
+   "count": 176
+  },
+  {
+   "name": "zan",
+   "count": 176
+  },
+  {
+   "name": "yamamoto",
+   "count": 175
+  },
+  {
+   "name": "amamiya mizuki",
+   "count": 175
+  },
+  {
+   "name": "takapi",
+   "count": 175
+  },
+  {
+   "name": "shion",
+   "count": 175
+  },
+  {
+   "name": "asaki takayuki",
+   "count": 175
+  },
+  {
+   "name": "kawaisaw",
+   "count": 175
+  },
+  {
+   "name": "puyocha",
+   "count": 174
+  },
+  {
+   "name": "sakurazawa izumi",
+   "count": 174
+  },
+  {
+   "name": "tksn",
+   "count": 174
+  },
+  {
+   "name": "ponkotsu works",
+   "count": 174
+  },
+  {
+   "name": "ebisubashi seizou",
+   "count": 174
+  },
+  {
+   "name": "ogu",
+   "count": 174
+  },
+  {
+   "name": "kuon michiyoshi",
+   "count": 174
+  },
+  {
+   "name": "sage joh",
+   "count": 174
+  },
+  {
+   "name": "imajin kouji",
+   "count": 173
+  },
+  {
+   "name": "mashiro shirako",
+   "count": 173
+  },
+  {
+   "name": "chacharan",
+   "count": 173
+  },
+  {
+   "name": "katou chakichi",
+   "count": 173
+  },
+  {
+   "name": "hayashida toranosuke",
+   "count": 173
+  },
+  {
+   "name": "matsuno susumu",
+   "count": 173
+  },
+  {
+   "name": "ra-men",
+   "count": 173
+  },
+  {
+   "name": "oota takeshi",
+   "count": 173
+  },
+  {
+   "name": "shijima yukio",
+   "count": 173
+  },
+  {
+   "name": "katsura airi",
+   "count": 173
+  },
+  {
+   "name": "monchan rev3",
+   "count": 172
+  },
+  {
+   "name": "try",
+   "count": 172
+  },
+  {
+   "name": "ameto yuki",
+   "count": 172
+  },
+  {
+   "name": "yam",
+   "count": 172
+  },
+  {
+   "name": "kuromotokun",
+   "count": 172
+  },
+  {
+   "name": "oryou",
+   "count": 172
+  },
+  {
+   "name": "misao.",
+   "count": 172
+  },
+  {
+   "name": "niro",
+   "count": 172
+  },
+  {
+   "name": "sasayuki",
+   "count": 172
+  },
+  {
+   "name": "chinbotsu",
+   "count": 172
+  },
+  {
+   "name": "tawara hiryuu",
+   "count": 172
+  },
+  {
+   "name": "saeki tatsuya",
+   "count": 172
+  },
+  {
+   "name": "hontoku",
+   "count": 171
+  },
+  {
+   "name": "matsuriuta",
+   "count": 171
+  },
+  {
+   "name": "makita aoi",
+   "count": 171
+  },
+  {
+   "name": "hattori mitsuka",
+   "count": 171
+  },
+  {
+   "name": "hiryuu ran",
+   "count": 171
+  },
+  {
+   "name": "yaminabe",
+   "count": 171
+  },
+  {
+   "name": "inaba cozy",
+   "count": 171
+  },
+  {
+   "name": "murata.",
+   "count": 171
+  },
+  {
+   "name": "fujimoto hideaki",
+   "count": 171
+  },
+  {
+   "name": "ramanda",
+   "count": 170
+  },
+  {
+   "name": "tottotonero tarou.",
+   "count": 170
+  },
+  {
+   "name": "yamada gogogo",
+   "count": 170
+  },
+  {
+   "name": "heiqing langjun",
+   "count": 170
+  },
+  {
+   "name": "don shigeru",
+   "count": 170
+  },
+  {
+   "name": "nanami shizuka",
+   "count": 170
+  },
+  {
+   "name": "souryuu",
+   "count": 170
+  },
+  {
+   "name": "horori",
+   "count": 169
+  },
+  {
+   "name": "henrybird",
+   "count": 169
+  },
+  {
+   "name": "nori",
+   "count": 169
+  },
+  {
+   "name": "yamazaki kazuma",
+   "count": 169
+  },
+  {
+   "name": "kanyapyi",
+   "count": 169
+  },
+  {
+   "name": "katou jun",
+   "count": 169
+  },
+  {
+   "name": "petenshi",
+   "count": 169
+  },
+  {
+   "name": "momofuki rio",
+   "count": 169
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+# ── 憑證：絕對不能進 repo ──────────────────────────────────────────
+token.env
+token.env.txt
+.env
+
+# ── 執行期資料：會被 bot 持續改寫 ───────────────────────────────────
+# ⚠️ 這些檔案如果被 git 追蹤，會有兩個嚴重後果：
+#   1) git pull 會因為「本地檔案已修改」而失敗（啟動腳本每次都會 pull）
+#   2) 若有人 git add . && push，玩家資料就會被推上（目前是公開 repo！）
+profile_data/
+favorites_data/
+comic_cache.json
+cogs/nhentai_download_cache.json
+log_channel.json
+global_feedback_channel.json
+feedback_settings.json
+cogs/fixlink_settings.json
+restart_flag.json
+
+# ── 執行期產物 ──────────────────────────────────────────────────────
+bot.log
+bot.log.*
+__pycache__/
+*.pyc
+*.pyo
+
+# pip 快取（.cache/pip/... 內含數百個檔案，與專案無關）
+.cache/
+
+# 下載到機器人的虛擬環境（.local/lib/python3.11/site-packages/...）
+# ⚠️ 這裡面有「2454 個檔案」，是 pip 安裝的第三方套件，不是本專案的程式碼。
+#    依賴請用 requirements.txt 重建，不要把整個 venv 推上 repo。
+.local/
+
+# ⚠️ 新增的執行期 json 請務必比照上面逐檔列出，不要用 `*.json` 一次全包 ——
+#    那會連 tools/ 底下要進版控的資料檔（如 term_quality.json）一起排除。
+
+# tools/ 測試用的暫存資料夾（test_autorestart.py 會建立與刪除；
+# 若測試中途被中斷而殘留，不該進 repo）
+tools/_scratch_test_tmp/
+
+# ── 翻譯功能的執行期快取 ────────────────────────────────────────────
+# 🌐 cogs/translate.py 會把翻好的書名寫進這個檔（30 天有效、上限 2000 筆）。
+# 它純粹是快取，刪掉只會讓下次查詢重新打一次機翻 API，不影響任何資料，
+# 而且會隨使用者查詢不斷改寫 —— 跟 comic_cache.json 一樣不該進 repo。
+cogs/translate_cache.json
+cogs/translate_cache.tmp
