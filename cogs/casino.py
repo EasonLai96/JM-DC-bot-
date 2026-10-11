@@ -32,28 +32,59 @@ class Casino(commands.Cog):
         # 玩家，而且永遠不會被移除 —— 只贏過一次的玩家也會留下一筆 0。這裡在每次
         # 累加時順手修剪掉值為 0 的舊紀錄，讓它的大小只跟「當下連輸中的人數」有關。
         self.loss_streaks = {}
+        # 🛠️ 修復（小額預熱套利）：原本救濟金只看「連輸幾把」，與下注額無關，
+        # 所以可以用 1 MP 故意輸兩把預熱，第三把改押大注 —— 觸發時退款卻是按
+        # 大注的 50% 計算，把莊家優勢反轉成穩定正收益（實測 dice +20%）。
+        # 這裡額外記下「這段連敗期間的最小下注額」，救濟金一律以最小額計算，
+        # 讓預熱完全沒有套利空間，同時保留原本「連輸 3 把給安慰獎」的設計。
+        self.loss_streak_min_bet = {}
         # 🔒 紀錄目前正在進行賭局（已扣款但尚未結算）的玩家，防止旋轉動畫等待期間被重複觸發造成併發扣款漏洞
         self.active_players = set()
 
-    def _bump_loss_streak(self, uid: int) -> int:
+    def _bump_loss_streak(self, uid: int, bet: int = 0) -> int:
         """連輸次數 +1，回傳新值；必要時修剪掉已經歸零的舊紀錄。"""
         self.loss_streaks[uid] = self.loss_streaks.get(uid, 0) + 1
+        # 同步記下這段連敗期間的最小下注額（救濟金的計算基準）
+        prev = self.loss_streak_min_bet.get(uid)
+        self.loss_streak_min_bet[uid] = bet if prev is None else min(prev, bet)
         if len(self.loss_streaks) > self.MAX_LOSS_STREAK_ENTRIES:
             for k in [k for k, v in self.loss_streaks.items() if v <= 0]:
                 self.loss_streaks.pop(k, None)
+                self.loss_streak_min_bet.pop(k, None)
         return self.loss_streaks[uid]
 
+    def _clear_loss_streak(self, uid: int) -> None:
+        """歸零連輸計數，同時清掉該段連敗的最小下注紀錄。"""
+        self.loss_streaks[uid] = 0
+        self.loss_streak_min_bet.pop(uid, None)
+
+    def _relief_refund(self, uid: int, bet: int) -> int:
+        """平庸之福的連輸救濟金。
+
+        🛠️ 以「這段連敗期間的最小下注額」為基準，而不是當前這一把的下注額 ——
+        否則只要用小額預熱兩把、第三把押大注，就能拿到大注的 50% 退款。
+        """
+        min_bet = min(self.loss_streak_min_bet.get(uid, bet), bet)
+        return int(min_bet * 0.5)
+
     def _check_profession_flow(self, prof_name: str) -> str:
-        """根據職業名稱精準分析流派"""
-        if not prof_name:
-            return "平庸之福流"
-        if any(k in prof_name for k in ["科技", "程式", "宅", "潛水", "開發"]):
-            return "時空定錨流"
-        if any(k in prof_name for k in ["商", "精明", "錢", "走私", "粗心"]):
-            return "結晶走私流"
-        if any(k in prof_name for k in ["無業", "遊民", "新手", "平民"]):
-            return "平庸之福流"
-        return "萌力暴走流"
+        """根據職業名稱精準分析流派。
+
+        🛠️ 修復（與經濟系統判定不一致）：原本這裡自己維護一份關鍵字表，與
+        profile_store.get_profession_talent() 的結果不一致 —— 例如官方選項
+        「時空定錨者」在經濟系統修好後會被判為時空定錨，但這裡因為關鍵字表
+        只有「科技/程式/宅/潛水/開發」而判成萌力暴走流，同一位玩家在賭場與
+        /hourly 會拿到不同流派。現在改為直接複用同一個判定函式，兩邊永遠一致。
+        """
+        try:
+            # ⚠️ 保留原本「空職業視為平庸之福」的行為：profile_store 對空字串的
+            #    fallback 是萌力暴走，兩者原本就不一致，這裡以賭場原本的語意為準。
+            if not prof_name or not prof_name.strip():
+                return "平庸之福流"
+            return f"{profile_store.get_profession_talent(prof_name)}流"
+        except Exception:
+            # 判定失敗時保守回傳預設流派，不讓賭局因此中斷
+            return "萌力暴走流"
 
     def _calc_tax(self, amount: int, rate: float = 0.05) -> int:
         """統一計算賭場稅。只要有應稅金額（amount > 0）就至少抽 1，避免小額下注因無條件捨去而完全免稅。"""
@@ -80,7 +111,7 @@ class Casino(commands.Cog):
     # ==========================================
     # 🎲 遊戲一：命運極限雙骰 (/dice)
     # ==========================================
-    @app_commands.command(name="dice", description="🪐 時空裂縫賭場：命運雙骰對決，支援結晶豪賭，勝負一瞬間！")
+    @app_commands.command(name="dice", description="擲骰比大小")
     @app_commands.describe(
         數量="你要下注的貨幣數量",
         貨幣類型="請選擇下注 MP 還是稀有的 DC 結晶"
@@ -157,7 +188,7 @@ class Casino(commands.Cog):
                         embed.description = f"🎉 **恭喜獲勝！** 贏得了 **`{win_net:,}` 次元結晶 (DC)**！"
                     await profile_store.add_dc(uid, 數量 + win_net)  # 本金 + 淨利
                 
-                self.loss_streaks[uid] = 0
+                self._clear_loss_streak(uid)
                 embed.color = discord.Color.green()
 
             elif p_total < b_total:
@@ -167,14 +198,15 @@ class Casino(commands.Cog):
                 
                     # 平庸之福流 連輸安慰補償判定
                     if flow == "平庸之福流":
-                        self._bump_loss_streak(uid)
+                        self._bump_loss_streak(uid, 數量)
                         if self.loss_streaks[uid] >= 3:
-                            refund = int(數量 * 0.5)
+                            # 🛠️ 以連敗期間的最小下注額為基準，避免小額預熱套利
+                            refund = self._relief_refund(uid, 數量)
                             await profile_store.add_mp(uid, refund)
                             embed.description += f"\n🌱 **【平庸之福】特權發動：** 偵測到連續慘輸 {self.loss_streaks[uid]} 把，命運時空同情補償返還 **`{refund:,}` MP** 救濟金！"
-                            self.loss_streaks[uid] = 0
+                            self._clear_loss_streak(uid)
                     else:
-                        self.loss_streaks[uid] = 0
+                        self._clear_loss_streak(uid)
                 else:
                     # 結晶走私流 特權判定：本金已被預扣，這裡改成觸發時「退還」本金
                     if flow == "結晶走私流" and random.random() < 0.10:
@@ -203,7 +235,7 @@ class Casino(commands.Cog):
     # ==========================================
     # 🎡 遊戲二：次元幸運大輪盤 (/wheel)
     # ==========================================
-    @app_commands.command(name="wheel", description="🪐 時空裂縫賭場：轉動次元命運大輪盤，機率直接摸出極稀有結晶！")
+    @app_commands.command(name="wheel", description="轉輪盤抽結晶")
     @app_commands.describe(下注mp="你要注入大輪盤的 MP 數量")
     async def casino_wheel(self, interaction: discord.Interaction, 下注mp: int):
         if 下注mp <= 0:
@@ -254,21 +286,22 @@ class Casino(commands.Cog):
                 
                 # 平庸之福連輸補償
                 if flow == "平庸之福流":
-                    self._bump_loss_streak(uid)
+                    self._bump_loss_streak(uid, 下注mp)
                     if self.loss_streaks[uid] >= 3:
-                        refund = int(下注mp * 0.5)
+                        # 🛠️ 以連敗期間的最小下注額為基準，避免小額預熱套利
+                        refund = self._relief_refund(uid, 下注mp)
                         await profile_store.add_mp(uid, refund)
                         res_embed.description += f"\n\n🌱 **【平庸之福】天賦觸發：** 連輸 3 把大輪盤/骰子，守護因果線，緊急補償你 **`{refund:,}` MP**！"
-                        self.loss_streaks[uid] = 0
+                        self._clear_loss_streak(uid)
                 else:
-                    self.loss_streaks[uid] = 0
+                    self._clear_loss_streak(uid)
 
             elif rand < 0.65:
                 # 2. 原物返還 (25%)
                 await profile_store.add_mp(uid, 下注mp)
                 res_embed.description = f"⚖️ **【原物返還】(機率 25%)**\n法陣軌道完美重合！退回全額本金 **`{下注mp:,}` MP**。"
                 res_embed.color = discord.Color.blue()
-                self.loss_streaks[uid] = 0
+                self._clear_loss_streak(uid)
 
             elif rand < 0.85:
                 # 3. 萌力翻湧 1.5倍 (20%)
@@ -281,7 +314,7 @@ class Casino(commands.Cog):
                 
                 res_embed.description = f"✨ **【萌力翻湧】(機率 20%)**\n法陣金光大作！斬獲 **1.5 倍** 收益！\n獲得共計：**`{net_win:,}` MP** *(扣除稅金 `{tax:,}` MP 已注入發電廠)*。"
                 res_embed.color = discord.Color.green()
-                self.loss_streaks[uid] = 0
+                self._clear_loss_streak(uid)
 
             elif rand < 0.95:
                 # 4. 狂暴突破 3倍暴擊 (10%)
@@ -294,7 +327,7 @@ class Casino(commands.Cog):
                 
                 res_embed.description = f"💥 **【狂暴突破】(機率 10%)**\n核心代碼超載！觸發 **3.0 倍超級暴擊**！\n直接獲得高達：**`{net_win:,}` MP** *(扣除稅金 `{tax:,}` MP 已注入發電廠)*！"
                 res_embed.color = discord.Color.orange()
-                self.loss_streaks[uid] = 0
+                self._clear_loss_streak(uid)
 
             else:
                 # 5. 結晶裂縫 (5%) -> 轉換為 1~3 顆結晶
@@ -302,7 +335,7 @@ class Casino(commands.Cog):
                 await profile_store.add_dc(uid, dc_reward)
                 res_embed.description = f"🔮 **【結晶裂縫】(極致機率 5%)**\n大輪盤核心破碎，時空裂縫深處掉落高階能源！\n不返還 MP，但你直接挖出了稀有物資： **`{dc_reward}` 顆 【次元結晶 (DC)】**！"
                 res_embed.color = discord.Color.gold()
-                self.loss_streaks[uid] = 0
+                self._clear_loss_streak(uid)
 
             res_embed.set_footer(text=f"✨ 目前特權流派屬性：【{flow}】")
             await spin_msg.edit(embed=res_embed)
@@ -314,7 +347,7 @@ class Casino(commands.Cog):
     # ==========================================
     # 🃏 遊戲三：萌力 21 點 (/blackjack)
     # ==========================================
-    @app_commands.command(name="blackjack", description="🃏 時空裂縫賭場：挑戰萌力 21 點！靠智商、策略與運氣擊敗機器人莊家！")
+    @app_commands.command(name="blackjack", description="21 點，跟莊家對賭")
     @app_commands.describe(下注mp="你要下注的 MP 數量")
     async def casino_blackjack(self, interaction: discord.Interaction, 下注mp: int):
         if 下注mp <= 0:
@@ -356,6 +389,13 @@ class Casino(commands.Cog):
             await interaction.response.send_message(f"❌ 你的萌力值 (MP) 不足！當前餘額：`{p['deposit']:,}` MP", ephemeral=True)
             self.active_players.discard(uid)
             return
+
+        # 🛠️ 修復（天選開局重複退款）：下方 try 區塊中的「天選開局」分支會先發放
+        # 獎金（add_mp），才送出訊息。若緊接著的 send_message 失敗（訊息被刪、
+        # 網路異常…），就會落到 except 把「本金」也退還一次 —— 玩家等於同時拿到
+        # 2.5 倍獎金與本金。用這個旗標記錄「獎金是否已發放」，except 只在還沒發放時
+        # 才退本金。
+        payout_done = False
 
         try:
             # 21點撲克牌庫與發牌邏輯
@@ -425,28 +465,29 @@ class Casino(commands.Cog):
                             await profile_store.add_mp(self.user_id, net_win)
                             await self.cog._handle_casino_tax(tax)
                             msg_text += f"\n💰 淨獲得 **`{net_win - self.bet:,}` MP** *(已扣除稅金 `{tax:,}` 注入發電廠)*"
-                            self.cog.loss_streaks[self.user_id] = 0
+                            self.cog._clear_loss_streak(self.user_id)
                         elif status == "blackjack":
                             tax = self.cog._calc_tax(int(self.bet * 1.5))
                             net_win = int(self.bet * 2.5) - tax
                             await profile_store.add_mp(self.user_id, net_win)
                             await self.cog._handle_casino_tax(tax)
                             msg_text += f"\n👑 淨獲得 **`{net_win - self.bet:,}` MP** *(已扣除稅金 `{tax:,}` 注入發電廠)*"
-                            self.cog.loss_streaks[self.user_id] = 0
+                            self.cog._clear_loss_streak(self.user_id)
                         elif status == "push":
                             await profile_store.add_mp(self.user_id, self.bet)
-                            self.cog.loss_streaks[self.user_id] = 0
+                            self.cog._clear_loss_streak(self.user_id)
                         else:
                             # 玩家輸了
                             if self.flow == "平庸之福流":
-                                self.cog._bump_loss_streak(self.user_id)
+                                self.cog._bump_loss_streak(self.user_id, self.bet)
                                 if self.cog.loss_streaks[self.user_id] >= 3:
-                                    refund = int(self.bet * 0.5)
+                                    # 🛠️ 以連敗期間的最小下注額為基準，避免小額預熱套利
+                                    refund = self.cog._relief_refund(self.user_id, self.bet)
                                     await profile_store.add_mp(self.user_id, refund)
                                     msg_text += f"\n\n🌱 **【平庸之福】連輸慰問發動：** 返還補償 **`{refund:,}` MP** 救濟金！"
-                                    self.cog.loss_streaks[self.user_id] = 0
+                                    self.cog._clear_loss_streak(self.user_id)
                             else:
-                                self.cog.loss_streaks[self.user_id] = 0
+                                self.cog._clear_loss_streak(self.user_id)
 
                         emb = discord.Embed(title="🃏 萌力 21 點：對局結束 🪐", description=msg_text, color=color)
                         emb.set_author(name=inter.user.display_name, icon_url=inter.user.display_avatar.url)
@@ -527,9 +568,21 @@ class Casino(commands.Cog):
                             await self.cog._handle_casino_tax(tax)
                         elif status == "push":
                             await profile_store.add_mp(self.user_id, self.bet)
-                        # status == "lose" 不需額外動作，本金已在開局時扣除
+                        else:
+                            # 🛠️ 修復（逾時洗掉連敗計數）：原本無論輸贏都無條件把
+                            # loss_streaks 歸零，導致「逾時輸局」不但拿不到平庸之福的
+                            # 連輸救濟，還會把先前累積的連敗次數洗掉 —— 玩家只要刻意
+                            # 放著逾時，就能規避連敗紀錄。這裡改成與按鈕結算一致：
+                            # 輸局時照樣累計連敗並在達標時發放救濟金。
+                            if self.flow == "平庸之福流":
+                                self.cog._bump_loss_streak(self.user_id, self.bet)
+                                if self.cog.loss_streaks[self.user_id] >= 3:
+                                    refund = self.cog._relief_refund(self.user_id, self.bet)
+                                    await profile_store.add_mp(self.user_id, refund)
+                                    self.cog._clear_loss_streak(self.user_id)
+                            else:
+                                self.cog._clear_loss_streak(self.user_id)
 
-                        self.cog.loss_streaks[self.user_id] = 0
                         self.cog.active_players.discard(self.user_id)
                         # 注意：逾時後 interaction 已失效，無法再 edit_message，僅能靜默完成結算
 
@@ -540,6 +593,9 @@ class Casino(commands.Cog):
                 net_win = int(下注mp * 2.5) - tax
                 await profile_store.add_mp(uid, net_win)
                 await self._handle_casino_tax(tax)
+                # 🛠️ 獎金已發放，之後若送訊息失敗不可再退本金
+                payout_done = True
+                self._clear_loss_streak(uid)
             
                 emb = discord.Embed(title="🃏 萌力 21 點：天選開局！ 👑", description=f"🔥 **【天選・大羅神眼】！** 開局直接拿到 **Blackjack (21點)**！\n獲得 **1.5倍 特殊獲勝獎勵**，斬獲 **`{net_win - 下注mp:,}` MP** *(已扣稅注入發電廠)*！", color=discord.Color.gold())
                 emb.add_field(name="👤 你的手牌", value=" ".join([f"`{c['suit']}{c['rank']}`" for c in player_hand]), inline=True)
@@ -561,7 +617,10 @@ class Casino(commands.Cog):
             # 🛠️ 修復：本金已於上方扣除，若這段中途發生任何未預期例外，
             # 直接把下注金額退還給玩家，並釋放 active_players 鎖，
             # 避免「錢被扣走但賭局面板送不出去」或「永久卡在賭局中」的情況。
-            await profile_store.add_mp(uid, 下注mp)
+            # ⚠️ 但若「天選開局」的獎金已經發放過（payout_done），就絕對不能再退本金，
+            #    否則玩家會同時拿到獎金與本金（重複退款）。
+            if not payout_done:
+                await profile_store.add_mp(uid, 下注mp)
             self.active_players.discard(uid)
             log.error(f"❌ [21點] 開局失敗，已自動退還本金 {下注mp:,} MP 給玩家 {uid}: {e}")
             try:

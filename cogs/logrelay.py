@@ -7,7 +7,7 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 from logger_config import log, discord_relay_handler
-from config import current_dir
+from config import current_dir, DEV_GUILD_IDS
 
 # 🛠️ 修復：原本是 CONFIG_FILE = 'log_channel.json' 純相對路徑，跟專案裡其他所有
 # cog（Autorestart.py、feedback.py、waifu.py、profile_store.py 全都用 current_dir）
@@ -416,7 +416,8 @@ class LogRelayCog(commands.Cog):
             pass
 
     # ── /setlogchannel 指令 ───────────────────────────────────────────
-    @app_commands.command(name='setlogchannel', description='【開發者專用】設定即時 log 轉發到的頻道')
+    @app_commands.command(name='setlogchannel', description='【開發者】設定 log 頻道')
+    @app_commands.guilds(*DEV_GUILD_IDS)
     @app_commands.describe(channel='要接收 log 的頻道（留空則關閉轉發）')
     async def set_log_channel(self, interaction: discord.Interaction, channel: discord.TextChannel = None):
         if not await self.bot.is_owner(interaction.user):

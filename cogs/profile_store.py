@@ -6,6 +6,7 @@ import os
 import json
 import time
 import math
+import copy
 import shutil
 import asyncio
 import datetime
@@ -315,6 +316,19 @@ DEFAULT_PROFILE = {
 
 _lock = asyncio.Lock()
 
+
+def _new_profile() -> dict:
+    """回傳一份全新的玩家預設資料。
+
+    🛠️ 修復（成就清單被所有新玩家共用）：
+    原本各處都用 `DEFAULT_PROFILE.copy()`，那是**淺拷貝** —— 裡面的
+    `"achievements": []` 這個 list 是所有玩家共用同一個物件。只要有任何一位玩家
+    拿到成就，`add_achievement()` 對它 append，就會同時改到 DEFAULT_PROFILE 本身，
+    之後每一位新建玩家一開局就自動擁有那個成就。
+    改用 copy.deepcopy，讓每個玩家拿到完全獨立的資料。
+    """
+    return copy.deepcopy(DEFAULT_PROFILE)
+
 def _load_raw() -> dict:
     if not os.path.exists(PROFILES_PATH):
         return {}
@@ -395,9 +409,15 @@ def _load_global() -> dict:
         return {"total_contributed": 0, "buff_end_time": 0.0}
 
 def _save_global(data: dict):
+    # 🛠️ 修復（發電廠進度無聲歸零）：原本直接 open(...,'w') 覆寫，容器在寫入過程
+    # 被砍（Pterodactyl 重啟／OOM 很常見）就會留下半截 JSON，而 _load_global() 的
+    # except 會靜默回傳 {"total_contributed": 0} —— 全服累積的 50 萬 MP 進度直接消失。
+    # 改用與 _save_raw 相同的 tmp + os.replace 原子寫入。
     try:
-        with open(GLOBAL_STORE_PATH, "w", encoding="utf-8") as f:
+        tmp_path = GLOBAL_STORE_PATH + ".tmp"
+        with open(tmp_path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
+        os.replace(tmp_path, GLOBAL_STORE_PATH)
     except Exception as e:
         log.error(f"❌ [ProfileStore] 寫入 global_economy.json 失敗: {e}")
 
@@ -409,15 +429,17 @@ async def get_profile(user_id: int) -> dict:
         data = _load_raw()
         uid_str = str(user_id)
         if uid_str not in data:
-            data[uid_str] = DEFAULT_PROFILE.copy()
+            data[uid_str] = _new_profile()
             data[uid_str]["last_hourly_time"] = time.time()  # 新玩家初始化提取時間
             _save_raw(data)
         
         user_data = data[uid_str]
         # 自動補齊新欄位
+        # 🛠️ 用 deepcopy：若補的是可變物件（如 achievements 的 list），
+        # 直接指派會讓該玩家與 DEFAULT_PROFILE 共用同一個 list。
         for key, val in DEFAULT_PROFILE.items():
             if key not in user_data:
-                user_data[key] = val
+                user_data[key] = copy.deepcopy(val)
         
         # ⭐ 數據相容大核心：如果老舊存款有錢，自動等值繼承到萌力值與次元結晶
         # 🛠️ 修復（顯示與扣款不一致）：原本這段只改記憶體裡的 dict、**從來沒有存檔**，
@@ -484,7 +506,7 @@ async def update_profession(user_id: int, profession: str):
         data = _load_raw()
         uid_str = str(user_id)
         if uid_str not in data:
-            data[uid_str] = DEFAULT_PROFILE.copy()
+            data[uid_str] = _new_profile()
         data[uid_str]["profession"] = profession[:15]
         _save_raw(data)
 
@@ -494,7 +516,7 @@ async def add_mp(user_id: int, amount: int) -> int:
         data = _load_raw()
         uid_str = str(user_id)
         if uid_str not in data:
-            data[uid_str] = DEFAULT_PROFILE.copy()
+            data[uid_str] = _new_profile()
         
         current = data[uid_str].get("moe_point", 0)
         new_val = max(0, current + amount)
@@ -509,7 +531,7 @@ async def add_dc(user_id: int, amount: int) -> int:
         data = _load_raw()
         uid_str = str(user_id)
         if uid_str not in data:
-            data[uid_str] = DEFAULT_PROFILE.copy()
+            data[uid_str] = _new_profile()
         
         current = data[uid_str].get("dimension_crystal", 0)
         new_val = max(0, current + amount)
@@ -535,7 +557,7 @@ async def try_spend(user_id: int, mp_cost: int = 0, dc_cost: int = 0) -> tuple:
         data = _load_raw()
         uid_str = str(user_id)
         if uid_str not in data:
-            data[uid_str] = DEFAULT_PROFILE.copy()
+            data[uid_str] = _new_profile()
             data[uid_str]["last_hourly_time"] = time.time()
         _ensure_schema(data[uid_str])
 
@@ -561,7 +583,7 @@ async def add_achievement(user_id: int, achievement_name: str) -> bool:
         data = _load_raw()
         uid_str = str(user_id)
         if uid_str not in data:
-            data[uid_str] = DEFAULT_PROFILE.copy()
+            data[uid_str] = _new_profile()
         
         achievements = data[uid_str].get("achievements", [])
         if achievement_name in achievements:
@@ -578,14 +600,32 @@ def get_custom_bg_path(user_id: int) -> Optional[str]:
 
 # ==================== 🛠️ 創新互動核心系統 API ====================
 
+# 🛠️ 官方職業名稱 → 天賦的直接對照表。
+# 這四個字串就是 /set_profession 實際寫入 profiles.json 的值，必須精確比對。
+OFFICIAL_PROFESSION_TALENTS = {
+    "時空定錨者": "時空定錨",
+    "萌力暴走者": "萌力暴走",
+    "結晶走私客": "結晶走私",
+    "無業遊民": "平庸之福",
+}
+
 def get_profession_talent(profession: str) -> str:
     """根據現有名稱，智慧歸類四大專屬互動流派天賦"""
     p = profession.strip()
+    # 🛠️ 修復（時空定錨者天賦永久失效）：
+    # 官方選項寫入的值是「時空定錨者」，但它不含下方任何一個關鍵字
+    # （宅／工程／科技／程式／潛水／魔法師／開發），於是落到最後的 fallback，
+    # 被歸類成「萌力暴走」—— 選時空定錨者的玩家拿不到 +2 小時儲存池，
+    # 反而白拿 10% 簽到暴擊。這裡讓官方名稱優先精確命中。
+    official = OFFICIAL_PROFESSION_TALENTS.get(p)
+    if official:
+        return official
+    # 以下保留關鍵字比對，供玩家自訂的職業名稱使用
     if any(k in p for k in ["無業", "遊民", "新手", "平民"]):
         return "平庸之福"
-    if any(k in p for k in ["宅", "工程", "科技", "程式", "潛水", "魔法師", "開發"]):
+    if any(k in p for k in ["宅", "工程", "科技", "程式", "潛水", "魔法師", "開發", "定錨"]):
         return "時空定錨"
-    if any(k in p for k in ["商", "精明", "錢", "走私", "偷", "忘記"]):
+    if any(k in p for k in ["商", "精明", "錢", "走私", "偷", "忘記", "粗心"]):
         return "結晶走私"
     # 其他所有自創職業（例如：冒險者、忍者、Gay、不認識妳等）皆歸為最受歡迎的暴擊流派
     return "萌力暴走"
@@ -638,7 +678,8 @@ def _ensure_schema(user_data: dict) -> dict:
      若欄位是後來才加進 DEFAULT_PROFILE 的，舊玩家資料裡不會有它，直接 += 1 就會炸掉)"""
     for key, val in DEFAULT_PROFILE.items():
         if key not in user_data:
-            user_data[key] = val
+            # 🛠️ deepcopy 同上：避免可變預設值被多個玩家共用
+            user_data[key] = copy.deepcopy(val)
     return user_data
 
 async def update_hourly_time(user_id: int, new_time: float):
@@ -675,7 +716,7 @@ async def execute_upgrade(user_id: int, target_lvl: int, mp_cost: int, dc_cost: 
         data = _load_raw()
         uid_str = str(user_id)
         if uid_str not in data:
-            data[uid_str] = DEFAULT_PROFILE.copy()
+            data[uid_str] = _new_profile()
         _ensure_schema(data[uid_str])
 
         cur_mp = data[uid_str].get("moe_point", 0)
@@ -704,7 +745,7 @@ async def execute_reclaim(user_id: int, mp_cost: int, dc_cost: int) -> bool:
         data = _load_raw()
         uid_str = str(user_id)
         if uid_str not in data:
-            data[uid_str] = DEFAULT_PROFILE.copy()
+            data[uid_str] = _new_profile()
         _ensure_schema(data[uid_str])
 
         cur_mp = data[uid_str].get("moe_point", 0)
@@ -735,7 +776,7 @@ async def set_voice_join_time(user_id: int, join_time: float):
         data = _load_raw()
         uid_str = str(user_id)
         if uid_str not in data:
-            data[uid_str] = DEFAULT_PROFILE.copy()
+            data[uid_str] = _new_profile()
         data[uid_str]["voice_join_time"] = join_time
         _save_raw(data)
 

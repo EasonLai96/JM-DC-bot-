@@ -18,7 +18,7 @@ from discord import app_commands
 from discord.ext import commands
 
 from logger_config import log
-from utils import is_nsfw_allowed, safe_respond
+from utils import is_nsfw_allowed, safe_respond, guard_context
 
 from . import favorites_store
 
@@ -289,6 +289,8 @@ class FavoritesCog(commands.Cog):
 
     async def _nsfw_guard(self, interaction: discord.Interaction) -> bool:
         """成人指令一律只在 NSFW 頻道可用（與 /jm、/nh 相同規則）。"""
+        if await guard_context(interaction):
+            return False
         if is_nsfw_allowed(interaction.channel):
             return True
         await safe_respond(interaction, "🔞 這個指令只能在 **年齡限制（NSFW）** 頻道使用！")
@@ -297,7 +299,7 @@ class FavoritesCog(commands.Cog):
     # ==========================================
     # ⭐ 收藏
     # ==========================================
-    @app_commands.command(name="favorite", description="⭐ 收藏一本本子（禁漫 / nhentai 共用收藏庫）")
+    @app_commands.command(name="favorite", description="收藏本子")
     @app_commands.describe(
         本子="本子 ID 或完整網址，例如 JM:123456、NH:654321、https://nhentai.net/g/654321/",
         來源="純數字 ID 時必須指定來源（兩站 ID 會重複）",
@@ -352,7 +354,7 @@ class FavoritesCog(commands.Cog):
     # ==========================================
     # 🗑️ 取消收藏
     # ==========================================
-    @app_commands.command(name="unfavorite", description="🗑️ 取消收藏一本本子")
+    @app_commands.command(name="unfavorite", description="取消收藏")
     @app_commands.describe(
         本子="本子 ID 或完整網址（也接受 JM:123456 / NH:654321）",
         來源="純數字 ID 時必須指定來源",
@@ -387,7 +389,7 @@ class FavoritesCog(commands.Cog):
     # ==========================================
     # 📖 收藏清單
     # ==========================================
-    @app_commands.command(name="favorites", description="📖 查看收藏清單（可查自己或其他人的）")
+    @app_commands.command(name="favorites", description="看收藏清單")
     @app_commands.describe(
         使用者="要查看誰的收藏（留空 = 自己）",
         來源="只看某個站台的收藏（留空 = 全部）",
@@ -433,7 +435,7 @@ class FavoritesCog(commands.Cog):
     # ==========================================
     # 🧹 清空收藏
     # ==========================================
-    @app_commands.command(name="favorites_clear", description="🧹 清空自己的所有收藏（會先請你確認）")
+    @app_commands.command(name="favorites_clear", description="清空收藏（會先確認）")
     async def favorites_clear(self, interaction: discord.Interaction):
         if not await self._nsfw_guard(interaction):
             return

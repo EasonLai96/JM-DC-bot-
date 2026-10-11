@@ -34,7 +34,7 @@ except ImportError:
     import logging
     log = logging.getLogger(__name__)
 
-from utils import is_nsfw_allowed
+from utils import is_nsfw_allowed, guard_context
 
 try:
     # 🌐 顯示層翻譯（cogs/translate.py）。用 try/except 包住：翻譯是附加功能，
@@ -98,6 +98,8 @@ class RandomRecommendationView(discord.ui.View):
 
     @discord.ui.button(label="🎲 Random", style=discord.ButtonStyle.primary)
     async def random_button(self, interaction: discord.Interaction, button: discord.ui.Button) -> None:
+        if await guard_context(interaction):
+            return
         if not is_nsfw_channel(interaction):
             await interaction.response.send_message(
                 "❌ 此指令包含成人內容，請前往 **開啟年齡限制 (NSFW)** 的頻道中使用！",
@@ -203,10 +205,12 @@ class NhentaiSearchCog(commands.Cog):
         embed.set_footer(text=f"使用 /nhv {gallery_id} 查看完整資訊；使用 /nh {gallery_id} 建立 PDF。")
         return embed, gallery_id
 
-    @app_commands.command(name="nhsearch", description="以關鍵字搜尋 nHentai 作品")
+    @app_commands.command(name="nhsearch", description="搜尋 nHentai")
     @app_commands.describe(keyword="標題、角色、作者或標籤關鍵字", page="結果頁碼，預設第 1 頁")
     @app_commands.checks.cooldown(1, 8.0, key=lambda interaction: interaction.user.id)
     async def nh_search(self, interaction: discord.Interaction, keyword: str, page: app_commands.Range[int, 1, 100] = 1):
+        if await guard_context(interaction):
+            return
         if not is_nsfw_channel(interaction):
             await interaction.response.send_message(
                 "❌ 此指令包含成人內容，請前往 **開啟年齡限制 (NSFW)** 的頻道中使用！",
@@ -260,9 +264,11 @@ class NhentaiSearchCog(commands.Cog):
             log.exception("❌ [nhentai] 搜尋發生未預期錯誤")
             await interaction.followup.send("❌ 搜尋失敗，請稍後再試。", ephemeral=True)
 
-    @app_commands.command(name="nhrandom", description="隨機推薦一部 nHentai 作品")
+    @app_commands.command(name="nhrandom", description="隨機一部 nHentai")
     @app_commands.checks.cooldown(1, 10.0, key=lambda interaction: interaction.user.id)
     async def nh_random(self, interaction: discord.Interaction):
+        if await guard_context(interaction):
+            return
         if not is_nsfw_channel(interaction):
             await interaction.response.send_message(
                 "❌ 此指令包含成人內容，請前往 **開啟年齡限制 (NSFW)** 的頻道中使用！",

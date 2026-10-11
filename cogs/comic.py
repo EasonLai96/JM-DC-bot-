@@ -21,6 +21,7 @@ from utils import (
     split_id_tokens,
     pack_embed_fields,
     safe_respond,
+    guard_context,
 )
 import comic_cache  # 🆕 下載結果快取：同一本子重複下載時直接重送上次的連結，省頻寬與時間
 
@@ -52,6 +53,24 @@ except Exception:
     except Exception as _tr_err:  # pragma: no cover
         _TR = None
         log.warning(f"⚠️ [翻譯] 無法載入翻譯模組，將只顯示原文: {_tr_err!r}")
+
+
+async def _notify(interaction, text: str) -> None:
+    """不確定這個頻道能不能發言時的通知：先走 interaction token（一定通），
+    真的不行才退回頻道。純通知用，不承載下載連結。
+
+    🛠️ 2026-10-09：原本的 except 區塊直接用 interaction.channel.send() 回報錯誤 ——
+    但會走到 except 的原因往往正是「沒有發言權」，那一行自己也會再炸一次。
+    """
+    try:
+        await interaction.followup.send(text)
+        return
+    except Exception:
+        pass
+    try:
+        await interaction.channel.send(text)
+    except Exception:
+        pass
 
 
 async def _tr_title(title, limit: int = 240) -> str:
@@ -170,9 +189,11 @@ class ComicCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @app_commands.command(name='jmv', description='預覽本子的標題、作者、標籤等資訊')
+    @app_commands.command(name='jmv', description='預覽禁漫本子資訊')
     @app_commands.describe(album_id='請輸入本子 ID 或完整網址')
     async def view_comic(self, interaction: discord.Interaction, album_id: str):
+        if await guard_context(interaction):
+            return
         if not is_nsfw_allowed(interaction.channel):
             await interaction.response.send_message("❌ 此指令包含成人內容，請前往 **開啟年齡限制 (NSFW)** 的頻道中使用！", ephemeral=True)
             return
@@ -228,10 +249,12 @@ class ComicCog(commands.Cog):
     # ==========================================
     # 📚 批量查詢（一次查多本）
     # ==========================================
-    @app_commands.command(name='jmbatch', description=f'批量查詢多本禁漫本子的資訊（一次最多 {MAX_BATCH_IDS} 本）')
+    @app_commands.command(name='jmbatch', description=f'批量預覽禁漫（最多 {MAX_BATCH_IDS} 本）')
     @app_commands.describe(ids='多個本子 ID 或網址，用空白、逗號或換行分隔（例：123456 234567 345678）')
     @app_commands.checks.cooldown(1, 20.0, key=lambda i: i.user.id)
     async def batch_view_comic(self, interaction: discord.Interaction, ids: str):
+        if await guard_context(interaction):
+            return
         if not is_nsfw_allowed(interaction.channel):
             await interaction.response.send_message("❌ 此指令包含成人內容，請前往 **開啟年齡限制 (NSFW)** 的頻道中使用！", ephemeral=True)
             return
@@ -314,9 +337,11 @@ class ComicCog(commands.Cog):
             f"批量查詢完成 -> 成功 {success} / 失敗 {failed}（共 {len(album_ids)} 本）",
         )
 
-    @app_commands.command(name='jm', description='智慧安全多線程下載本子圖片並託管至免空')
+    @app_commands.command(name='jm', description='下載禁漫本子')
     @app_commands.describe(album_id='請輸入本子 ID 或完整網址')
     async def download_comic(self, interaction: discord.Interaction, album_id: str):
+        if await guard_context(interaction):
+            return
         if not is_nsfw_allowed(interaction.channel):
             await interaction.response.send_message("❌ 此指令包含成人內容，請前往 **開啟年齡限制 (NSFW)** 的頻道中使用！", ephemeral=True)
             return
@@ -418,6 +443,11 @@ class ComicCog(commands.Cog):
 
                 progress_status = {"current": 0, "total": 0, "title": "獲取中..."}
 
+                # 下載執行緒做好一份 PDF 就丟進來，主執行緒邊收邊上傳。
+                # ⚠️ 一定要定義在這個外層 —— 兩邊都要用到它。
+                from queue import Queue
+                pdf_queue = Queue()
+
                 # 💡 子執行緒：只做「下載、壓縮、打包 ZIP」
                 def safe_download_process():
                     gc.collect()
@@ -490,26 +520,6 @@ class ComicCog(commands.Cog):
                         return page_num, save_path
 
                     from concurrent.futures import ThreadPoolExecutor
-                    download_results = []
-                    with ThreadPoolExecutor(max_workers=4) as executor:
-                        tasks = [(i, img) for i, img in enumerate(image_details)]
-                        for page_num, saved_path in executor.map(download_single_image, tasks):
-                            progress_status["current"] = page_num
-                            dl_manager.update_progress(album_id, current=page_num)   # 🆕 即時回報佇列管理器
-                            BotMonitor.log_download_progress(album_id, page_num, total_pages)
-                            download_results.append((page_num, saved_path))
-                            if page_num % 4 == 0: gc.collect()
-
-                    # 💡 直接用下載迴圈回報的實際路徑，依頁碼排序，
-                    # 不再靠事後 glob 猜檔名/副檔名，徹底避免抓到空清單。
-                    image_files = [path for _, path in sorted(download_results) if path]
-                    failed_count = total_pages - len(image_files)
-
-                    if not image_files:
-                        raise ValueError("下載失敗：所有頁面都無法成功下載，請確認本子 ID 是否正確，或稍後再試一次。")
-
-                    if failed_count > 0:
-                        log.warning(f"⚠️ [部分頁面缺失] ID: {album_id} | 共 {failed_count}/{total_pages} 頁下載失敗，PDF 將略過這些頁面")
 
                     BotMonitor.log_compress_start(album_id)
 
@@ -570,31 +580,61 @@ class ComicCog(commands.Cog):
                                 im.close()
                         gc.collect()
 
-                    # ── 按頁數切割，產生一或多個 PDF ────────────────────────────
-                    total_images = len(image_files)
-                    chunks = [
-                        image_files[i:i + PAGES_PER_CHUNK]
-                        for i in range(0, total_images, PAGES_PER_CHUNK)
-                    ]
-                    total_chunks = len(chunks)
+                    # ── 逐批下載 → 做 PDF → 交給主執行緒上傳 ────────────────────
+                    # 🛠️ 2026-10-10 修 OOM：舊版是「整本 8131 頁全部抓完，才開始切段做
+                    # PDF」。那些來源圖的 page cache 會被算進容器的 cgroup 記憶體
+                    # ——Pterodactyl 量的是整個 cgroup，不是 bot 自己的 RSS，所以 bot.log
+                    # 一直顯示「機器人: 228MB」很安全，實際上容器已經 995MB / 上限 1024MB。
+                    # 實測每頁約 0.13MB，三次都斷在 5490～5640 頁，就是撞到這道牆被 OOM。
+                    # 現在每批做完 PDF 就把來源圖刪掉，尖峰從「整本」降到「一批」。
+                    total_chunks = max(1, (total_pages + PAGES_PER_CHUNK - 1) // PAGES_PER_CHUNK)
+                    produced = 0
+                    try:
+                        for start in range(0, total_pages, PAGES_PER_CHUNK):
+                            batch = image_details[start:start + PAGES_PER_CHUNK]
+                            got = []
+                            with ThreadPoolExecutor(max_workers=4) as executor:
+                                tasks = [(start + i, img) for i, img in enumerate(batch)]
+                                for page_num, saved_path in executor.map(download_single_image, tasks):
+                                    progress_status["current"] = page_num
+                                    dl_manager.update_progress(album_id, current=page_num)
+                                    BotMonitor.log_download_progress(album_id, page_num, total_pages)
+                                    if saved_path:
+                                        got.append((page_num, saved_path))
+                                    if page_num % 4 == 0: gc.collect()
 
-                    output_pdf_paths = []  # 最終回傳所有 PDF 路徑
-                    for idx, chunk in enumerate(chunks, start=1):
-                        if total_chunks == 1:
-                            chunk_name = f"comic_{album_id}.pdf"
-                        else:
-                            chunk_name = f"comic_{album_id}_vol{idx:02d}of{total_chunks:02d}.pdf"
-                        chunk_path = os.path.join(current_dir, chunk_name)
-                        if os.path.exists(chunk_path): os.remove(chunk_path)
+                            batch_files = [p for _, p in sorted(got)]
+                            if not batch_files:
+                                log.warning(f"⚠️ [整批失敗] ID: {album_id} | 頁 "
+                                            f"{start + 1}~{start + len(batch)} 全部下載失敗，跳過")
+                                continue
 
-                        page_start = (idx - 1) * PAGES_PER_CHUNK + 1
-                        page_end   = min(idx * PAGES_PER_CHUNK, total_images)
-                        log.info(f"📄 [PDF切割] {album_id} → 第 {idx}/{total_chunks} 冊 "
-                                 f"(頁 {page_start}~{page_end})，共 {len(chunk)} 頁")
-                        build_chunk_pdf(chunk, chunk_path)
-                        output_pdf_paths.append(chunk_path)
+                            produced += 1
+                            if total_chunks == 1:
+                                chunk_name = f"comic_{album_id}.pdf"
+                            else:
+                                chunk_name = f"comic_{album_id}_vol{produced:02d}of{total_chunks:02d}.pdf"
+                            chunk_path = os.path.join(current_dir, chunk_name)
+                            if os.path.exists(chunk_path): os.remove(chunk_path)
 
-                    return output_pdf_paths, local_target_folder
+                            page_start = start + 1
+                            page_end = start + len(batch)
+                            log.info(f"📄 [PDF切割] {album_id} → 第 {produced}/{total_chunks} 冊 "
+                                     f"(頁 {page_start}~{page_end})，共 {len(batch_files)} 頁")
+                            build_chunk_pdf(batch_files, chunk_path)
+
+                            # ★ 關鍵一行：來源圖做完就刪。留著只會讓 page cache 一路堆到 OOM。
+                            for p in batch_files:
+                                try: os.remove(p)
+                                except OSError: pass
+                            gc.collect()
+
+                            pdf_queue.put((produced, total_chunks, chunk_path, page_start, page_end))
+                    finally:
+                        # 不論成功或丟例外都要放哨兵，否則主執行緒會永遠等在那裡
+                        pdf_queue.put(None)
+
+                    return local_target_folder
 
                 # 前台 Discord 進度條刷新協程
                 async def report_progress_task():
@@ -626,8 +666,12 @@ class ComicCog(commands.Cog):
                                 
                         if tot > 0 and curr >= tot: break
 
-                # 1. 執行多線程下載，並等待它完全打包結束
-                download_worker = asyncio.to_thread(safe_download_process)
+                # 🛠️ 2026-10-10：改成「下載執行緒邊做 PDF、主執行緒邊上傳」。
+                # 舊版要等整本 8131 頁下載完才開始做 PDF，來源圖的 page cache
+                # 會把容器記憶體推到上限被 OOM（詳見 safe_download_process 內註解）。
+                output_pdf_paths = []
+                target_folder = None
+                download_worker = asyncio.create_task(asyncio.to_thread(safe_download_process))
                 progress_reporter = asyncio.create_task(report_progress_task())
 
                 # 🛠️ 修復（殭屍任務）：舊版是 `await download_worker` 之後才
@@ -637,42 +681,40 @@ class ComicCog(commands.Cog):
                 # 它會變成一個每 2.5 秒無限呼叫 edit_original_response 的洩漏任務，
                 # 例外全被 `except: pass` 吞掉，永遠不會停。
                 # 這裡保證無論成功或失敗，這個協程都會被取消並確實回收。
-                try:
-                    output_pdf_paths, target_folder = await download_worker
-                finally:
-                    if not progress_reporter.done():
-                        progress_reporter.cancel()
-                    try:
-                        await progress_reporter
-                    except asyncio.CancelledError:
-                        pass  # 這是我們自己發出的取消，屬正常結束路徑
-                
-                # 2. ⚡ 核心修復：回到 Discord 安全的主異步線程中進行上傳與發送
-                valid_pdfs = [p for p in output_pdf_paths if os.path.exists(p)]
-                if valid_pdfs:
-                    total_vols = len(valid_pdfs)
-                    total_size_mb = sum(os.path.getsize(p) for p in valid_pdfs) / (1024 * 1024)
 
-                    async def safe_edit_status(msg_text):
-                        # 🛠️ 修復（L2）：同上，訊息含本子標題等第三方文字，關閉提及解析。
-                        try: await interaction.edit_original_response(
-                            content=msg_text, allowed_mentions=discord.AllowedMentions.none()
-                        )
-                        except discord.errors.HTTPException as he:
-                            if he.status == 401: await interaction.channel.send(content=f"⚠️ {msg_text}")
-                            else: raise he
-
-                    vol_hint = f"共 {total_vols} 冊" if total_vols > 1 else ""
-                    await safe_edit_status(
-                        f"🎉 PDF 合併完成 (`{total_size_mb:.1f}MB` {vol_hint})！正在逐冊託管至 Pixeldrain 免空..."
+                async def safe_edit_status(msg_text):
+                    # 🛠️ 修復（L2）：同上，訊息含本子標題等第三方文字，關閉提及解析。
+                    try: await interaction.edit_original_response(
+                        content=msg_text, allowed_mentions=discord.AllowedMentions.none()
                     )
+                    except discord.errors.HTTPException as he:
+                        if he.status == 401: await interaction.channel.send(content=f"⚠️ {msg_text}")
+                        else: raise he
 
-                    upload_errors = []
-                    cached_volumes = []  # 🆕 收集每冊的連結/大小/頁碼範圍，全部成功後寫入快取
-                    for vol_idx, pdf_path in enumerate(valid_pdfs, start=1):
+                def _drop_pdf(p):
+                    # 上傳完就刪。17 冊 × 150MB 全留在磁碟上，page cache 一樣會把容器推爆。
+                    try:
+                        if p and os.path.exists(p): os.remove(p)
+                    except OSError:
+                        pass
+
+                upload_errors = []
+                cached_volumes = []  # 🆕 收集每冊的連結/大小/頁碼範圍，全部成功後寫入快取
+                got_any_volume = False
+
+                # 2. ⚡ 邊收邊上傳：PDF 一到就上傳、發連結、刪檔
+                try:
+                    while True:
+                        item = await asyncio.to_thread(pdf_queue.get)
+                        if item is None:
+                            break   # 下載執行緒收工
+                        got_any_volume = True
+                        vol_idx, total_vols, pdf_path, page_start, page_end = item
+                        output_pdf_paths.append(pdf_path)
                         file_size_mb = os.path.getsize(pdf_path) / (1024 * 1024)
                         vol_label = f"第 {vol_idx}/{total_vols} 冊" if total_vols > 1 else ""
 
+                        # ① 上傳：這裡失敗才是真的上傳失敗
                         try:
                             if total_vols > 1:
                                 await safe_edit_status(
@@ -681,7 +723,21 @@ class ComicCog(commands.Cog):
                             BotMonitor.log_upload_start(album_id, file_size_mb)
                             download_url = await upload_to_pixeldrain(pdf_path)
                             BotMonitor.log_upload_success(album_id, download_url)
+                        except Exception as ue:
+                            BotMonitor.log_upload_fail(album_id, ue)
+                            upload_errors.append(f"{vol_label}：{ue}")
+                            await _notify(
+                                interaction,
+                                f"❌ Pixeldrain 上傳失敗 {vol_label}，原因：\n```{str(ue)[:800]}```",
+                            )
+                            BotMonitor.log_bot_output(interaction, f"上傳失敗訊息 {vol_label} -> {ue}")
+                            _drop_pdf(pdf_path)
+                            continue
 
+                        # ② 貼結果：這裡失敗是「沒有發言權」，不是上傳失敗。
+                        #    🛠️ 2026-10-09：以前兩件事包在同一個 try，貼訊息被 403 擋掉時
+                        #    會被記成「Pixeldrain 上傳失敗」，害人往免空方向查（檔案其實已在雲上）。
+                        try:
                             # 🌐 顯示層翻譯：progress_status['title'] 是原文，
                             # 翻的只有要放進 embed 的顯示字串，/queue 仍顯示原文。
                             title_text = await _tr_title(progress_status['title'], limit=200)
@@ -717,30 +773,41 @@ class ComicCog(commands.Cog):
                                 'vol_idx': vol_idx,
                                 'url': download_url,
                                 'size_mb': file_size_mb,
-                                'page_start': (vol_idx - 1) * 500 + 1,
-                                'page_end': min(vol_idx * 500, progress_status['total']),
+                                'page_start': page_start,
+                                'page_end': page_end,
                             })
-
-                        except Exception as ue:
-                            BotMonitor.log_upload_fail(album_id, ue)
-                            upload_errors.append(f"{vol_label}：{ue}")
-                            await interaction.channel.send(
-                                f"❌ Pixeldrain 上傳失敗 {vol_label}，原因：\n```{str(ue)}```"
+                        except Exception as se:
+                            BotMonitor.log_result_send_fail(album_id, vol_label, se)
+                            upload_errors.append(f"{vol_label}：結果訊息送不出去（{se}）")
+                            await _notify(
+                                interaction,
+                                f"❌ {vol_label} 的結果訊息送不出去（{type(se).__name__}）。\n"
+                                "（檔案其實已經上傳成功，是我在這個頻道沒有發言權）",
                             )
-                            BotMonitor.log_bot_output(interaction, f"上傳失敗訊息 {vol_label} -> {ue}")
+                        _drop_pdf(pdf_path)
+                finally:
+                    if not progress_reporter.done():
+                        progress_reporter.cancel()
+                    try:
+                        await progress_reporter
+                    except asyncio.CancelledError:
+                        pass  # 這是我們自己發出的取消，屬正常結束路徑
 
-                    if not upload_errors:
-                        # 🆕 全部冊次都成功上傳才寫入快取——只要有任何一冊失敗，
-                        # 就不快取這本，避免下次快取命中卻只拿到殘缺的冊數。
-                        comic_cache.save_cached_album(
-                            album_id, progress_status['title'], progress_status['total'], cached_volumes
-                        )
-                        await safe_edit_status("✅ 處理完成！所有 PDF 下載連結已成功發送。")
-                    else:
-                        await safe_edit_status(f"⚠️ 部分冊次上傳失敗，請查看頻道訊息。")
-                else:
+                # 下載執行緒的例外在這裡浮出來（哨兵已保證佇列不會卡住）
+                target_folder = await download_worker
+
+                if not got_any_volume:
                     await interaction.channel.send("❌ 錯誤：找不到生成的 PDF 檔案。")
                     BotMonitor.log_bot_output(interaction, "錯誤訊息 -> 找不到生成的 PDF 檔案")
+                elif not upload_errors:
+                    # 🆕 全部冊次都成功上傳才寫入快取——只要有任何一冊失敗，
+                    # 就不快取這本，避免下次快取命中卻只拿到殘缺的冊數。
+                    comic_cache.save_cached_album(
+                        album_id, progress_status['title'], progress_status['total'], cached_volumes
+                    )
+                    await safe_edit_status("✅ 處理完成！所有 PDF 下載連結已成功發送。")
+                else:
+                    await safe_edit_status(f"⚠️ 部分冊次上傳失敗，請查看頻道訊息。")
                     
         except Exception as e:
             # 依你的要求改回顯示完整訊息（同上，jmcomic 的錯誤內容本身是給使用者看的）。
@@ -773,7 +840,7 @@ class ComicCog(commands.Cog):
     # ==========================================
     # 📋 佇列狀態查詢
     # ==========================================
-    @app_commands.command(name='queue', description='查看目前的本子下載佇列狀態與預估等待時間')
+    @app_commands.command(name='queue', description='看下載佇列')
     async def queue_status(self, interaction: discord.Interaction):
         snap = dl_manager.snapshot()
         running = snap["running"]

@@ -132,3 +132,66 @@ async def upload_to_pixeldrain(file_path: str) -> str:
                 else:
                     text = await response.text()
                     raise Exception(f"Pixeldrain 錯誤 ({response.status}): {text}")
+
+
+# ------------------- 使用情境守衛 -------------------
+# 為什麼需要：JM 開了 user install（使用者安裝），指令會跟著「使用者的帳號」
+# 跑到機器人沒加入的伺服器。那種情境下走 interaction token 的回覆（response／
+# followup／edit_original_response）沒問題，但 channel.send() 與 message.edit()
+# 一律被 Discord 回 403（50001 Missing Access）—— 2026-10-09 就是這樣白跑完
+# 兩分鐘的下載，連結送不出去，還被記成「Pixeldrain 上傳失敗」。
+# 與其做完才失敗，不如一開始就講清楚。
+CONTEXT_MSG_NOT_IN_GUILD = (
+    "❌ 這個伺服器還沒邀請 JM 機器人，請先邀請後再使用。\n"
+    "（在私訊裡使用不受影響）"
+)
+CONTEXT_MSG_NO_PERMISSION = (
+    "❌ 我在這個頻道沒有發言權，請給我「檢視頻道」與「傳送訊息」權限。"
+)
+
+
+def context_block_reason(interaction) -> str | None:
+    """需要發言的指令先問這一個：回傳擋下來的理由，沒問題回 None。
+
+    · guild_id 有值、但 guild 是 None 或 name 是空字串 → 機器人不在這個伺服器
+      （discord.py 對「不在的伺服器」會建一個 unavailable Guild，name 是空的）
+    · app_permissions 缺「檢視頻道」或「傳送訊息」 → 在裡面但沒發言權
+    """
+    if getattr(interaction, "guild_id", None) is None:
+        return None                      # 私訊：正常，走 token 路線
+
+    guild = getattr(interaction, "guild", None)
+    if guild is None or not getattr(guild, "name", ""):
+        return "not_in_guild"
+
+    perms = getattr(interaction, "app_permissions", None)
+    if perms is not None and not (perms.view_channel and perms.send_messages):
+        return "no_permission"
+    return None
+
+
+async def guard_context(interaction) -> bool:
+    """被擋掉回 True（呼叫端直接 return），沒問題回 False。
+
+    回覆一律 ephemeral：只有使用者看得到，而且走 token 路線，
+    在沒有頻道權限的地方照樣送得出去。
+    """
+    reason = context_block_reason(interaction)
+    if reason is None:
+        return False
+
+    text = CONTEXT_MSG_NOT_IN_GUILD if reason == "not_in_guild" else CONTEXT_MSG_NO_PERMISSION
+    try:
+        if interaction.response.is_done():
+            await interaction.followup.send(text, ephemeral=True)
+        else:
+            await interaction.response.send_message(text, ephemeral=True)
+    except Exception:
+        pass
+
+    try:
+        from bot_monitor import BotMonitor
+        BotMonitor.log_context_blocked(interaction, reason)
+    except Exception:
+        pass
+    return True

@@ -66,8 +66,9 @@ def _with_nav_footer(embed: discord.Embed, extra: str) -> discord.Embed:
 # 不是用裝飾器，所以無法從指令物件自動推斷，只能在這裡明確維護。
 #
 # ⚠️ 必須與 cogs/logrelay.py 的 SENSITIVE_COMMANDS 保持一致（那邊也維護了一份）。
-#    logrelay 目前的值：{"debug_give", "settings", "set_feedback_channel",
-#                        "setlogchannel", "announcement"}
+#    logrelay / main.py 目前的值（6 個）：
+#      {"debug_give", "settings", "set_feedback_channel",
+#       "setlogchannel", "announcement", "translate_test"}
 #    這裡額外加上沒有被 logrelay 收錄的 "restart"。
 #    漏掉的話，那些管理指令會出現在一般使用者看到的 /help 裡。
 ADMIN_ONLY_COMMANDS = {
@@ -83,7 +84,7 @@ ADMIN_ONLY_COMMANDS = {
 # 分組「提示」：用來決定顯示順序與歸類。
 # ⚠️ 不在這裡的指令並不會消失，會自動歸到最後的「其他指令」區塊。
 COMMAND_GROUPS = [
-    ("📕 漫畫與本子", ["jmv", "jmbatch", "jm", "nzip", "queue",
+    ("📕 漫畫與本子", ["jmv", "jmbatch", "jm", "queue",
                       "nhv", "nhbatch", "nh", "nhsearch", "nhrandom",
                       "favorite", "unfavorite", "favorites", "favorites_clear"]),
     ("🪐 經濟與簽到", ["hourly", "daily", "reclaim", "level_info", "power_plant", "leaderboard"]),
@@ -167,7 +168,6 @@ def build_media_embed(bot=None) -> discord.Embed:
         value="• `/jmv [ID或網址]` ：預覽禁漫天堂本子的標題、作者與標籤。\n"
               "• `/jm [ID或網址]` ：自動下載解密禁漫本子，打包轉存至 Pixeldrain 雲端。\n"
               "　　同一本子短時間內重複下載會直接命中快取、秒速送出，不會重複佔用下載通道。\n"
-              "• `/nzip [ID或網址]` ：秒級生成 `nhentai.zip` 雲端打包下載頁面。\n"
               "• `/favorite <ID或網址>` ：⭐ 收藏喜歡的本子（禁漫與 nhentai **共用同一個收藏庫**，\n"
               "　　以 `JM:` / `NH:` 前綴區分，兩邊 ID 撞號也不會搞混）。\n"
               "• `/favorites [使用者]` ：📖 查看收藏清單，可依來源篩選、可分頁。",
@@ -176,7 +176,7 @@ def build_media_embed(bot=None) -> discord.Embed:
 
     # 🆕 自動補上上面文案沒提到的同類指令（例如 /nh、/nhv、/nhsearch、/nhrandom）。
     # 這樣以後新增本子相關指令時，這頁不會再出現「功能存在但說明沒寫」的落差。
-    described = {"jmv", "jm", "nzip", "favorite", "favorites"}
+    described = {"jmv", "jm", "favorite", "favorites"}
     extra_lines = []
     for name in dict(COMMAND_GROUPS).get("📕 漫畫與本子", []):
         if name in described:
@@ -218,8 +218,10 @@ def build_currency_and_level_embed(current_lvl: int = None) -> discord.Embed:
     )
     embed.add_field(
         name="🔮 次元結晶（DC）",
-        value="稀有核心能源，用於 4 等以上升級與補簽。**唯一取得管道**：`/daily` 簽到時有 **10%** 機率"
-              "掉落 **1~3 顆**，每滿 **7 天連續簽到**額外 **+1 顆**（最多 +3 顆）。",
+        value="稀有核心能源，用於 4 等以上升級與補簽。目前有**三條**取得管道：\n"
+              "• `/daily` 簽到：**45%** 機率掉落 **25~50 顆**，每滿 **5 天**連續簽到額外 **+8 顆**（封頂 +80）\n"
+              "• 每日發言：每則訊息 **3%** 機率掉落 **1 顆**（不限次數）\n"
+              "• 進入語音頻道：停留滿 **5 分鐘**後 **55%** 機率掉落 **5~10 顆**",
         inline=False
     )
 
@@ -500,7 +502,7 @@ def build_home_embed(bot=None) -> discord.Embed:
     )
     embed.add_field(
         name="📕 漫畫下載",
-        value="`/jm`、`/jmv`、`/nzip`，以及 Twitter/IG/TikTok/Pixiv 等連結的自動預覽修復。",
+        value="`/jm`、`/jmv`，以及 Twitter/IG/TikTok/Pixiv 等連結的自動預覽修復。",
         inline=False
     )
     embed.add_field(
@@ -526,7 +528,7 @@ def build_home_embed(bot=None) -> discord.Embed:
 
 def setup_help(bot):
     """將 /help 斜線指令註冊到機器人的 Command Tree 中"""
-    @bot.tree.command(name='help', description='顯示機器人的所有功能與完整指令指南')
+    @bot.tree.command(name='help', description='看完整指令指南')
     async def custom_help(interaction: discord.Interaction):
         await interaction.response.send_message(
             embed=build_home_embed(interaction.client), view=HelpView()

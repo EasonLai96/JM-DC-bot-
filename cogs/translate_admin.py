@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import discord
 from discord import app_commands
+from config import DEV_GUILD_IDS
 from discord.ext import commands
 
 try:
@@ -48,8 +49,9 @@ class TranslateAdminCog(commands.Cog):
 
     @app_commands.command(
         name="translate_test",
-        description="🔬 [開發者專用] 測試翻譯功能（端點、延遲、字典涵蓋率、快取狀態）",
+        description="【開發者】測試翻譯",
     )
+    @app_commands.guilds(*DEV_GUILD_IDS)
     @app_commands.describe(
         text="要翻譯的字串（英／日文書名或標籤，例如 nakadashi 或 如月ちゃんの受難）",
         show_tags="是否列出前 20 個標籤的字典對照（預設否）",

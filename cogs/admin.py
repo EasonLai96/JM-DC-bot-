@@ -2,6 +2,7 @@
 import discord
 from discord.ext import commands, tasks
 from discord import app_commands
+from config import DEV_GUILD_IDS
 from logger_config import log
 
 class AdminCog(commands.Cog):
@@ -36,7 +37,8 @@ class AdminCog(commands.Cog):
         await self.bot.wait_until_ready()
 
 
-    @app_commands.command(name='announcement', description='【開發者專用】向機器人所在的所有伺服器發送更新公告')
+    @app_commands.command(name='announcement', description='【開發者】全服公告')
+    @app_commands.guilds(*DEV_GUILD_IDS)
     @app_commands.describe(title='公告標題', content='公告詳細內容（支援 \\\\n 換行）')
     async def system_announcement(self, interaction: discord.Interaction, title: str, content: str):
         if not await self.bot.is_owner(interaction.user):

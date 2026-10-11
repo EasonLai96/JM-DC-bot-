@@ -14,7 +14,7 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 
-from config import current_dir
+from config import current_dir, DEV_GUILD_IDS
 from logger_config import log
 
 # ─────────────────────────────────────────────
@@ -128,7 +128,7 @@ class FeedbackCog(commands.Cog):
     # ─────────────────────────────────────────────
     # 1. 所有人皆可用的回饋指令 (支援私訊與任何伺服器)
     # ─────────────────────────────────────────────
-    @app_commands.command(name="feedback", description="向總設計者回報 Bug、提交功能建議或提出其他意見")
+    @app_commands.command(name="feedback", description="回報 Bug 或建議")
     @app_commands.describe(
         category="請選擇回饋的分類",
         attachment="可選擇性附加一張螢幕截圖或相關檔案"
@@ -151,7 +151,8 @@ class FeedbackCog(commands.Cog):
     # ─────────────────────────────────────────────
     # 2. 💥 【全新加入】開發者專用：隨時更改獨立回饋頻道的指令
     # ─────────────────────────────────────────────
-    @app_commands.command(name="set_feedback_channel", description="【總設計者專用】設定或隨時變更接收使用者回饋的獨立頻道")
+    @app_commands.command(name="set_feedback_channel", description="【開發者】設定回饋頻道")
+    @app_commands.guilds(*DEV_GUILD_IDS)
     @app_commands.describe(channel="要將使用者回饋發送到的專屬頻道")
     async def set_feedback_channel(self, interaction: discord.Interaction, channel: discord.TextChannel):
         # 嚴格驗證是否為機器人擁有者（你）

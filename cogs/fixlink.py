@@ -16,13 +16,27 @@ SETTINGS_PATH = os.path.join(os.path.dirname(__file__), "fixlink_settings.json")
 # 送出修復訊息後，等待這麼多秒讓 Discord 的連結爬蟲把 embed 抓回來
 EMBED_CHECK_DELAY = 30
 
+# 預設翻譯目標語言（FixTweetBot 是跟隨互動者的 locale，這裡固定為 zh-TW 繁體中文）
+DEFAULT_LANG = "zh-tw"
+
 # 每個平台的顯示名稱 + 對應的 (regex, fixer_domain) 規則
+#
+# 🆕 translatable：該平台的 fixer 是否支援「在網址尾端接語言碼」來翻譯貼文。
+#    這是翻譯功能的核心開關 —— **實測只有 fxtwitter 與 fxbsky 支援**，其餘 fixer
+#    接了語言碼會直接壞掉（實測：vxreddit 的 /zh-TW 回 "Invalid post path"、
+#    phixiv 回 500、tnktok 回 404）。所以只有這兩個平台會被加上語言碼。
+#
+# 🆕 translation_fixer：翻譯開啟時要改用的 fixer 網域。目前只有 Bluesky 需要 ——
+#    原本用的 bskyx.app（第三方 VixBluesky）不支援語言碼，必須換成 FxEmbed 官方的
+#    fxbsky.app 才有翻譯。翻譯關閉時仍走原本的 bskyx.app，維持 121 台伺服器
+#    現有的預覽外觀不變。
 PLATFORMS = {
     "twitter": {
         "label": "Twitter / X",
         "rules": [
             (r'https?://(?:www\.)?(?:twitter\.com|x\.com)(/.+)', 'https://fxtwitter.com'),
         ],
+        "translatable": True,
     },
     "tiktok": {
         "label": "TikTok",
@@ -56,6 +70,8 @@ PLATFORMS = {
         "rules": [
             (r'https?://bsky\.app(/.+)', 'https://bskyx.app'),
         ],
+        "translatable": True,
+        "translation_fixer": 'https://fxbsky.app',
     },
     "threads": {
         "label": "Threads",
@@ -66,6 +82,68 @@ PLATFORMS = {
 }
 
 DEFAULT_ENABLED = {key: True for key in PLATFORMS}
+
+# 支援翻譯的平台（給設定面板用）
+TRANSLATABLE_PLATFORMS = [key for key, cfg in PLATFORMS.items() if cfg.get("translatable")]
+
+
+# ──────────────────────────────────────────────────────────────
+# 語言碼處理（與 FxEmbed 的 normalizeLanguage 對齊）
+# ──────────────────────────────────────────────────────────────
+
+# 領頭的 ISO 語言 token：`en`、`zh-tw`、`zh-hant`
+_LANG_TOKEN_RE = re.compile(r'^[a-z]{2,3}(?:-[a-z]{2,4})?')
+
+# 使用者輸入的別名 → FxEmbed 認得的代碼
+_LANG_ALIASES = {
+    "zh": "zh-cn",
+    "cn": "zh-cn",
+    "zh-hans": "zh-cn",
+    "tw": "zh-tw",
+    "hk": "zh-tw",
+    "zh-hk": "zh-tw",
+    "zh-mo": "zh-tw",
+    "zh-hant": "zh-tw",
+    "jp": "ja",
+    "kr": "ko",
+    "ua": "uk",
+}
+
+
+def normalize_lang(value) -> str:
+    """把使用者輸入的語言碼正規化成 fixer 認得的形式。
+
+    與 FxEmbed 的 normalizeLanguage 行為一致（含 Discord 暴雷標記 `||` 會黏在網址
+    尾巴的情形），並額外對映 tw/hk → zh-tw、jp → ja 這類常見寫法。無法解析時
+    回傳空字串，交由呼叫端決定 fallback。
+    """
+    if not isinstance(value, str):
+        return ""
+    text = value.strip().lower().replace('|', '')
+    token = _LANG_TOKEN_RE.match(text)
+    if not token:
+        return ""
+    code = token.group(0)
+    return _LANG_ALIASES.get(code, code)
+
+
+def is_valid_lang(value) -> bool:
+    """使用者輸入的語言碼是否可用（2 字母 ISO 639-1，可帶地區碼）。"""
+    return bool(normalize_lang(value))
+
+
+def _append_lang(url: str, lang: str) -> str:
+    """把語言碼接到網址路徑尾端，且**必須在 query / fragment 之前**。
+
+    FxEmbed 的路由是 `/:handle/status/:id/:language`，語言碼是路徑的最後一段；
+    若直接接在 `?s=20` 之後（`.../status/1?s=20/zh-tw`）會被當成 query 值，
+    翻譯不會生效。所以要先切開 query / fragment 再插。
+    """
+    for sep in ('?', '#'):
+        idx = url.find(sep)
+        if idx != -1:
+            return url[:idx].rstrip('/') + '/' + lang + url[idx:]
+    return url.rstrip('/') + '/' + lang
 
 
 def load_settings() -> dict:
@@ -102,6 +180,20 @@ def get_guild_settings(all_settings: dict, guild_id: int) -> dict:
     """回傳該伺服器的平台開關設定，沒設定過的平台預設為開啟"""
     guild_conf = all_settings.get(str(guild_id), {})
     return {key: guild_conf.get(key, True) for key in PLATFORMS}
+
+
+def get_translation_settings(all_settings: dict, guild_id: int) -> tuple:
+    """回傳 (各平台翻譯開關, 目標語言)。
+
+    🆕 預設全部開啟（使用者指定）：121 台伺服器升級後立刻就有翻譯，不想用的伺服器
+    自己打 `/settings` 關掉。已存在 fixlink_settings.json 的舊設定不受影響 ——
+    翻譯是**新增的 key**（`twitter_tr` / `bluesky_tr` / `lang`），舊檔裡沒有這些 key
+    就套用預設值。
+    """
+    guild_conf = all_settings.get(str(guild_id), {})
+    translation = {key: bool(guild_conf.get(f"{key}_tr", True)) for key in TRANSLATABLE_PLATFORMS}
+    lang = normalize_lang(guild_conf.get("lang")) or DEFAULT_LANG
+    return translation, lang
 
 
 def label_from_url(url: str) -> str:
@@ -145,7 +237,18 @@ def _safe_link_target(url: str) -> str:
     return ''.join(_MD_TARGET_ESCAPES.get(ch, ch) for ch in url)
 
 
-def find_and_fix_links(content: str, enabled: dict):
+def find_and_fix_links(content: str, enabled: dict, translation: dict = None, lang: str = DEFAULT_LANG):
+    """找出可修復的連結並產生修復後的網址。
+
+    :param content: 訊息內容
+    :param enabled: 各平台是否開啟修復（`get_guild_settings` 的結果）
+    :param translation: 🆕 各平台是否開啟翻譯（`get_translation_settings` 的第一項）。
+                        預設 None＝全部不翻譯，行為與加入本功能前完全相同。
+    :param lang: 🆕 翻譯目標語言（已正規化，例如 `zh-tw`）
+    :return: [(原始網址, 修復後網址, 平台 key, 是否翻譯), ...]
+    """
+    translation = translation or {}
+    lang = normalize_lang(lang) or DEFAULT_LANG
     results = []
     urls = _URL_RE.findall(content)
     for raw_url in urls:
@@ -158,8 +261,17 @@ def find_and_fix_links(content: str, enabled: dict):
             for pattern, fixer_domain in platform["rules"]:
                 match = re.match(pattern, url)
                 if match:
+                    # 🆕 翻譯：只有 fixer 真的支援語言碼的平台才加（見 PLATFORMS 的說明）
+                    translate_this = bool(
+                        platform.get("translatable") and translation.get(key, False)
+                    )
+                    if translate_this:
+                        # 翻譯開啟時改用支援翻譯的 fixer（目前只有 Bluesky 需要換）
+                        fixer_domain = platform.get("translation_fixer", fixer_domain)
                     fixed = (fixer_domain + match.group(1)).rstrip('&?')
-                    results.append((url, fixed))
+                    if translate_this:
+                        fixed = _append_lang(fixed, lang)
+                    results.append((url, fixed, key, translate_this))
                     break
             else:
                 continue
@@ -202,17 +314,132 @@ class PlatformSelect(discord.ui.Select):
 
         enabled_labels = [PLATFORMS[k]["label"] for k in PLATFORMS if k in selected]
         desc = "、".join(enabled_labels) if enabled_labels else "（全部關閉）"
+        translation, lang = get_translation_settings(self.all_settings, self.guild_id)
+        tr_labels = [PLATFORMS[k]["label"] for k in TRANSLATABLE_PLATFORMS if translation[k]]
 
         await interaction.response.edit_message(
-            content=f"✅ 已更新本伺服器的修復連結設定！\n目前開啟：{desc}",
+            content=(
+                f"✅ 已更新本伺服器的修復連結設定！\n目前開啟：{desc}\n"
+                f"翻譯：{'、'.join(tr_labels) + f'（→ {lang}）' if tr_labels else '（全部關閉）'}"
+            ),
             view=self.view,
         )
+
+
+class TranslationSelect(discord.ui.Select):
+    """🆕 選擇要開啟翻譯的平台（只列出 fixer 真的支援翻譯的平台）。"""
+
+    def __init__(self, guild_id: int, all_settings: dict):
+        self.guild_id = guild_id
+        self.all_settings = all_settings
+        translation, _lang = get_translation_settings(all_settings, guild_id)
+
+        options = [
+            discord.SelectOption(
+                label=PLATFORMS[key]["label"],
+                value=key,
+                default=translation[key],
+                description="翻譯成繁體中文（zh-tw）",
+            )
+            for key in TRANSLATABLE_PLATFORMS
+        ]
+
+        super().__init__(
+            placeholder="選擇要開啟翻譯的平台",
+            min_values=0,
+            max_values=len(options),
+            options=options,
+        )
+
+    async def callback(self, interaction: discord.Interaction):
+        selected = set(self.values)
+        guild_conf = self.all_settings.setdefault(str(self.guild_id), {})
+        for key in TRANSLATABLE_PLATFORMS:
+            guild_conf[f"{key}_tr"] = key in selected
+        save_settings(self.all_settings)
+
+        for option in self.options:
+            option.default = option.value in selected
+
+        _translation, lang = get_translation_settings(self.all_settings, self.guild_id)
+        labels = [PLATFORMS[k]["label"] for k in TRANSLATABLE_PLATFORMS if k in selected]
+        desc = "、".join(labels) if labels else "（全部關閉）"
+
+        await interaction.response.edit_message(
+            content=f"✅ 已更新翻譯設定！\n翻譯平台：{desc}\n目標語言：{lang}",
+            view=self.view,
+        )
+
+
+class LangModal(discord.ui.Modal):
+    """🆕 編輯翻譯目標語言。
+
+    與 FixTweetBot 的 TranslationModal 相同設計：輸入 2 字母 ISO 639-1 語言代碼。
+    本專案額外接受 `zh-TW` 這種帶地區碼的寫法（FxEmbed 支援）。
+    """
+
+    def __init__(self, guild_id: int, all_settings: dict):
+        super().__init__(title="編輯翻譯語言", timeout=180)
+        self.guild_id = guild_id
+        self.all_settings = all_settings
+        _translation, lang = get_translation_settings(all_settings, guild_id)
+        self.add_item(discord.ui.TextInput(
+            label="翻譯語言",
+            placeholder="輸入 2 字母 ISO 語言代碼（例：zh-TW、ja、en）",
+            custom_id="lang",
+            default=lang,
+            max_length=16,
+        ))
+
+    async def on_submit(self, interaction: discord.Interaction):
+        raw = str(self.children[0]).strip()
+        code = normalize_lang(raw)
+        if not code:
+            await interaction.response.send_message(
+                f"❌ `{discord.utils.escape_markdown(raw)}` 不是有效的語言代碼。\n"
+                "請輸入 2 字母 ISO 639-1 代碼（例：`zh-TW`、`zh-CN`、`ja`、`en`、`ko`）。\n"
+                "語言代碼列表：<https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes#Table>",
+                ephemeral=True,
+                delete_after=15,
+            )
+            return
+
+        guild_conf = self.all_settings.setdefault(str(self.guild_id), {})
+        guild_conf["lang"] = code
+        save_settings(self.all_settings)
+
+        await interaction.response.send_message(
+            f"✅ 翻譯目標語言已設為 `{code}`。\n"
+            "（下一次張貼連結時生效；已貼出的舊訊息不會變更）",
+            ephemeral=True,
+            delete_after=15,
+        )
+
+
+class LangButton(discord.ui.Button):
+    def __init__(self, guild_id: int, all_settings: dict):
+        translation, lang = get_translation_settings(all_settings, guild_id)
+        enabled_any = any(translation.values())
+        super().__init__(
+            label=f"編輯翻譯語言（目前 {lang}）",
+            style=discord.ButtonStyle.secondary,
+            disabled=not enabled_any,
+        )
+        self.guild_id = guild_id
+        self.all_settings = all_settings
+
+    async def callback(self, interaction: discord.Interaction):
+        await interaction.response.send_modal(LangModal(self.guild_id, self.all_settings))
 
 
 class SettingsView(discord.ui.View):
     def __init__(self, guild_id: int, all_settings: dict):
         super().__init__(timeout=180)
         self.add_item(PlatformSelect(guild_id, all_settings))
+        # 🆕 翻譯相關控制項（只有 fixer 支援翻譯的平台會出現）
+        if TRANSLATABLE_PLATFORMS:
+            self.add_item(TranslationSelect(guild_id, all_settings))
+            self.add_item(LangButton(guild_id, all_settings))
 
 
 class FixLinkCog(commands.Cog):
@@ -258,12 +485,15 @@ class FixLinkCog(commands.Cog):
         if re.search(r'(?<![A-Za-z0-9_])fxignore(?![A-Za-z0-9_])', message.content, re.I):
             return
 
-        enabled = (
-            get_guild_settings(self.settings, message.guild.id)
-            if message.guild else DEFAULT_ENABLED
-        )
+        if message.guild:
+            enabled = get_guild_settings(self.settings, message.guild.id)
+            # 🆕 翻譯設定（預設全開，見 get_translation_settings 的說明）
+            translation, lang = get_translation_settings(self.settings, message.guild.id)
+        else:
+            enabled = DEFAULT_ENABLED
+            translation, lang = {}, DEFAULT_LANG
 
-        fixes = find_and_fix_links(message.content, enabled)
+        fixes = find_and_fix_links(message.content, enabled, translation, lang)
         if not fixes:
             return
 
@@ -277,7 +507,7 @@ class FixLinkCog(commands.Cog):
         lines = [
             f"[{discord.utils.escape_markdown(label_from_url(original))}](<{original}>) • "
             f"[{discord.utils.escape_markdown(label_from_url(fixed))}]({_safe_link_target(fixed)})"
-            for original, fixed in fixes
+            for original, fixed, _key, _tr in fixes
         ]
         reply = '\n'.join(lines)
 
@@ -317,11 +547,12 @@ class FixLinkCog(commands.Cog):
                     pass
             return
 
-        for original, fixed in fixes:
+        for original, fixed, _key, translated in fixes:
             log.info(
                 f"🔗 [修復連結] 伺服器: [{message.guild.name if message.guild else '私訊'}] "
                 f"| 使用者: {message.author.name}({message.author.id}) "
                 f"| 原始: {original} → 修復: {fixed}"
+                + (f" | 🌐 翻譯: {lang}" if translated else "")
             )
 
         # 🆕 集中保存背景任務的參照（原本是射後不理，無法取消也無法觀察）
@@ -357,7 +588,13 @@ class FixLinkCog(commands.Cog):
             f"🔗 [修復連結] 偵測不到 embed，判定修復失敗並自動撤回 | 訊息: {original_message.jump_url}"
         )
 
-    @app_commands.command(name="settings", description="設定本伺服器要修復的社群平台連結")
+    @app_commands.command(name="settings", description="設定要修復的連結平台")
+    # 讓一般使用者看不到這個指令（122 個伺服器的 / 列表都能少一項）。
+    # ⚠️ 這只是「預設隱藏」的提示，伺服器管理員仍可自行開放；真正擋住執行的
+    #    是下面那個 has_permissions 檢查，兩者都要留（縱深防禦）。
+    # ⚠️ 必須用裝飾器形式 —— app_commands.command() 不接受 default_permissions 參數
+    #    （實測會噴 TypeError: command() got an unexpected keyword argument）。
+    @app_commands.default_permissions(manage_guild=True)
     @app_commands.guild_only()
     @app_commands.checks.has_permissions(manage_guild=True)
     async def settings_command(self, interaction: discord.Interaction):
@@ -365,9 +602,19 @@ class FixLinkCog(commands.Cog):
         enabled_labels = [platform["label"] for key, platform in PLATFORMS.items() if enabled[key]]
         desc = "、".join(enabled_labels) if enabled_labels else "（全部關閉）"
 
+        translation, lang = get_translation_settings(self.settings, interaction.guild_id)
+        tr_labels = [PLATFORMS[k]["label"] for k in TRANSLATABLE_PLATFORMS if translation[k]]
+        tr_desc = f"{'、'.join(tr_labels)}（→ {lang}）" if tr_labels else "（全部關閉）"
+
         view = SettingsView(interaction.guild_id, self.settings)
         await interaction.response.send_message(
-            content=f"目前開啟：{desc}\n請選擇要開啟修復的平台：",
+            content=(
+                f"目前開啟修復：{desc}\n"
+                f"目前開啟翻譯：{tr_desc}\n\n"
+                "・**修復平台**：選擇哪些平台的連結要改寫成可正常顯示預覽的版本\n"
+                "・**翻譯平台**：選擇哪些平台的貼文要自動翻譯（只支援 Twitter/X 與 Bluesky）\n"
+                "・**編輯翻譯語言**：修改翻譯的目標語言（預設 zh-TW 繁體中文）"
+            ),
             view=view,
             ephemeral=True,
         )

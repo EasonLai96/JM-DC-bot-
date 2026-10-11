@@ -4,7 +4,8 @@
 -----------------------------------------------
 功能：
   🕓 定時重啟：每天固定時間（預設台灣時間 04:00）自動重啟一次。
-  🛠️ /restart  [僅限開發者] 手動立即重啟。
+  🛠️ /restart  [僅限開發者] 手動重啟；預設會先等進行中的下載完成，
+     `/restart force:True` 才跳過等待、立即重啟。
 
 v2 改動重點：
   1. 【強制結束保險】重啟一開始就啟動一條「非 daemon 的看門狗執行緒」，
@@ -20,6 +21,9 @@ v2 改動重點：
   4. 【開機保護】剛開機 60 秒內拒絕再次重啟，避免重啟迴圈。
   5. 移除「連續失敗計數」：舊版 _do_restart 內部已吞掉所有例外並直接 os._exit，
      計數邏輯實際上永遠不會被觸發，屬於死程式碼。
+  6. 【手動重啟也等下載】`/restart`（不帶 force）與定時重啟行為一致：
+     有下載在跑就延後，等它們完成才重啟；`force:True` 才跳過等待。
+     等待期間只擋 `/restart`，其餘指令照常運作。
 
 重啟機制：
   預設關閉 Discord 連線後以非 0 狀態碼結束，交給翼龍／Docker 的 restart policy。
@@ -46,7 +50,7 @@ import discord
 from discord.ext import commands, tasks
 from discord import app_commands
 
-from config import current_dir
+from config import current_dir, DEV_GUILD_IDS
 from logger_config import log
 
 BOOT_TIME = time.monotonic()
@@ -349,6 +353,15 @@ class AutoRestartCog(commands.Cog):
                 is_restart_cmd = getattr(interaction.command, "name", None) == "restart"
                 if not is_restart_cmd:
                     return await self._orig_interaction_check(interaction)
+
+                # 🛠️ 修復（force 逃生門被自己鎖住）：原本這裡無條件擋掉所有 /restart，
+                # 但擋掉的提示卻叫使用者「請用 /restart force:True」—— 而那一樣會被
+                # 這裡攔下來，永遠到不了指令本體，等於那個逃生門根本打不開，
+                # 使用者只能等最多 2 小時的下載跑完。這裡放行 force:True，
+                # 讓它進到 restart_command 去取消等待、立即重啟。
+                if self._restart_has_force(interaction):
+                    return await self._orig_interaction_check(interaction)
+
                 try:
                     await interaction.response.send_message(
                         "⏳ 已排定「等目前的下載完成後」自動重啟，不需要再手動重啟。\n"
@@ -367,6 +380,22 @@ class AutoRestartCog(commands.Cog):
                 pass
             return False
         return await self._orig_interaction_check(interaction)
+
+    @staticmethod
+    def _restart_has_force(interaction: discord.Interaction) -> bool:
+        """判斷這次 /restart 呼叫是否帶了 force=True。
+
+        `interaction_check` 拿不到解析後的參數，只能自己翻 `interaction.data`
+        的 options。任何解析失敗都回 False（保守：當成沒帶 force，維持擋下）。
+        """
+        try:
+            options = (interaction.data or {}).get("options", []) or []
+            for opt in options:
+                if opt.get("name") == "force":
+                    return bool(opt.get("value"))
+        except Exception:
+            pass
+        return False
 
     async def _tree_on_error(self, interaction: discord.Interaction, error: app_commands.AppCommandError):
         if isinstance(error, app_commands.CommandNotFound):
@@ -481,6 +510,12 @@ class AutoRestartCog(commands.Cog):
             reason = f"每日定時重啟（{RESTART_HOUR:02d}:{RESTART_MINUTE:02d} 台灣時間）"
             pending, probe_error = _pending_downloads()
             if pending or probe_error:
+                # 🛠️ 先設 _deferring 再建立任務：create_task 只是「排程」，
+                # 任務本體要等下一個 event loop tick 才會跑；在那之前
+                # _deferring 還是 False，而 _restarting 已經是 True →
+                # _tree_interaction_check 會走「全部擋掉」的分支，
+                # 這一瞬間所有指令都會被誤擋成「機器人正在重啟中」。
+                self._deferring = True
                 self._pending_restart_task = asyncio.create_task(
                     self._deferred_restart_guarded(reason, pending, probe_error)
                 )
@@ -493,7 +528,8 @@ class AutoRestartCog(commands.Cog):
             log.error(f"☠️ [自動重啟] 定時重啟發生例外，明天會再嘗試：\n{traceback.format_exc()}")
 
     async def _deferred_restart_guarded(self, reason: str, pending: List[str],
-                                        probe_error: Optional[str]) -> None:
+                                        probe_error: Optional[str],
+                                        label: str = "定時重啟") -> None:
         """`_deferred_restart()` 的安全外殼。
 
         兩個必須處理的邊界：
@@ -501,10 +537,12 @@ class AutoRestartCog(commands.Cog):
              解鎖，否則之後所有重啟都會被「已經在重啟中」永久擋掉。
           2. 發生未預期例外 → 同上解鎖，並記錄下來，不能讓這個背景任務
              默默死掉而 bot 從此不再定時重啟。
+
+        `label` 只影響通知文案（「定時重啟」／「手動重啟」）。
         """
         try:
             self._deferring = True
-            await self._deferred_restart(reason, pending, probe_error)
+            await self._deferred_restart(reason, pending, probe_error, label)
         except asyncio.CancelledError:
             self._restarting = False
             log.warning("⚠️ [自動重啟] 等待下載的延後重啟已被取消，重啟鎖已解除")
@@ -565,12 +603,15 @@ class AutoRestartCog(commands.Cog):
             log.warning(f"⚠️ [自動重啟] 無法送出延後通知（不影響重啟）: {type(e).__name__}: {e}")
 
     async def _deferred_restart(self, reason: str, pending: List[str],
-                                probe_error: Optional[str]) -> None:
+                                probe_error: Optional[str],
+                                label: str = "定時重啟") -> None:
         """等所有下載結束後才真正重啟；超過 DOWNLOAD_GRACE_SECONDS 則放棄等待。
 
         為什麼要有「放棄等待」的上限：如果某個下載卡死（例如遠端主機不回應、
         狀態沒被正確釋放），無限等待就等於**永遠不再重啟**，
         那比打斷一次下載更糟。
+
+        `label` 只影響通知文案（「定時重啟」／「手動重啟」）。
         """
         if probe_error:
             log.warning(
@@ -584,7 +625,7 @@ class AutoRestartCog(commands.Cog):
 
         summary = "\n".join(f"　• {item}" for item in pending) or "　• （狀態無法確認）"
         await self._notify_restart_channel(
-            f"⏳ **今日定時重啟已延後**：目前還有下載正在進行，為避免中斷使用者的下載，"
+            f"⏳ **{label}已延後**：目前還有下載正在進行，為避免中斷使用者的下載，"
             f"機器人會等它們完成後才重啟（最多等 {DOWNLOAD_GRACE_SECONDS // 60} 分鐘）。\n"
             f"進行中的工作：\n{summary}",
             force=True,
@@ -618,7 +659,7 @@ class AutoRestartCog(commands.Cog):
 
             # 節流後回報進度，讓使用者知道「不是當掉，是在等」
             await self._notify_restart_channel(
-                f"⏳ 定時重啟仍在等待下載完成（已等約 {int(waited // 60)} 分鐘）…\n"
+                f"⏳ {label}仍在等待下載完成（已等約 {int(waited // 60)} 分鐘）…\n"
                 f"剩餘 {max(0, int((deadline - time.monotonic()) // 60))} 分鐘後無論如何都會重啟。"
             )
 
@@ -632,9 +673,10 @@ class AutoRestartCog(commands.Cog):
         await self._do_restart(reason=reason)
 
     # ── 🛠️ 手動重啟指令 ───────────────────────────────────────
-    @app_commands.command(name="restart", description="【開發者專用】立即手動重啟機器人")
+    @app_commands.command(name="restart", description="【開發者】重啟機器人")
+    @app_commands.guilds(*DEV_GUILD_IDS)
     @app_commands.describe(
-        force="跳過「等待下載完成」直接重啟（會中斷正在進行的下載，預設否）"
+        force="跳過「等待下載完成」直接重啟（會中斷正在進行的下載，殘留暫存檔於下次開機自動清除）"
     )
     async def restart_command(self, interaction: discord.Interaction, force: bool = False):
         if not await self.bot.is_owner(interaction.user):
@@ -654,7 +696,7 @@ class AutoRestartCog(commands.Cog):
             # 的延後重啟，而使用者不想等了 → 取消等待、立刻重啟。
             deferring = self._pending_restart_task is not None and not self._pending_restart_task.done()
             if deferring and force:
-                log.warning("⚠️ [自動重啟] 手動 /restart force:True 覆蓋了等待中的定時重啟，改為立即執行")
+                log.warning("⚠️ [自動重啟] 手動 /restart force:True 覆蓋了等待中的延後重啟，改為立即執行")
                 _cancel_pending_restart_task(self._pending_restart_task)
                 self._deferring = False
                 try:
@@ -667,7 +709,7 @@ class AutoRestartCog(commands.Cog):
                     pass
                 await asyncio.sleep(1)
                 await self._do_restart(
-                    reason=f"由 {interaction.user} 手動觸發（強制覆蓋延後中的定時重啟）",
+                    reason=f"由 {interaction.user} 手動觸發（強制覆蓋延後中的重啟）",
                     notify_channel_id=interaction.channel_id,
                 )
                 return
@@ -683,6 +725,56 @@ class AutoRestartCog(commands.Cog):
             await interaction.response.send_message("🔄 已經在重啟中了，請稍候。", ephemeral=True)
             return
 
+        # 🛠️ 修復（force 參數形同虛設）：原本這個指令取得重啟鎖之後就**無條件**
+        # 直接 `_do_restart()`，完全不檢查下載狀態 —— 也就是說 `force` 只影響
+        # 「覆蓋別人已排定的延後重啟」這一種情境，平常打 `/restart` 一定會
+        # 立刻中斷使用者正在進行的下載，而且被強殺的下載暫存資料夾不會被清
+        # （`finally` 跑不到），會慢慢吃掉 1GB 的硬碟。
+        # 現在改成與每日定時重啟一致的行為：
+        #   • 沒有 force（預設）→ 有下載在跑就延後，等它們完成（最多等 DOWNLOAD_GRACE_SECONDS）
+        #   • force=True        → 維持原本「立即重啟」的行為
+        if not force:
+            try:
+                pending, probe_error = _pending_downloads()
+            except Exception:
+                # 探測失敗一律保守視為「有下載」，絕不貿然打斷
+                log.warning(f"⚠️ [自動重啟] 手動重啟檢查下載狀態時發生例外：\n{traceback.format_exc()}")
+                pending, probe_error = [], "無法確認下載狀態"
+
+            if pending or probe_error:
+                # 🛠️ 先設 _deferring，再 await 任何東西：一旦 _restarting=True 而
+                # _deferring 還是 False，`_tree_interaction_check` 會走「全部擋掉」
+                # 的分支，所有使用者都會被誤回「機器人正在重啟中」。
+                # 這裡在送出回覆之前就先舉旗，確保等待期間只有 /restart 被擋。
+                self._deferring = True
+
+                # 先讓使用者知道「不是不理你，是在等」，再丟到背景任務去等。
+                summary = "\n".join(f"　• {item}" for item in pending) or "　• （狀態無法確認）"
+                try:
+                    await interaction.response.send_message(
+                        f"⏳ **重啟已排定，但會先等進行中的下載完成**（最多等 "
+                        f"{DOWNLOAD_GRACE_SECONDS // 60} 分鐘）：\n{summary}\n\n"
+                        f"若你要**立刻**重啟（會中斷下載），請用 `/restart force:True`。",
+                        ephemeral=True,
+                    )
+                except Exception:
+                    # 回覆失敗不影響後續等待與重啟，繼續走下去
+                    log.warning("⚠️ [自動重啟] 手動重啟的「已排定等待」回覆送出失敗（不影響重啟）")
+
+                self._pending_restart_task = asyncio.create_task(
+                    self._deferred_restart_guarded(
+                        reason=f"由 {interaction.user} 手動觸發",
+                        pending=pending,
+                        probe_error=probe_error,
+                        label="手動重啟",
+                    )
+                )
+                log.info(
+                    f"⏳ [自動重啟] 手動重啟已排定：偵測到 {len(pending)} 項下載工作進行中，"
+                    f"將等它們完成後才重啟"
+                )
+                return
+
         try:
             await interaction.response.send_message(
                 "🔄 收到！機器人即將重新啟動，約 10~30 秒後會自動回報。**請先不要再輸入指令**，"
@@ -692,10 +784,13 @@ class AutoRestartCog(commands.Cog):
             self._restarting = False  # 連回覆都失敗就不重啟，解鎖
             raise
 
-        log.info(f"🔄 [自動重啟] 由 {interaction.user} ({interaction.user.id}) 手動觸發重啟")
+        log.info(
+            f"🔄 [自動重啟] 由 {interaction.user} ({interaction.user.id}) 手動觸發重啟"
+            f"{'（force=True，跳過下載等待）' if force else ''}"
+        )
         await asyncio.sleep(1)  # 讓上面的訊息有時間送達
         await self._do_restart(
-            reason=f"由 {interaction.user} 手動觸發",
+            reason=f"由 {interaction.user} 手動觸發" + ("（force）" if force else ""),
             notify_channel_id=interaction.channel_id,
         )
 

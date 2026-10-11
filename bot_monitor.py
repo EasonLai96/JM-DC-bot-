@@ -54,6 +54,25 @@ class BotMonitor:
         user_info = f"{interaction.user.name}({interaction.user.id})"
         return guild_name, user_info
 
+    @staticmethod
+    def _ids(interaction: discord.Interaction):
+        """🆕 2026-10-09：只靠名稱追不到「機器人不在的伺服器」（name 是空的），
+        所以需要發言的關鍵紀錄都補上 guild_id / channel_id。"""
+        gid = getattr(interaction, "guild_id", None) or "-"
+        cid = getattr(interaction, "channel_id", None) or getattr(
+            getattr(interaction, "channel", None), "id", "-"
+        )
+        return f"gid:{gid} cid:{cid}"
+
+    @classmethod
+    def log_context_blocked(cls, interaction: discord.Interaction, reason: str):
+        """🆕 2026-10-09：情境守衛擋下來時記一筆（見 utils.context_block_reason）。"""
+        guild_name, user_info = cls._get_context(interaction)
+        log.warning(
+            f"🚧 [情境不符已擋下] 伺服器: [{guild_name}] | 使用者: {user_info} | "
+            f"原因: {reason} | {cls._ids(interaction)}"
+        )
+
     @classmethod
     def log_preview_request(cls, interaction: discord.Interaction, album_id: str):
         guild_name, user_info = cls._get_context(interaction)
@@ -84,7 +103,10 @@ class BotMonitor:
     def log_task_start(cls, interaction: discord.Interaction, album_id: str):
         guild_name, user_info = cls._get_context(interaction)
         ram_info = cls._get_ram_usage()
-        log.info(f"🚀 [開始下載] 伺服器: [{guild_name}] | 使用者: {user_info} | 本子 ID: {album_id} {ram_info}")
+        log.info(
+            f"🚀 [開始下載] 伺服器: [{guild_name}] | 使用者: {user_info} | "
+            f"本子 ID: {album_id} | {cls._ids(interaction)} {ram_info}"
+        )
 
     @classmethod
     def log_structure_success(cls, album_id: str, title: str, total_pages: int):
@@ -119,6 +141,17 @@ class BotMonitor:
     @staticmethod
     def log_upload_fail(album_id: str, error: Exception):
         log.error(f"❌ [雲端上傳崩潰] ID: {album_id} 上傳 Pixeldrain 失敗: {error}")
+
+    @staticmethod
+    def log_result_send_fail(album_id: str, vol_label: str, error: Exception):
+        """🆕 2026-10-09：上傳成功、但結果訊息送不出去（通常是沒有頻道發言權）。
+
+        以前這種情況會被 log_upload_fail 記成「Pixeldrain 上傳失敗」，
+        害人往免空的方向查 —— 實際上檔案已經在雲上了。
+        """
+        log.error(
+            f"❌ [結果訊息送不出去] ID: {album_id} {vol_label} 上傳成功但訊息發送失敗: {error}"
+        )
 
     @classmethod
     def log_cleanup_success(cls, album_id: str):

@@ -133,11 +133,47 @@ async def on_ready():
         except Exception as ce:
             log.error(f"❌ 模組 {cog} 載入失敗: {ce}")
 
+    # ==================================================================
+    # 斜線指令同步（兩段式）
+    # ==================================================================
+    # 為什麼要分兩段：Discord 的 bulk_upsert 是「整批覆蓋」語意 —— 送出去的
+    # 清單裡沒有的指令，會被 Discord 直接刪掉。開發者指令帶了
+    # @app_commands.guilds()，所以它們**不會**出現在全域清單裡，
+    # 必須另外對指定伺服器同步一次，否則就真的消失了。
+    #
+    # ⚠️ 順序刻意是「先 guild、後全域」：
+    #    如果 guild 同步失敗（例如 bot 在那個伺服器沒有 applications.commands
+    #    權限），就**不要**做全域同步 —— 不然開發者指令會從全域被刪掉、又沒進
+    #    guild，等於憑空消失，只能手動救。
+    try:
+        from config import DEV_GUILD_IDS
+        DEV_GUILD_IDS = [int(g) for g in DEV_GUILD_IDS]
+    except Exception as e:
+        DEV_GUILD_IDS = []
+        log.error(f"❌ 讀不到 config.DEV_GUILD_IDS（{type(e).__name__}: {e}）")
+
+    guild_synced = False
+    for _gid in DEV_GUILD_IDS:
+        try:
+            await bot.tree.sync(guild=discord.Object(id=_gid))
+            guild_synced = True
+            log.info(f"✓ 已同步開發者指令到伺服器 {_gid}")
+        except Exception as e:
+            log.error(f"❌ 伺服器 {_gid} 的開發者指令同步失敗: {e}")
+
+    if DEV_GUILD_IDS and not guild_synced:
+        log.error(
+            "⚠️ 開發者指令同步全部失敗，這次『略過』全域同步 —— "
+            "否則那些指令會從全域被刪掉又沒進任何伺服器。"
+            "請檢查 config.DEV_GUILD_IDS 與 bot 在該伺服器的指令權限。"
+        )
+        return
+
     try:
         await bot.tree.sync()
-        log.info(f"✓ 成功同步所有斜線指令！")
+        log.info("✓ 成功同步全域斜線指令！")
     except Exception as e:
-        log.error(f"❌ 指令同步失敗: {e}")
+        log.error(f"❌ 全域指令同步失敗: {e}")
 
 if __name__ == '__main__':
     TOKEN = os.getenv('DISCORD_TOKEN')

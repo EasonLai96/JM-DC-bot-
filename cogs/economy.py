@@ -91,7 +91,7 @@ class EconomySystem(commands.Cog):
         # 視為延續同一段停留時間，不重新計時、不重複結算。
 
     # ==================== 🪐 核心指令一：每小時提取 ====================
-    @app_commands.command(name="hourly", description="提取時空累積的萌力值 (MP)")
+    @app_commands.command(name="hourly", description="領每小時 MP")
     async def hourly(self, interaction: discord.Interaction):
         # 🛠️ 修復（併發重複領取）：原本「讀取 last_hourly_time → 判斷是否滿 1 小時
         # → add_mp 發錢 → update_hourly_time 寫回」是四段各自獨立的鎖區段，中間每個
@@ -251,7 +251,7 @@ class EconomySystem(commands.Cog):
         return embed
 
     # ==================== 🌸 核心指令二：每日簽到 ====================
-    @app_commands.command(name="daily", description="每日點擊簽到，獲取大量萌力值與維繫連簽")
+    @app_commands.command(name="daily", description="每日簽到領 MP")
     async def daily(self, interaction: discord.Interaction):
         # 🛠️ 修復（併發重複領取）：同 /hourly。原本「檢查今天是否已簽到 → 發獎 →
         # save_daily_signin 寫回」分段執行，連點兩次可以各領一份獎勵（含 DC 掉落判定）。
@@ -305,7 +305,7 @@ class EconomySystem(commands.Cog):
 
 
     # ==================== ⛩️ 核心指令三：全服發電廠注入 ====================
-    @app_commands.command(name="power_plant", description="將自身的萌力值注入到全服發電廠，達標開啟全服簽到狂歡 Buff")
+    @app_commands.command(name="power_plant", description="捐 MP 開全服 Buff")
     @app_commands.describe(注入數量="你想奉獻並銷毀的萌力值 (MP) 數量")
     async def power_plant(self, interaction: discord.Interaction, 注入數量: int):
         if 注入數量 <= 0:
@@ -356,7 +356,7 @@ class EconomySystem(commands.Cog):
 
 
     # ==================== 🏆 核心指令：全服排行榜 ====================
-    @app_commands.command(name="leaderboard", description="查看跨伺服器全服排行榜，看看誰是萌力次元的頂尖玩家")
+    @app_commands.command(name="leaderboard", description="看全服排行榜")
     @app_commands.describe(排序依據="選擇要依據哪個項目排名")
     @app_commands.choices(排序依據=[
         app_commands.Choice(name="🪐 萌力階級 (等級)", value="level"),
@@ -419,7 +419,7 @@ class EconomySystem(commands.Cog):
 
 
     # ==================== 📊 核心指令四：查看換算表與升級 ====================
-    @app_commands.command(name="level_info", description="查看 1~200 萌力階級換算表，並升級自己的簽到等級")
+    @app_commands.command(name="level_info", description="看等級表與升級")
     async def level_info(self, interaction: discord.Interaction):
         user_id = interaction.user.id
         p_data = await profile_store.get_profile(user_id)
@@ -495,7 +495,7 @@ class EconomySystem(commands.Cog):
         return True
 
     # ==================== 🔮 核心指令五：時空扭轉補簽 ====================
-    @app_commands.command(name="reclaim", description="扭轉時空進行補簽，挽回斷簽的連續天數")
+    @app_commands.command(name="reclaim", description="補簽救回連續天數")
     async def reclaim(self, interaction: discord.Interaction):
         await interaction.response.defer()
         user_id = interaction.user.id

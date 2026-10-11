@@ -22,7 +22,7 @@ from discord.ext import commands
 from PIL import Image, ImageDraw, ImageFont
 from typing import Optional
 
-from config import current_dir
+from config import current_dir, DEV_GUILD_IDS
 from logger_config import log
 from utils import safe_respond
 from . import profile_store  # 引入儲存層
@@ -391,7 +391,7 @@ class ProfileCard(commands.Cog):
         output.seek(0)
         return output
 
-    @app_commands.command(name="profile", description="查看並展示你的個人生涯檔案卡（可輸入任何人的UID跨伺服器查詢）")
+    @app_commands.command(name="profile", description="看個人名片卡")
     @app_commands.describe(uid="要查詢的玩家 Discord UID（純數字，留空則查詢自己）。右鍵點選使用者「複製使用者ID」即可取得")
     # 🆕 防狂刷：這張卡每次都要下載頭像 + 跑一整套 Pillow 合成（fallback 底圖、
     #    81 次文字描邊…），是這個 bot 最貴的指令之一，原本完全沒有節流。
@@ -477,7 +477,7 @@ class ProfileCard(commands.Cog):
             log.error(f"❌ 個人卡渲染失敗: {e}")
             await interaction.followup.send("⚠️ 產生檔案卡時發生未知圖像錯誤！", ephemeral=True)
 
-    @app_commands.command(name="set_profession", description="選擇你在這個數位次元的轉職流派與稱號")
+    @app_commands.command(name="set_profession", description="選流派與稱號")
     @app_commands.describe(流派="請從四大天賦流派中選擇一個職業")
     @app_commands.choices(流派=[
         app_commands.Choice(name="⏰ 時空定錨者 (科技/程式/潛水黨)", value="時空定錨者"),
@@ -496,7 +496,7 @@ class ProfileCard(commands.Cog):
             "時空定錨者": "⏰ 轉職成功！你已與時間同步，`/hourly` 儲存上限永久增加 2 小時！",
             "萌力暴走者": "💥 轉職成功！體內萌力開始暴走，`/daily` 簽到有 10% 機率直接翻倍！",
             "結晶走私客": "🕵️ 轉職成功！暗影網路已連接，`/reclaim` 補簽所需次元結晶永遠減免 1 顆！",
-            "無業遊民": "🌱 選擇了平庸之福！新手期（Lv.2 ~ Lv.10）的階級升級費用全部享有 9 折優惠！"
+            "無業遊民": "🌱 選擇了平庸之福！新手期（Lv.2 ~ Lv.3）的階級升級費用全部享有 9 折優惠！"
         }
         
         await interaction.followup.send(
@@ -510,7 +510,7 @@ class ProfileCard(commands.Cog):
     # ⚠️ MAX_BG_PIXELS 已提升到模組層級（見檔頭）：Image.MAX_IMAGE_PIXELS 必須在模組
     #    載入時就設好，Pillow 才能在 Image.open() 階段就擋掉超標的圖。
 
-    @app_commands.command(name="set_background", description="上傳自訂圖片，更換你名片卡的背景底圖")
+    @app_commands.command(name="set_background", description="上傳名片背景圖")
     @app_commands.describe(圖片檔案="請附加一張名片比例的自訂背景圖 (將自動裁切成 16:9)")
     @app_commands.checks.cooldown(1, 20.0, key=lambda i: i.user.id)   # 🆕 防連續上傳拖垮 bot
     async def set_background(self, interaction: discord.Interaction, 圖片檔案: discord.Attachment):
@@ -603,11 +603,27 @@ class ProfileCard(commands.Cog):
                 Image.Resampling.LANCZOS,
             )
 
-        # 4) 🛠️ 壓到名片實際需要的尺寸再存。名片渲染出來就是 2000x1120，存原始尺寸對
-        #    畫質沒有任何幫助，只會吃光磁碟（實測：8MB 的 JPEG 上傳存成 PNG 會變成
-        #    12MB+，目前 custom_backgrounds/ 平均 3.93MB，外推到 10% 使用者約 1.16GB）。
-        if (img.width, img.height) != (CARD_STORE_W, CARD_STORE_H):
-            img = img.resize((CARD_STORE_W, CARD_STORE_H), Image.Resampling.LANCZOS)
+        # 4) 🛠️ 置中裁切成名片比例再存。
+        #    原本是無條件 resize 成 2000x1120 —— 那會把任何非 25:14 的圖**整個拉伸變形**
+        #    （人臉會變寬或變長），與指令說明「將自動裁切成 16:9」不符。
+        #    這裡改成標準的 cover 裁切：先等比縮放到「剛好蓋滿」目標尺寸，再置中裁掉多餘部分，
+        #    不變形、不留黑邊。名片渲染出來就是 2000x1120，存原始尺寸對畫質沒有幫助，
+        #    只會吃光磁碟（實測：8MB 的 JPEG 上傳存成 PNG 會變成 12MB+，
+        #    目前 custom_backgrounds/ 平均 3.93MB，外推到 10% 使用者約 1.16GB）。
+        target_w, target_h = CARD_STORE_W, CARD_STORE_H
+        if (img.width, img.height) != (target_w, target_h):
+            if img.width * target_h > img.height * target_w:
+                # 來源比目標「寬」→ 以高度對齊縮放，左右會有多餘，裁掉左右
+                new_h = target_h
+                new_w = max(target_w, int(round(img.width * target_h / img.height)))
+            else:
+                # 來源比目標「高」→ 以寬度對齊縮放，上下會有多餘，裁掉上下
+                new_w = target_w
+                new_h = max(target_h, int(round(img.height * target_w / img.width)))
+            img = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+            left = (new_w - target_w) // 2
+            top = (new_h - target_h) // 2
+            img = img.crop((left, top, left + target_w, top + target_h))
 
         buf = io.BytesIO()
         img.save(buf, format="PNG", optimize=True)
@@ -622,7 +638,7 @@ class ProfileCard(commands.Cog):
 
         return img.width, img.height, png_bytes
 
-    @app_commands.command(name="reset_background", description="🌌 將你名片卡的自訂背景圖清除，恢復為預設星空底圖")
+    @app_commands.command(name="reset_background", description="還原預設背景")
     async def reset_background(self, interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         save_path = os.path.join(profile_store.BACKGROUND_DIR, f"{interaction.user.id}.png")
@@ -637,7 +653,8 @@ class ProfileCard(commands.Cog):
         else:
             await interaction.followup.send("💡 你的名片目前本來就是預設背景，不需外部重設喔！", ephemeral=True)
 
-    @app_commands.command(name="debug_give", description="🛠️ [開發者專用] 自由調整自己或目標玩家的等級與貨幣資產")
+    @app_commands.command(name="debug_give", description="【開發者】調整等級與資產")
+    @app_commands.guilds(*DEV_GUILD_IDS)
     @app_commands.describe(
         項目="請選擇要調整的測試核心項目",
         數量="要給予的數量（輸入負數代表扣除）",

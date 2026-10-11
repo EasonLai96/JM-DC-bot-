@@ -27,7 +27,14 @@ from nhentai_cache import (
     save_cached_download,
     verify_link_alive,
 )
-from utils import upload_to_pixeldrain, is_nsfw_allowed, split_id_tokens, pack_embed_fields, safe_respond
+from utils import (
+    upload_to_pixeldrain,
+    is_nsfw_allowed,
+    split_id_tokens,
+    pack_embed_fields,
+    safe_respond,
+    guard_context,
+)
 
 try:
     # 🆕 預覽結果底下的「⭐ 收藏這本」按鈕（cogs/favorites.py）。
@@ -565,10 +572,12 @@ class NhentaiCog(commands.Cog):
         finally:
             shutil.rmtree(work_dir, ignore_errors=True)
 
-    @app_commands.command(name="nhv", description="查詢 nHentai 作品資訊（僅查詢/預覽，不下載）")
+    @app_commands.command(name="nhv", description="預覽 nHentai 資訊")
     @app_commands.describe(id_or_url="輸入 nHentai 本子 ID 或完整網址")
     @app_commands.checks.cooldown(1, 10.0, key=lambda i: i.user.id)
     async def nhv(self, interaction: discord.Interaction, id_or_url: str):
+        if await guard_context(interaction):
+            return
         if not is_nsfw_allowed(interaction.channel):
             await interaction.response.send_message(
                 "❌ 此指令包含成人內容，請前往 **開啟年齡限制 (NSFW)** 的頻道中使用！",
@@ -684,10 +693,12 @@ class NhentaiCog(commands.Cog):
                 ephemeral=True,
             )
 
-    @app_commands.command(name="nh", description="下載 nHentai 作品為 PDF 並上傳至雲端")
+    @app_commands.command(name="nh", description="下載 nHentai 為 PDF")
     @app_commands.describe(id_or_url="輸入 nHentai 本子 ID 或完整網址")
     @app_commands.checks.cooldown(1, 30.0, key=lambda i: i.user.id)
     async def nh_download(self, interaction: discord.Interaction, id_or_url: str):
+        if await guard_context(interaction):
+            return
         if not is_nsfw_allowed(interaction.channel):
             await interaction.response.send_message(
                 "❌ 此指令包含成人內容，請前往 **開啟年齡限制 (NSFW)** 的頻道中使用！",
@@ -786,10 +797,12 @@ class NhentaiCog(commands.Cog):
     # ==========================================
     # 📚 批量查詢（一次查多個作品）
     # ==========================================
-    @app_commands.command(name="nhbatch", description=f"批量查詢多個 nHentai 作品的資訊（一次最多 {MAX_BATCH_IDS} 本）")
+    @app_commands.command(name="nhbatch", description=f"批量預覽 nHentai（最多 {MAX_BATCH_IDS} 本）")
     @app_commands.describe(ids_or_urls="多個本子 ID 或網址，用空白、逗號或換行分隔")
     @app_commands.checks.cooldown(1, 30.0, key=lambda i: i.user.id)
     async def nh_batch(self, interaction: discord.Interaction, ids_or_urls: str):
+        if await guard_context(interaction):
+            return
         if not is_nsfw_allowed(interaction.channel):
             await interaction.response.send_message(
                 "❌ 此指令包含成人內容，請前往 **開啟年齡限制 (NSFW)** 的頻道中使用！",
